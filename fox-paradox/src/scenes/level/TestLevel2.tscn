@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b5gqoew8uddv1"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_mwhvo"]
+[ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="2_q2ndp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54k5r"]
+size = Vector2(74, 645)
+
+[node name="TestLevel2" type="Node2D" unique_id=729554712]
+script = ExtResource("1_mwhvo")
+id = "test_level2"
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="Bound" type="Area2D" parent="." unique_id=1143285523]
+position = Vector2(0, 320)
+script = ExtResource("2_q2ndp")
+to_screen = "test_level"
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=2140701768]
+shape = SubResource("RectangleShape2D_54k5r")

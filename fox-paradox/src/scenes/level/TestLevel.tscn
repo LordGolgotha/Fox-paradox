@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dibml6373m8x2"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_h5bsx"]
+[ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="2_v0kqr"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="3_84mm7"]
+[ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="4_lk5r0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0kqr"]
+size = Vector2(64, 640)
+
+[node name="TestLevel" type="Node2D" unique_id=1311014518]
+script = ExtResource("1_h5bsx")
+id = "puits"
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="Bound" type="Area2D" parent="." unique_id=228959304]
+position = Vector2(0, 320)
+script = ExtResource("2_v0kqr")
+to_screen = "foret"
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=1050007422]
+shape = SubResource("RectangleShape2D_v0kqr")
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("3_84mm7")]
+position = Vector2(448, 192)
+
+[node name="Node2D" parent="." unique_id=185771439 instance=ExtResource("4_lk5r0")]
+position = Vector2(64, 512)
+
+[node name="Node2D2" parent="." unique_id=491843327 instance=ExtResource("4_lk5r0")]
+position = Vector2(448, 512)
+
+[node name="Node2D3" parent="." unique_id=1700286228 instance=ExtResource("4_lk5r0")]
+position = Vector2(832, 512)

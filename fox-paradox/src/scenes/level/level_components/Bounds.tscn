@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://p0olt1tpfw4j"]
+
+[ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="1_007ce"]
+
+[node name="Bounds" type="Area2D" unique_id=1244421549]
+script = ExtResource("1_007ce")
