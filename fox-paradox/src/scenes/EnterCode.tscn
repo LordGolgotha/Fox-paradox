@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://ddoi1w30yayym"]
+
+[ext_resource type="Script" uid="uid://c52t8cco5r4su" path="res://src/scripts/enter_code.gd" id="1_str6e"]
+
+[node name="EnterCode" type="Control" unique_id=1330988193]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_str6e")
+
+[node name="Button" type="Node" parent="." unique_id=990705037]
+
+[node name="Button_X" type="Button" parent="Button" unique_id=240405962]
+offset_left = 35.0
+offset_top = 41.0
+offset_right = 100.0
+offset_bottom = 106.0
+theme_override_font_sizes/font_size = 32
+text = "X"
+
+[node name="Button_0" type="Button" parent="Button" unique_id=76016708]
+offset_left = 126.0
+offset_top = 190.0
+offset_right = 384.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Button_3" type="Button" parent="Button" unique_id=833132929]
+offset_left = 126.0
+offset_top = 413.0
+offset_right = 384.0
+offset_bottom = 559.0
+theme_override_font_sizes/font_size = 32
+text = "3"
+
+[node name="Button_1" type="Button" parent="Button" unique_id=352158450]
+offset_left = 497.0
+offset_top = 190.0
+offset_right = 755.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="Button_4" type="Button" parent="Button" unique_id=682169666]
+offset_left = 497.0
+offset_top = 413.0
+offset_right = 755.0
+offset_bottom = 559.0
+theme_override_font_sizes/font_size = 32
+text = "4"
+
+[node name="Button_2" type="Button" parent="Button" unique_id=1513266510]
+offset_left = 855.0
+offset_top = 190.0
+offset_right = 1113.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 32
+text = "2"
+
+[node name="Button_5" type="Button" parent="Button" unique_id=563862589]
+offset_left = 855.0
+offset_top = 413.0
+offset_right = 1113.0
+offset_bottom = 559.0
+theme_override_font_sizes/font_size = 32
+text = "5"
+
+[node name="Labels" type="Node" parent="." unique_id=715799137]
+
+[node name="Label_code" type="Label" parent="Labels" unique_id=1761442446]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -79.5
+offset_top = 56.0
+offset_right = 79.5
+offset_bottom = 144.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "XXXX"
+
+[node name="Label_verified" type="Label" parent="Labels" unique_id=1057483190]
+offset_left = 682.0
+offset_top = 54.0
+offset_right = 770.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 64
+text = "✅"
+
+[connection signal="pressed" from="Button/Button_X" to="." method="_on_button_x_pressed"]
+[connection signal="pressed" from="Button/Button_0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="Button/Button_3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button/Button_1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button/Button_4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button/Button_2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button/Button_5" to="." method="_on_button_5_pressed"]
