@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://c3gjq3a63uaiy"]
+
+[ext_resource type="Script" uid="uid://b2p2lh5rb2ffi" path="res://src/scripts/ui/main_menu.gd" id="1_qkuje"]
+
+[sub_resource type="Gradient" id="Gradient_1vaol"]
+colors = PackedColorArray(0.6859077, 0.42623946, 0.09331935, 1, 0.6862745, 0.42745098, 0.09411765, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rm437"]
+gradient = SubResource("Gradient_1vaol")
+
+[node name="MainMenu" type="Control" unique_id=1744993639]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qkuje")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1262397011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_rm437")
+
+[node name="Label" type="Label" parent="." unique_id=1469354618]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_right = 55.5
+offset_bottom = 23.0
+grow_horizontal = 2
+scale = Vector2(1.0050627, 0.99652886)
+text = "FOX PARADOX"
+
+[node name="QuitHBox" type="HBoxContainer" parent="." unique_id=598260363]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -66.94501
+offset_right = 21.0
+offset_bottom = -35.945007
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="QuitButton" type="Button" parent="QuitHBox" unique_id=1879101032]
+layout_mode = 2
+text = "Quit"
+
+[node name="SeedVBox" type="VBoxContainer" parent="." unique_id=461259464]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -38.5
+offset_right = 64.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ErrorLabel" type="Label" parent="SeedVBox" unique_id=778007322]
+layout_mode = 2
+
+[node name="SeedLineEdit" type="LineEdit" parent="SeedVBox" unique_id=2113703284]
+layout_mode = 2
+text = "Enter seed"
+
+[node name="ConfirmSeedButton" type="Button" parent="SeedVBox" unique_id=195863530]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Confirm"
+
+[node name="SummerWinterVBox" type="VBoxContainer" parent="." unique_id=1930325304]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -20.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SummerWinterVBox" unique_id=395683140]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="SummerButton" type="Button" parent="SummerWinterVBox/HBoxContainer" unique_id=473906732]
+layout_mode = 2
+text = "Summer"
+
+[node name="WinterButton" type="Button" parent="SummerWinterVBox/HBoxContainer" unique_id=1833579949]
+layout_mode = 2
+text = "Winter
+"
+
+[node name="BackButton" type="Button" parent="SummerWinterVBox" unique_id=1496846437]
+layout_mode = 2
+text = "Back
+"
+
+[connection signal="button_down" from="QuitHBox/QuitButton" to="." method="_on_quit_button_button_down"]
+[connection signal="button_down" from="SeedVBox/ConfirmSeedButton" to="." method="_on_confirm_seed_button_button_down"]
+[connection signal="button_down" from="SummerWinterVBox/HBoxContainer/SummerButton" to="." method="_on_summer_button_button_down"]
+[connection signal="button_down" from="SummerWinterVBox/HBoxContainer/WinterButton" to="." method="_on_winter_button_button_down"]
+[connection signal="button_down" from="SummerWinterVBox/BackButton" to="." method="_on_back_button_button_down"]
