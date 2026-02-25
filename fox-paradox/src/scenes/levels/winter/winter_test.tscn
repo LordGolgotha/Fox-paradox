@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dd758c4j374n8"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_ksmec"]
+[ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="2_f3a16"]
+[ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="3_i3u0e"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="4_57207"]
+[ext_resource type="Script" uid="uid://dbirm5hscp5nd" path="res://src/scripts/scenes/level/level_codes/winter_test_label.gd" id="5_f3a16"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ksmec"]
+normal = Vector2(1, 0)
+
+[node name="Level" type="Node2D" unique_id=468715851]
+script = ExtResource("1_ksmec")
+id = "winter_test"
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="Bound" type="Area2D" parent="." unique_id=629302655]
+script = ExtResource("2_f3a16")
+to_screen = "winter1"
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=529235249]
+shape = SubResource("WorldBoundaryShape2D_ksmec")
+
+[node name="Ground" type="Node" parent="." unique_id=69805723]
+
+[node name="Node2D3" parent="Ground" unique_id=185771439 instance=ExtResource("3_i3u0e")]
+position = Vector2(48, 566)
+
+[node name="Node2D2" parent="Ground" unique_id=1774087843 instance=ExtResource("3_i3u0e")]
+position = Vector2(760, 567)
+
+[node name="Node2D" parent="Ground" unique_id=1595276788 instance=ExtResource("3_i3u0e")]
+position = Vector2(404, 566)
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("4_57207")]
+position = Vector2(468, 472)
+
+[node name="Label" type="Label" parent="." unique_id=258460538]
+offset_left = 202.0
+offset_top = 173.0
+offset_right = 959.0
+offset_bottom = 261.0
+theme_override_font_sizes/font_size = 64
+text = "Your secret code is XXXX"
+script = ExtResource("5_f3a16")

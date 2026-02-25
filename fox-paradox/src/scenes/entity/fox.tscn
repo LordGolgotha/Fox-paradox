@@ -7,6 +7,7 @@
 size = Vector2(126, 126)
 
 [node name="fox" type="CharacterBody2D" unique_id=1154230614]
+collision_layer = 3
 script = ExtResource("1_vrs5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1821736743]
