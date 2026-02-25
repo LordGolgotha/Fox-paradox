@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bpsruroqevudj"]
+
+[ext_resource type="Script" uid="uid://cjhj3kgahaowt" path="res://src/scripts/ui/pause_menu.gd" id="1_yqfnv"]
+
+[sub_resource type="Gradient" id="Gradient_1vaol"]
+offsets = PackedFloat32Array(0, 0.9939759)
+colors = PackedColorArray(0.6862745, 0.42745098, 0.09411765, 0.39215687, 0.6862745, 0.42745098, 0.09411765, 0.39215687)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rm437"]
+gradient = SubResource("Gradient_1vaol")
+
+[node name="PauseMenu" type="Control" unique_id=1744993639]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqfnv")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1262397011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_rm437")
+
+[node name="Label" type="Label" parent="." unique_id=1469354618]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_right = 55.5
+offset_bottom = 23.0
+grow_horizontal = 2
+scale = Vector2(1.0050627, 0.99652886)
+text = "FOX PARADOX"
+
+[node name="QuitHBox" type="HBoxContainer" parent="." unique_id=598260363]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -66.94501
+offset_right = 21.0
+offset_bottom = -35.945007
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="QuitButton" type="Button" parent="QuitHBox" unique_id=1879101032]
+layout_mode = 2
+text = "Quit"
+
+[node name="PauseVBox" type="VBoxContainer" parent="." unique_id=461259464]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.75
+offset_top = -57.5
+offset_right = 62.75
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ResumeButton" type="Button" parent="PauseVBox" unique_id=195863530]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Resume"
+
+[connection signal="button_down" from="QuitHBox/QuitButton" to="." method="_on_quit_button_button_down"]
+[connection signal="button_down" from="PauseVBox/ResumeButton" to="." method="pause_unpause"]

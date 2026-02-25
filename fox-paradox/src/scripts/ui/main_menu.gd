@@ -6,10 +6,10 @@ extends Node
 @onready var error_label : Label = $SeedVBox/ErrorLabel
 
 func _on_summer_button_button_down() -> void:
-	get_tree().change_scene_to_file("res://src/scenes/levels/summer/summer1.tscn")
+	GameManager.go_to_level("test_level")
 	
 func _on_winter_button_button_down() -> void:
-	get_tree().change_scene_to_file("res://src/scenes/levels/winter/winter1.tscn")
+	GameManager.go_to_level("test_level2")
 	
 func _on_quit_button_button_down() -> void:
 	get_tree().quit() 
