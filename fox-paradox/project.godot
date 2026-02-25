@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Fox Paradox"
+run/main_scene="uid://c3ehhc7g0d1de"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+PasswordGenerator="*uid://c6odi1yqlqe5m"
 
 [physics]
 
