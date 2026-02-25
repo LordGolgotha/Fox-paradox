@@ -5,5 +5,11 @@ class_name Level
 
 @export var id:String
 
+@export var player:Fox
+
+func _ready():
+	for b in bounds:
+		b.player_entered.connect(go_to_level)
+
 func go_to_level(id_level:String):
-	get_tree().change_scene_to_file(id_level)
+	print("changing to level" + id_level)

@@ -5,22 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="3_84mm7"]
 [ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="4_lk5r0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0kqr"]
-size = Vector2(64, 640)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84mm7"]
+size = Vector2(74, 522)
 
-[node name="TestLevel" type="Node2D" unique_id=1311014518]
+[node name="TestLevel" type="Node2D" unique_id=1311014518 node_paths=PackedStringArray("bounds")]
 script = ExtResource("1_h5bsx")
-id = "puits"
+bounds = [NodePath("Bound")]
+id = "test_level"
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
-
-[node name="Bound" type="Area2D" parent="." unique_id=228959304]
-position = Vector2(0, 320)
-script = ExtResource("2_v0kqr")
-to_screen = "foret"
-metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=1050007422]
-shape = SubResource("RectangleShape2D_v0kqr")
 
 [node name="fox" parent="." unique_id=1154230614 instance=ExtResource("3_84mm7")]
 position = Vector2(448, 192)
@@ -33,3 +25,12 @@ position = Vector2(448, 512)
 
 [node name="Node2D3" parent="." unique_id=1700286228 instance=ExtResource("4_lk5r0")]
 position = Vector2(832, 512)
+
+[node name="Bound" type="Area2D" parent="." unique_id=608854644]
+position = Vector2(64, 256)
+script = ExtResource("2_v0kqr")
+to_screen = "test_level2"
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=1475842655]
+shape = SubResource("RectangleShape2D_84mm7")
