@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://crnrb8lbolv4e"]
+
+[ext_resource type="Script" path="res://src/scripts/password_generator.gd" id="1_r2r4l"]
+
+[node name="Node2D" type="Node2D" unique_id=882999131]
+script = ExtResource("1_r2r4l")
