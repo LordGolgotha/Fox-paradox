@@ -1,15 +1,31 @@
 [gd_scene format=3 uid="uid://b5gqoew8uddv1"]
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_mwhvo"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="2_m77rt"]
+[ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="2_meky1"]
 [ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="2_q2ndp"]
+[ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="4_meky1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54k5r"]
 size = Vector2(74, 645)
 
-[node name="TestLevel2" type="Node2D" unique_id=729554712]
+[node name="TestLevel2" type="Node2D" unique_id=729554712 node_paths=PackedStringArray("bounds")]
 script = ExtResource("1_mwhvo")
+bounds = [NodePath("Bound")]
 id = "test_level2"
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="PauseMenu" parent="." unique_id=1744993639 instance=ExtResource("2_meky1")]
+process_mode = 3
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("2_m77rt")]
+position = Vector2(233, 382)
+
+[node name="Node2D" parent="." unique_id=185771439 instance=ExtResource("4_meky1")]
+position = Vector2(75, 595)
 
 [node name="Bound" type="Area2D" parent="." unique_id=1143285523]
 position = Vector2(0, 320)
