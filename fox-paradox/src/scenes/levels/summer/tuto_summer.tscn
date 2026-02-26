@@ -1,0 +1,66 @@
+[gd_scene format=4 uid="uid://smqsbvb5qc33"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_wgerl"]
+[ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_naknc"]
+[ext_resource type="Texture2D" uid="uid://cw2buwcdvu8jj" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="3_85dxq"]
+[ext_resource type="Texture2D" uid="uid://ccee48odikrha" path="res://assets/oak_woods_v1.0/background/background_layer_3.png" id="4_nmcvf"]
+[ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="5_ig3ha"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="6_vmcpa"]
+[ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="7_icaw6"]
+[ext_resource type="Texture2D" uid="uid://bhi7t566gowmc" path="res://assets/utils/glyphe1.png" id="8_vmcpa"]
+[ext_resource type="Texture2D" uid="uid://b2rbcxa58q6g1" path="res://assets/utils/glyphe2.png" id="9_icaw6"]
+[ext_resource type="Texture2D" uid="uid://l5wnsdf5qdt7" path="res://assets/utils/glyphe3.png" id="10_erofv"]
+[ext_resource type="Texture2D" uid="uid://gtn8xpd1e734" path="res://assets/utils/glyphe4.png" id="11_ekytx"]
+
+[node name="Node2D" type="Node2D" unique_id=30359563]
+script = ExtResource("1_wgerl")
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=296929868]
+position = Vector2(576, 323.99997)
+scale = Vector2(3.6000004, 3.5999997)
+texture = ExtResource("2_naknc")
+
+[node name="BackgroundLayer2" type="Sprite2D" parent="." unique_id=1973737559]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6000001)
+texture = ExtResource("3_85dxq")
+
+[node name="BackgroundLayer3" type="Sprite2D" parent="." unique_id=521877811]
+position = Vector2(576, 324)
+scale = Vector2(3.6000001, 3.6)
+texture = ExtResource("4_nmcvf")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1468165629]
+tile_map_data = PackedByteArray("AAAAAAQAAQAFAAAAAAABAAQAAQADAAAAAAACAAQAAQACAAAAAAADAAQAAQAAAAAAAAAEAAQAAQABAAAAAAAFAAQAAQAAAAAAAAAIAAQAAQAGAAAAAAAGAAQAAQADAAAAAAAHAAQAAQABAAAAAAA=")
+tile_set = ExtResource("5_ig3ha")
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("6_vmcpa")]
+position = Vector2(92, 473)
+
+[node name="Node2D" parent="." unique_id=185771439 instance=ExtResource("7_icaw6")]
+position = Vector2(-10, 3)
+rotation = 1.5707964
+scale = Vector2(2, 1)
+
+[node name="Glyphe1" type="Sprite2D" parent="." unique_id=1529544686]
+position = Vector2(206.5, 336.5)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_vmcpa")
+
+[node name="Glyphe2" type="Sprite2D" parent="." unique_id=26557938]
+position = Vector2(528, 275)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("9_icaw6")
+
+[node name="Glyphe3" type="Sprite2D" parent="." unique_id=2049866169]
+position = Vector2(807, 316)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_erofv")
+
+[node name="Glyphe4" type="Sprite2D" parent="." unique_id=627031344]
+modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
+texture_filter = 5
+position = Vector2(1066, 287)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("11_ekytx")
