@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dou468tlw0xsl"]
 
 [ext_resource type="Texture2D" uid="uid://de1vcd5hvndwd" path="res://icon.svg" id="1_6sujb"]
-[ext_resource type="Script" uid="uid://cpl0hbr6g30ow" path="res://src/scripts/entity/ground.gd" id="1_ies04"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wcxjy"]
 
@@ -10,7 +9,6 @@ size = Vector2(354, 20)
 
 [node name="Node2D" type="StaticBody2D" unique_id=185771439]
 physics_material_override = SubResource("PhysicsMaterial_wcxjy")
-script = ExtResource("1_ies04")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=239849737]
 position = Vector2(167, 0)

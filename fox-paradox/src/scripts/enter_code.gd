@@ -1,4 +1,5 @@
 extends Control
+class_name EnterCode
 
 @onready var button_x: Button = $Button/Button_X
 @onready var button_0: Button = $Button/Button_0
@@ -18,6 +19,7 @@ const GLYPHE_6 = preload("uid://wp558goj7j75")
 const number_to_glyph: Dictionary = {"0": GLYPHE_1, "1": GLYPHE_2, "2": GLYPHE_3, "3": GLYPHE_4, "4": GLYPHE_5, "5": GLYPHE_6}
 const glyph_to_number: Dictionary = {GLYPHE_1: "0", GLYPHE_2: "1", GLYPHE_3: "2", GLYPHE_4: "3", GLYPHE_5: "4", GLYPHE_6: "5"}
 var buttons
+
 
 @onready var label_code: Label = $Labels/Label_code
 @onready var label_verified: Label = $Labels/Label_verified
@@ -68,7 +70,6 @@ func check_code():
 		await get_tree().create_timer(1).timeout
 		code_succeed.emit()
 		set_visibility(false)
-		
 		
 func set_corect_code(code: String = "0000"):
 	correct_code = code

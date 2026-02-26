@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://blus4olghu771"]
+
+[ext_resource type="Script" uid="uid://dotgblk65lhev" path="res://src/scripts/scenes/level/level_components/code_controller.gd" id="1_ma1dd"]
+
+[node name="CodeController" type="Node2D" unique_id=981210675]
+script = ExtResource("1_ma1dd")
