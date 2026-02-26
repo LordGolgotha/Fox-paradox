@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://c3froq4fbwwf0"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_34bru"]
+[ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="2_bsd20"]
+[ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="2_une3j"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="2_yk10b"]
+[ext_resource type="PackedScene" uid="uid://dgjfvi2rreyaf" path="res://src/scenes/entity/jar.tscn" id="4_ubtyv"]
+[ext_resource type="PackedScene" uid="uid://bjwuj850ri18p" path="res://src/scenes/entity/jar_spot.tscn" id="6_6h3hu"]
+[ext_resource type="PackedScene" uid="uid://18j5jnwhqk43" path="res://src/scenes/entity/rock.tscn" id="7_dbi57"]
+[ext_resource type="PackedScene" uid="uid://dlvyfx1l23kro" path="res://src/scenes/entity/hive.tscn" id="8_nchww"]
+[ext_resource type="PackedScene" uid="uid://bjel63t88tfub" path="res://src/scenes/bear.tscn" id="9_0e3xp"]
+
+[node name="BearLevelSummer" type="Node2D" unique_id=493597110]
+script = ExtResource("1_34bru")
+id = "bear_level_summer"
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="PauseMenu" parent="." unique_id=1744993639 instance=ExtResource("2_bsd20")]
+process_mode = 3
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("2_yk10b")]
+position = Vector2(411, 460)
+scale = Vector2(0.25, 0.25)
+
+[node name="Node2D" parent="." unique_id=185771439 instance=ExtResource("2_une3j")]
+position = Vector2(34, 512)
+scale = Vector2(3.2670586, 0.2)
+collision_layer = 15
+
+[node name="hive" parent="." unique_id=985769630 node_paths=PackedStringArray("jar_spot") instance=ExtResource("8_nchww")]
+position = Vector2(284, 355)
+scale = Vector2(0.15, 0.15)
+collision_layer = 0
+jar_spot = NodePath("../JarSpot3")
+hive_size = "SMALL"
+
+[node name="hive2" parent="." unique_id=447545952 node_paths=PackedStringArray("jar_spot") instance=ExtResource("8_nchww")]
+position = Vector2(162, 357)
+scale = Vector2(0.15, 0.15)
+collision_layer = 0
+jar_spot = NodePath("../JarSpot2")
+hive_size = "TALL"
+
+[node name="hive3" parent="." unique_id=1592094891 node_paths=PackedStringArray("jar_spot") instance=ExtResource("8_nchww")]
+position = Vector2(54, 356)
+scale = Vector2(0.15, 0.15)
+collision_layer = 0
+jar_spot = NodePath("../JarSpot")
+hive_size = "MEDIUM"
+
+[node name="rock" parent="." unique_id=1529654570 groups=["rocks"] instance=ExtResource("7_dbi57")]
+position = Vector2(785, 496)
+scale = Vector2(0.1, 0.1)
+
+[node name="rock2" parent="." unique_id=1547723804 groups=["rocks"] instance=ExtResource("7_dbi57")]
+position = Vector2(827, 493)
+scale = Vector2(0.1, 0.1)
+
+[node name="rock3" parent="." unique_id=2112230369 groups=["rocks"] instance=ExtResource("7_dbi57")]
+position = Vector2(870, 493)
+scale = Vector2(0.1, 0.1)
+
+[node name="Jar" parent="." unique_id=281147090 groups=["jars"] instance=ExtResource("4_ubtyv")]
+position = Vector2(569, 508)
+
+[node name="Jar2" parent="." unique_id=568209931 groups=["jars"] instance=ExtResource("4_ubtyv")]
+position = Vector2(641, 506)
+
+[node name="Jar3" parent="." unique_id=729710765 groups=["jars"] instance=ExtResource("4_ubtyv")]
+position = Vector2(717, 503)
+
+[node name="JarSpot" parent="." unique_id=629362363 instance=ExtResource("6_6h3hu")]
+position = Vector2(52, 509)
+scale = Vector2(2, 2)
+
+[node name="JarSpot2" parent="." unique_id=1934862444 instance=ExtResource("6_6h3hu")]
+position = Vector2(161, 509)
+scale = Vector2(2, 2)
+
+[node name="JarSpot3" parent="." unique_id=2078684355 instance=ExtResource("6_6h3hu")]
+position = Vector2(284, 510)
+scale = Vector2(2, 2)
+
+[node name="Bear" parent="." unique_id=347275757 instance=ExtResource("9_0e3xp")]
+position = Vector2(1041, 452)
+scale = Vector2(0.05, 0.05)
+rock_pos = Vector2(790, 500)
+jar_pos = Vector2(500, 500)

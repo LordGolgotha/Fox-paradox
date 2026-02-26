@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://18j5jnwhqk43"]
+
+[ext_resource type="Script" uid="uid://b0qbdpddrr2ef" path="res://src/scripts/entity/rock.gd" id="1_eulup"]
+[ext_resource type="Texture2D" uid="uid://dve0gls1lgy4e" path="res://assets/caillou.png" id="2_4je5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbaf0"]
+size = Vector2(175, 164)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kbaf0"]
+radius = 101.4002
+
+[node name="rock" type="CharacterBody2D" unique_id=1529654570]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_eulup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=476361673]
+position = Vector2(5.5, 1)
+shape = SubResource("RectangleShape2D_kbaf0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1101527689]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4je5h")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2138213671]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=487239381]
+shape = SubResource("CircleShape2D_kbaf0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

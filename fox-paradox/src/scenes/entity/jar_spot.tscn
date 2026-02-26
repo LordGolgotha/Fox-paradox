@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bjwuj850ri18p"]
+
+[ext_resource type="Script" uid="uid://br1psrlidfrfh" path="res://src/scripts/entity/jar_spot.gd" id="1_lerfo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lerfo"]
+radius = 8.0
+height = 64.0
+
+[sub_resource type="Gradient" id="Gradient_lerfo"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jb583"]
+gradient = SubResource("Gradient_lerfo")
+width = 9
+height = 3
+
+[node name="JarSpot" type="Area2D" unique_id=629362363]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_lerfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572261555]
+shape = SubResource("CapsuleShape2D_lerfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1385197731]
+scale = Vector2(1.3247633, 0.5)
+texture = SubResource("GradientTexture2D_jb583")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
