@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dbirm5hscp5nd" path="res://src/scripts/scenes/level/level_codes/winter_test_label.gd" id="5_f3a16"]
 [ext_resource type="PackedScene" uid="uid://bgayfjodjch71" path="res://src/scenes/entity/interactable/box.tscn" id="6_i3u0e"]
 [ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="7_57207"]
-[ext_resource type="PackedScene" uid="uid://bfbbfcoc26ggm" path="res://src/util/snow.tscn" id="8_r13ey"]
+[ext_resource type="PackedScene" uid="uid://bfbbfcoc26ggm" path="res://src/util/snowStorm.tscn" id="8_r13ey"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ksmec"]
 normal = Vector2(1, 0)
@@ -59,5 +59,5 @@ scale = Vector2(2, 2)
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("7_57207")]
 position = Vector2(968, 485)
 
-[node name="SnowParticle" parent="." unique_id=241607874 instance=ExtResource("8_r13ey")]
-position = Vector2(320, 0)
+[node name="SnowStormParticle" parent="." unique_id=706089482 instance=ExtResource("8_r13ey")]
+position = Vector2(1182, 22.999939)

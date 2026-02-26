@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://wnqclspxn3ku"]
+[gd_scene format=3 uid="uid://bfbbfcoc26ggm"]
 
-[ext_resource type="Texture2D" uid="uid://bckrwllalvx8a" path="res://assets/utils/SnowBall.png" id="1_jabj1"]
+[ext_resource type="Texture2D" uid="uid://bckrwllalvx8a" path="res://assets/utils/SnowBall.png" id="1_gaqx0"]
 
 [sub_resource type="Gradient" id="Gradient_eiqov"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -14,7 +14,7 @@ particle_flag_disable_z = true
 emission_shape_scale = Vector3(1980, 1, 1)
 emission_shape = 3
 emission_box_extents = Vector3(1, 1, 1)
-gravity = Vector3(0, 20, 0)
+gravity = Vector3(-300, 300, 0)
 radial_accel_min = -1.0000023
 radial_accel_max = -1.0000023
 damping_min = 5.0
@@ -26,9 +26,12 @@ collision_mode = 1
 collision_friction = 1.0
 collision_bounce = 0.0
 
-[node name="SnowParticle" type="GPUParticles2D" unique_id=241607874]
-amount = 500
+[node name="SnowStormParticle" type="GPUParticles2D" unique_id=241607874]
+z_index = 7
+position = Vector2(1011, -212)
+rotation = 0.7313009
+amount = 5000
 sub_emitter = NodePath(".")
-texture = ExtResource("1_jabj1")
+texture = ExtResource("1_gaqx0")
 lifetime = 20.0
 process_material = SubResource("ParticleProcessMaterial_avmoa")

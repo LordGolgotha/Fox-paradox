@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddoi1w30yayym"]
 
 [ext_resource type="Script" uid="uid://c52t8cco5r4su" path="res://src/scripts/enter_code.gd" id="1_str6e"]
+[ext_resource type="Texture2D" uid="uid://bhi7t566gowmc" path="res://assets/utils/glyphe1.png" id="2_0ufyy"]
 
 [node name="EnterCode" type="Control" unique_id=1330988193]
 layout_mode = 3
@@ -90,6 +91,14 @@ offset_right = 770.0
 offset_bottom = 142.0
 theme_override_font_sizes/font_size = 64
 text = "✅"
+
+[node name="Glyphs" type="Node" parent="." unique_id=602683821]
+
+[node name="Glyph0" type="Sprite2D" parent="Glyphs" unique_id=275505794]
+visible = false
+position = Vector2(505.00003, 78)
+scale = Vector2(0.3515625, 0.3515625)
+texture = ExtResource("2_0ufyy")
 
 [connection signal="pressed" from="Button/Button_X" to="." method="_on_button_x_pressed"]
 [connection signal="pressed" from="Button/Button_0" to="." method="_on_button_0_pressed"]
