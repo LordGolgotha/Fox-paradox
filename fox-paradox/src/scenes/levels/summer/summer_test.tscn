@@ -32,6 +32,7 @@ position = Vector2(100, 590)
 position = Vector2(669, 595)
 
 [node name="fox" parent="." unique_id=1154230614 instance=ExtResource("4_1yg1h")]
+z_index = 5
 position = Vector2(193, 499)
 
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("5_6mu3q")]
