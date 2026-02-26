@@ -25,6 +25,10 @@ PasswordGenerator="*uid://c6odi1yqlqe5m"
 GameManager="*uid://d0o2dncaitg3b"
 LevelsControler="*uid://1ysf5phkdo6t"
 
+[display]
+
+window/size/viewport_height=640
+
 [input]
 
 pause={
