@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bjel63t88tfub"]
+
+[ext_resource type="Script" uid="uid://fx7smycchcpn" path="res://src/scripts/entity/bear.gd" id="1_j82s3"]
+[ext_resource type="Texture2D" uid="uid://dbyhfft7m73e" path="res://assets/bear.png" id="2_7eio3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31jrg"]
+size = Vector2(2151, 2285)
+
+[node name="Bear" type="Area2D" unique_id=347275757]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_j82s3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1952934029]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_31jrg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=503710004]
+texture = ExtResource("2_7eio3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
