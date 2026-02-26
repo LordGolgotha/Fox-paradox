@@ -8,11 +8,12 @@ var code_index = 3
 func _ready() -> void:
 	super()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	super(delta)
 	if Input.is_action_just_pressed("ui_accept"):
 		if current_state == State.IN:
-			print("Interacted")
 			entercode.emit(code_index)
+
+func set_code_index(index: int):
+	code_index = index

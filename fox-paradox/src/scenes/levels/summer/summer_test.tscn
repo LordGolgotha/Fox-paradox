@@ -32,11 +32,25 @@ position = Vector2(100, 590)
 position = Vector2(669, 595)
 
 [node name="fox" parent="." unique_id=1154230614 instance=ExtResource("4_1yg1h")]
+z_index = 5
 position = Vector2(193, 499)
 
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("5_6mu3q")]
 position = Vector2(864.99994, 436.99997)
 scale = Vector2(2.0400047, 2.0399952)
 
+[node name="Label" type="Label" parent="." unique_id=1661775875]
+visible = false
+offset_left = 364.0
+offset_top = 88.0
+offset_right = 846.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 64
+text = "Your winner 🏆"
+
 [node name="EnterCode" parent="." unique_id=1330988193 instance=ExtResource("7_hjmnj")]
 visible = false
+offset_left = 351.0
+offset_top = 405.0
+offset_right = 351.0
+offset_bottom = 405.0
