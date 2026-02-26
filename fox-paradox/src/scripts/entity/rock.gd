@@ -4,7 +4,7 @@ class_name Rock
 
 func _input(event: InputEvent) -> void:
 	super(event)
-	if event.is_action_pressed("throw_test") and is_grabbed:
+	if event.is_action_pressed("Throw") and is_grabbed:
 		throw()
 
 func throw():

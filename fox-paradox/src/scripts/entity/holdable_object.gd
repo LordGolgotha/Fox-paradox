@@ -19,9 +19,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	if can_be_grabbed and event.is_action_pressed("interact"):
+	if can_be_grabbed and event.is_action_pressed("Interact"):
 		is_grabbed = true
-	elif can_be_grabbed and event.is_action_released("interact"):
+	elif can_be_grabbed and event.is_action_released("Interact"):
 		is_grabbed = false
 		dropped.emit()
 		

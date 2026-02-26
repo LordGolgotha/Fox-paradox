@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -1000.0
 enum State{READY, STOPED}
 var current_state
 
+var has_object_in_hand : bool = false
+
 func _ready() -> void:
 	current_state = State.READY
 
