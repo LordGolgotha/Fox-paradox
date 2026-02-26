@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bgayfjodjch71"]
+
+[ext_resource type="Script" uid="uid://d113wer7jfao8" path="res://src/scripts/entity/interactable/box.gd" id="1_bjp2a"]
+[ext_resource type="Texture2D" uid="uid://dfnxd4qt0m7hj" path="res://src/util/icon.svg" id="2_bov4m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfj6f"]
+size = Vector2(68, 68)
+
+[node name="Box" type="Area2D" unique_id=282182755]
+script = ExtResource("1_bjp2a")
+metadata/_custom_type_script = "uid://bpccnmwcbrfrv"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=872121354]
+position = Vector2(17.93997, 18.939968)
+scale = Vector2(0.280312, 0.280312)
+texture = ExtResource("2_bov4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491208895]
+position = Vector2(17.93997, 18.939968)
+scale = Vector2(0.5199991, 0.5199991)
+shape = SubResource("RectangleShape2D_hfj6f")
+
+[node name="Notification" type="Label" parent="." unique_id=957413574]
+z_index = 10
+offset_left = -13.0
+offset_top = -36.0
+offset_right = 27.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(1, 0.26, 0.26, 1)
+theme_override_font_sizes/font_size = 32
+text = "!"
+metadata/_edit_use_anchors_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1951429979]
+position = Vector2(18, 19)
+target_position = Vector2(49, 0)

@@ -1,8 +1,5 @@
 extends Interactable
-class_name Code_Typer
-
-signal entercode(index)
-@export var code_index:int = 3
+class_name Box
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,7 +10,4 @@ func _process(delta: float) -> void:
 	super(delta)
 	if Input.is_action_just_pressed("ui_accept"):
 		if current_state == State.IN:
-			entercode.emit(code_index)
-
-func set_code_index(index: int):
-	code_index = index
+			print("push")

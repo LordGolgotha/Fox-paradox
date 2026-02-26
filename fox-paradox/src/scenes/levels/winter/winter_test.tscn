@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="3_i3u0e"]
 [ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="4_57207"]
 [ext_resource type="Script" uid="uid://dbirm5hscp5nd" path="res://src/scripts/scenes/level/level_codes/winter_test_label.gd" id="5_f3a16"]
+[ext_resource type="PackedScene" uid="uid://bgayfjodjch71" path="res://src/scenes/entity/interactable/box.tscn" id="6_i3u0e"]
+[ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="7_57207"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ksmec"]
 normal = Vector2(1, 0)
@@ -33,8 +35,12 @@ position = Vector2(760, 567)
 [node name="Node2D" parent="Ground" unique_id=1595276788 instance=ExtResource("3_i3u0e")]
 position = Vector2(404, 566)
 
+[node name="Node2D4" parent="Ground" unique_id=447172891 instance=ExtResource("3_i3u0e")]
+position = Vector2(1092, 549)
+rotation = -1.5707964
+
 [node name="fox" parent="." unique_id=1154230614 instance=ExtResource("4_57207")]
-position = Vector2(468, 472)
+position = Vector2(126, 505)
 
 [node name="Label" type="Label" parent="." unique_id=258460538]
 offset_left = 202.0
@@ -44,3 +50,10 @@ offset_bottom = 261.0
 theme_override_font_sizes/font_size = 64
 text = "Your secret code is XXXX"
 script = ExtResource("5_f3a16")
+
+[node name="Box" parent="." unique_id=282182755 instance=ExtResource("6_i3u0e")]
+position = Vector2(513, 477)
+scale = Vector2(2, 2)
+
+[node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("7_57207")]
+position = Vector2(968, 485)
