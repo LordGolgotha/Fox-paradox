@@ -3,7 +3,7 @@ class_name Interactable
 
 @onready var notification: Label = $Notification
 
-enum State{IN, OUT}
+enum State{IN, OUT, DONE}
 var current_state = State.OUT
 
 # Called when the node enters the scene tree for the first time.
@@ -17,14 +17,16 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Fox:
+	if current_state != State.DONE:
 		notification.visible = true
 		current_state = State.IN
-		print("IN")
 
 
 func _on_body_exited(body: Node2D) -> void:
-	notification.visible = false
-	current_state = State.OUT
-	print("OUT")
+	if current_state != State.DONE:
+		notification.visible = false
+		current_state = State.OUT
 	
+func finish():
+	notification.visible = false
+	current_state = State.DONE
