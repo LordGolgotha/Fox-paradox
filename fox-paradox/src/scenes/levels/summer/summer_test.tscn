@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bs3ddhs4gj13b"]
+
+[ext_resource type="Script" uid="uid://bxbb1miurr6ta" path="res://src/scripts/scenes/level/level_codes/level_test_menu.gd" id="1_1yg1h"]
+[ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="2_6mu3q"]
+[ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="3_nc2q8"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="4_1yg1h"]
+[ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="5_6mu3q"]
+[ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="7_hjmnj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hjmnj"]
+normal = Vector2(1, 0)
+
+[node name="Level" type="Node2D" unique_id=1857880803]
+script = ExtResource("1_1yg1h")
+id = "summer_test"
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="Bound" type="Area2D" parent="." unique_id=1078834932]
+script = ExtResource("2_6mu3q")
+to_screen = "summer1"
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=2073539216]
+shape = SubResource("WorldBoundaryShape2D_hjmnj")
+
+[node name="platforms" type="Node" parent="." unique_id=839222214]
+
+[node name="Node2D" parent="platforms" unique_id=185771439 instance=ExtResource("3_nc2q8")]
+position = Vector2(100, 590)
+
+[node name="Node2D2" parent="platforms" unique_id=1622661889 instance=ExtResource("3_nc2q8")]
+position = Vector2(669, 595)
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("4_1yg1h")]
+position = Vector2(193, 499)
+
+[node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("5_6mu3q")]
+position = Vector2(864.99994, 436.99997)
+scale = Vector2(2.0400047, 2.0399952)
+
+[node name="EnterCode" parent="." unique_id=1330988193 instance=ExtResource("7_hjmnj")]
+visible = false

@@ -14,3 +14,6 @@ func generate_passes(word: String = "", quantity: int = 5):
 			l.append(rng.randi_range(0,5))
 		passes.append(l)
 	return passes
+
+func _ready() -> void:
+	generate_passes("Anarchisme", 5)

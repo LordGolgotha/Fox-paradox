@@ -12,11 +12,14 @@ extends Control
 @onready var label_code: Label = $Labels/Label_code
 @onready var label_verified: Label = $Labels/Label_verified
 
-var correct_code: String = "1234"
+var correct_code: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	reset_labels()
+	var password = PasswordGenerator.passes[3]
+	for number in password:
+		correct_code += str(number)
 	
 func reset_labels():
 	label_code.text = ""

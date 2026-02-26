@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://caru34a384ux0"]
+
+[ext_resource type="Script" uid="uid://ckoqr8gqxooq1" path="res://src/scripts/entity/interactable/code_typer.gd" id="1_fniiv"]
+[ext_resource type="Texture2D" uid="uid://dfnxd4qt0m7hj" path="res://src/util/icon.svg" id="2_3oqgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inhq2"]
+size = Vector2(68, 68)
+
+[node name="code_typer" type="Area2D" unique_id=1137686485]
+script = ExtResource("1_fniiv")
+metadata/_custom_type_script = "uid://bpccnmwcbrfrv"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1127304281]
+position = Vector2(36, 34)
+scale = Vector2(0.5390625, 0.5390625)
+texture = ExtResource("2_3oqgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607350363]
+position = Vector2(36, 34)
+shape = SubResource("RectangleShape2D_inhq2")
+
+[node name="Notification" type="Label" parent="." unique_id=1192788792]
+offset_left = -52.0
+offset_top = -63.0
+offset_right = -12.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(1, 0.26, 0.26, 1)
+theme_override_font_sizes/font_size = 32
+text = "!"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

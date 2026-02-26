@@ -13,3 +13,4 @@ func _ready():
 
 func go_to_level(id_level:String):
 	print("changing to level" + id_level)
+	GameManager.go_to_level(id_level)
