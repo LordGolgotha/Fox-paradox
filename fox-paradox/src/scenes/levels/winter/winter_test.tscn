@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bgayfjodjch71" path="res://src/scenes/entity/interactable/box.tscn" id="6_i3u0e"]
 [ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="7_57207"]
 [ext_resource type="PackedScene" uid="uid://bfbbfcoc26ggm" path="res://src/util/snowStorm.tscn" id="8_r13ey"]
+[ext_resource type="PackedScene" uid="uid://wnqclspxn3ku" path="res://src/util/snow.tscn" id="9_lvq6n"]
+[ext_resource type="PackedScene" uid="uid://b84sedkgcelqu" path="res://src/util/fog.tscn" id="10_dw622"]
+[ext_resource type="PackedScene" uid="uid://dc0j6pdj0558b" path="res://src/util/fogStorm.tscn" id="11_muj17"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ksmec"]
 normal = Vector2(1, 0)
@@ -60,4 +63,17 @@ scale = Vector2(2, 2)
 position = Vector2(968, 485)
 
 [node name="SnowStormParticle" parent="." unique_id=706089482 instance=ExtResource("8_r13ey")]
+visible = false
 position = Vector2(1182, 22.999939)
+
+[node name="SnowParticle" parent="." unique_id=241607874 instance=ExtResource("9_lvq6n")]
+position = Vector2(569, -29)
+
+[node name="ParallaxBackground" parent="." unique_id=377206486 instance=ExtResource("10_dw622")]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="ParallaxBackground2" parent="." unique_id=923283539 instance=ExtResource("11_muj17")]
+visible = false
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
