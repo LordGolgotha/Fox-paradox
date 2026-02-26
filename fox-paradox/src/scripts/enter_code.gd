@@ -23,6 +23,7 @@ var buttons
 @onready var label_verified: Label = $Labels/Label_verified
 
 signal code_succeed()
+signal menu_exited()
 
 @export var code_index: int = 3
 var correct_code: String = ""
@@ -47,10 +48,12 @@ func reset_labels():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("Cancel"):
+		_on_button_x_pressed()
 
 func _on_button_x_pressed() -> void:
 	set_visibility(false)
+	menu_exited.emit()
 	
 func button_pressed(code: String = ""):
 	if len(label_code.text) == 4:

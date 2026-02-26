@@ -11,7 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	super(delta)
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("Interact"):
 		if current_state == State.IN:
 			entercode.emit(code_index)
 
