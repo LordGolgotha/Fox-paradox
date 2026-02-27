@@ -3,26 +3,34 @@
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_pg7pg"]
 [ext_resource type="PackedScene" uid="uid://ds1wgad320fl0" path="res://assets/oak_woods_v1.0/background/background_winter.tscn" id="2_fgynh"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="3_ixyd1"]
-[ext_resource type="TileSet" uid="uid://b4xo7vsywacpq" path="res://assets/tilemaps/winter_grass_tileset.tres" id="4_4x21c"]
+[ext_resource type="TileSet" uid="uid://bvvmpuk1m4p88" path="res://assets/tilemaps/winter_grass_tileset.tres" id="4_4x21c"]
 [ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="5_r2gv2"]
-[ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="6_fgynh"]
-[ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="7_ixyd1"]
-[ext_resource type="Script" path="res://src/scripts/scenes/level/level_components/code_controller.gd" id="8_4x21c"]
-[ext_resource type="TileSet" uid="uid://2brsqq53elf5" path="res://assets/tilemaps/winter_water_tileset.tres" id="9_r2gv2"]
+[ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="6_ivakh"]
+[ext_resource type="TileSet" uid="uid://d1ypqeukyajvp" path="res://assets/tilemaps/winter_water_tileset.tres" id="9_r2gv2"]
 [ext_resource type="PackedScene" uid="uid://c3iijm2afbvb6" path="res://assets/utils/dam_winter.tscn" id="11_2c6gg"]
 [ext_resource type="Texture2D" uid="uid://3cvl830xrh1b" path="res://assets/entities/castor.png" id="11_ei4an"]
+[ext_resource type="Script" uid="uid://dw4rrd35b3tj7" path="res://src/scenes/levels/winter/interactable.gd" id="11_ivakh"]
 [ext_resource type="Texture2D" uid="uid://nsxynug80kdk" path="res://assets/utils/winter_well.png" id="12_ei4an"]
+[ext_resource type="Texture2D" uid="uid://c4gfpbr3y31p3" path="res://assets/tilemaps/ice.png" id="14_fv6bn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivakh"]
 size = Vector2(691.5204, 865.2047)
 
-[node name="Node2D" type="Node2D" unique_id=1688802809 node_paths=PackedStringArray("fox", "enter_code", "code_controller", "code_typer")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78olm"]
+size = Vector2(127.5, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fv6bn"]
+radius = 43.011627
+
+[node name="Node2D" type="Node2D" unique_id=1688802809 node_paths=PackedStringArray("fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
 script = ExtResource("1_pg7pg")
 id = "winter_lake_well"
 fox = NodePath("fox")
-enter_code = NodePath("EnterCode")
-code_controller = NodePath("CodeController")
-code_typer = NodePath("code_typer")
+glyph_0 = NodePath("Glyphs/Glyph")
+glyph_1 = NodePath("Glyphs/Glyph2")
+glyph_2 = NodePath("Glyphs/Glyph3")
+glyph_3 = NodePath("Glyphs/Glyph4")
+code_id = 1
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="Node2D" parent="." unique_id=1571979652 instance=ExtResource("2_fgynh")]
@@ -37,29 +45,44 @@ tile_set = ExtResource("4_4x21c")
 tile_map_data = PackedByteArray("AAAAAAIAAQAAAAEAAAA=")
 tile_set = ExtResource("3_ixyd1")
 
+[node name="Glyphs" type="Node2D" parent="." unique_id=276558436]
+visible = false
+position = Vector2(663, 206)
+
+[node name="Glyph" type="Sprite2D" parent="Glyphs" unique_id=704681843]
+z_index = 6
+position = Vector2(-238, -87)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("6_ivakh")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
+
+[node name="Glyph2" type="Sprite2D" parent="Glyphs" unique_id=393014406]
+z_index = 6
+position = Vector2(-92.99988, -78.99997)
+scale = Vector2(0.35, 0.35)
+script = ExtResource("6_ivakh")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
+
+[node name="Glyph3" type="Sprite2D" parent="Glyphs" unique_id=515696340]
+z_index = 6
+position = Vector2(79, -77)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("6_ivakh")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
+
+[node name="Glyph4" type="Sprite2D" parent="Glyphs" unique_id=1410221451]
+z_index = 6
+position = Vector2(230.00018, -74.99991)
+scale = Vector2(0.35, 0.35)
+script = ExtResource("6_ivakh")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
+
 [node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_r2gv2")]
-position = Vector2(77, 209)
-
-[node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("6_fgynh")]
-position = Vector2(950, 187)
-
-[node name="EnterCode" parent="." unique_id=1330988193 instance=ExtResource("7_ixyd1")]
-offset_left = 579.0
-offset_top = 374.0
-offset_right = 579.0
-offset_bottom = 374.0
-
-[node name="CodeController" type="Node2D" parent="." unique_id=1981587410]
-script = ExtResource("8_4x21c")
+position = Vector2(90, 212)
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=2092683809]
 tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAADAAIAAAACAAAAAAAEAAIAAAACAAAAAAAFAAIAAAACAAAAAAAGAAIAAAACAAAAAAAEAAMAAAADAAAAAAAFAAMAAAADAAAAAAAGAAMAAAADAAAAAAA=")
 tile_set = ExtResource("9_r2gv2")
-
-[node name="Castor" type="Sprite2D" parent="." unique_id=2027400124]
-position = Vector2(990.99994, 227)
-scale = Vector2(0.05528827, 0.05528827)
-texture = ExtResource("11_ei4an")
 
 [node name="Node2D2" parent="." unique_id=446350652 instance=ExtResource("11_2c6gg")]
 position = Vector2(896, 258)
@@ -77,3 +100,30 @@ shape = SubResource("RectangleShape2D_ivakh")
 position = Vector2(137.61267, -120.61359)
 scale = Vector2(1.2134504, 1.2134504)
 texture = ExtResource("12_ei4an")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1164078839]
+position = Vector2(642, 271)
+scale = Vector2(4, 1)
+
+[node name="Ice" type="Sprite2D" parent="StaticBody2D2" unique_id=1290519666]
+texture = ExtResource("14_fv6bn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1885111427]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_78olm")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=2035806351]
+script = ExtResource("11_ivakh")
+metadata/_custom_type_script = "uid://bpccnmwcbrfrv"
+
+[node name="Castor" type="Sprite2D" parent="Interactable" unique_id=1439890544]
+position = Vector2(977.99994, 225.00002)
+scale = Vector2(0.05576923, 0.055769216)
+texture = ExtResource("11_ei4an")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1516010989]
+position = Vector2(978, 226)
+shape = SubResource("CircleShape2D_fv6bn")
+
+[connection signal="body_entered" from="Interactable" to="Interactable" method="_on_body_entered"]
+[connection signal="body_entered" from="Interactable" to="Interactable" method="enter"]

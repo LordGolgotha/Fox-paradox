@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="4_w3bi4"]
 [ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="5_7e5nw"]
 [ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="6_eofx5"]
-[ext_resource type="Texture2D" uid="uid://de1vcd5hvndwd" path="res://icon.svg" id="7_r8ha3"]
+[ext_resource type="Texture2D" uid="uid://dhi88n252lsdw" path="res://assets/utils/image.png" id="7_6e2u8"]
+[ext_resource type="Texture2D" uid="uid://315cpqep7833" path="res://assets/oak_woods_v1.0/decorations/lamp.png" id="7_m8flf"]
 [ext_resource type="Script" uid="uid://cjk4qk1iqpop" path="res://src/scenes/levels/winter/code_controller_tuto.gd" id="8_n4754"]
 [ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="9_6e2u8"]
 
@@ -44,7 +45,7 @@ bounds = [NodePath("Bounds")]
 fox = NodePath("fox")
 enter_code = NodePath("EnterCode")
 code_controller = NodePath("CodeController")
-code_typer = NodePath("code_typer")
+code_typer = NodePath("StaticBody2D/code_typer")
 code_id = 3
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
@@ -67,8 +68,18 @@ offset_top = 436.0
 offset_right = 962.0
 offset_bottom = 436.0
 
-[node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("6_eofx5")]
-position = Vector2(919, 412)
+[node name="StaticBody2D" type="Area2D" parent="." unique_id=1480003347]
+position = Vector2(1086, 386)
+scale = Vector2(1, 2.03125)
+
+[node name="code_typer" parent="StaticBody2D" unique_id=1137686485 instance=ExtResource("6_eofx5")]
+position = Vector2(-167, 12.799988)
+scale = Vector2(1, 0.4923077)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D/code_typer" unique_id=1480906851]
+position = Vector2(35.99994, 42)
+scale = Vector2(2.9565222, 2.03125)
+texture = ExtResource("7_m8flf")
 
 [node name="obstacle" type="StaticBody2D" parent="." unique_id=1418635297]
 position = Vector2(1089, 411)
@@ -76,7 +87,7 @@ position = Vector2(1089, 411)
 [node name="Sprite2D" type="Sprite2D" parent="obstacle" unique_id=1797204892]
 position = Vector2(-3, -24.999992)
 scale = Vector2(1, 2.03125)
-texture = ExtResource("7_r8ha3")
+texture = ExtResource("7_6e2u8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="obstacle" unique_id=636846676]
 position = Vector2(-1.5, -23.25)

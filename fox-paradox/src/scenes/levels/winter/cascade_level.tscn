@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dgqvwm5ar0wl0"]
+[gd_scene format=4 uid="uid://csugcec445nii"]
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_j3jlk"]
 [ext_resource type="PackedScene" uid="uid://crpg87kgh3tey" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_11pjv"]
