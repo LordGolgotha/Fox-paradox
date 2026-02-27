@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c3froq4fbwwf0"]
 
-[ext_resource type="Script" path="res://src/scripts/scenes/level/level_components/bear_level_summer.gd" id="1_k7318"]
+[ext_resource type="Script" uid="uid://bx0br7mps3mih" path="res://src/scripts/scenes/level/level_components/bear_level_summer.gd" id="1_k7318"]
 [ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="2_bsd20"]
 [ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_gl7ac"]
 [ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="2_une3j"]
@@ -13,12 +13,19 @@
 [ext_resource type="PackedScene" uid="uid://bjel63t88tfub" path="res://src/scenes/entity/bear.tscn" id="9_0e3xp"]
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="12_k7318"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="13_2iqtv"]
-[ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="14_k7318"]
+[ext_resource type="Script" path="res://src/scripts/entity/glyph.gd" id="14_k7318"]
+[ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="15_bdesh"]
 
-[node name="BearLevelSummer2" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3", "pause_menu")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg6jj"]
+size = Vector2(109, 694)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7318"]
+size = Vector2(117, 617)
+
+[node name="BearLevelSummer2" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("bounds", "fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3", "pause_menu")]
 script = ExtResource("1_k7318")
+bounds = [NodePath("Bounds")]
 id = "bear_level_summer"
-code_id = 1
 fox = NodePath("fox_winter")
 glyph_0 = NodePath("Glyph")
 glyph_1 = NodePath("Glyph2")
@@ -134,7 +141,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("13_2iqtv")]
-position = Vector2(52, 495)
+position = Vector2(82, 496)
 
 [node name="Glyph" type="Sprite2D" parent="." unique_id=1625576569]
 position = Vector2(73, 310)
@@ -155,3 +162,18 @@ script = ExtResource("14_k7318")
 position = Vector2(943, 318)
 scale = Vector2(0.505, 0.505)
 script = ExtResource("14_k7318")
+
+[node name="Bounds" parent="." unique_id=1244421549 instance=ExtResource("15_bdesh")]
+position = Vector2(-238, 649)
+to_screen = "tempete_level_summer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=383264639]
+position = Vector2(1426, -356)
+shape = SubResource("RectangleShape2D_hg6jj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2040491348]
+position = Vector2(-91, 410)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1676795096]
+position = Vector2(47, -157)
+shape = SubResource("RectangleShape2D_k7318")

@@ -26,8 +26,12 @@ font_size = 20
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhyfi"]
 size = Vector2(109, 694)
 
-[node name="BearLevelSummer" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("fox", "enter_code", "code_controller", "code_typer")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eahb"]
+size = Vector2(117, 617)
+
+[node name="BearLevelSummer" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("bounds", "fox", "enter_code", "code_controller", "code_typer")]
 script = ExtResource("1_oqiyf")
+bounds = [NodePath("Bounds")]
 id = "bear_level_summer"
 fox = NodePath("fox")
 enter_code = NodePath("EnterCode")
@@ -93,16 +97,10 @@ rotation = -0.45387572
 
 [node name="sleepy_bear" parent="." unique_id=347275757 node_paths=PackedStringArray("controller") instance=ExtResource("9_paaiq")]
 position = Vector2(1056, 461.99997)
-scale = Vector2(0.075, 0.075)
-controller = NodePath("../CodeController")
 scale = Vector2(0.05, 0.05)
 controller = NodePath("../CodeController")
 
-[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_kun8n")]
-position = Vector2(55, 487)
-scale = Vector2(0.5, 0.5)
-
-[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_kun8n")]
+[node name="fox" parent="." unique_id=81802165 instance=ExtResource("5_kun8n")]
 position = Vector2(99, 492)
 
 [node name="paper" parent="." unique_id=1307955519 node_paths=PackedStringArray("menu_to_display", "label") instance=ExtResource("12_oqiyf")]
@@ -115,8 +113,7 @@ label = NodePath("../Label")
 position = Vector2(569, -29)
 
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("14_ownd4")]
-position = Vector2(851, 433)
-position = Vector2(870, 442)
+position = Vector2(857, 407)
 code_index = 2
 
 [node name="CodeController" type="Node2D" parent="." unique_id=592291936]
@@ -158,7 +155,15 @@ label_settings = SubResource("LabelSettings_paaiq")
 
 [node name="Bounds" parent="." unique_id=1244421549 instance=ExtResource("19_3eahb")]
 position = Vector2(-194, 396)
+to_screen = "tempete_level_winter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=841135499]
-position = Vector2(147, -92)
+position = Vector2(1372, -92)
 shape = SubResource("RectangleShape2D_yhyfi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=974118812]
+position = Vector2(-91, 410)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1435192160]
+position = Vector2(48.5, -169.5)
+shape = SubResource("RectangleShape2D_3eahb")

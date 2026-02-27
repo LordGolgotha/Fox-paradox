@@ -5,4 +5,8 @@ var level_list={
 	"tuto_winter":"res://src/scenes/levels/winter/tuto_winter.tscn",
 	"summer_lake_well":"res://src/scenes/levels/summer/summer_lake_well.tscn",
 	"deep_well":"res://src/scenes/levels/summer/deep_well.tscn",
+	"winter_lake_well":"res://src/scenes/levels/winter/winter_lake_well.tscn",
+	"tempete_level_winter":"res://src/scenes/levels/winter/tempete_level.tscn",
+	"tempete_level_summer":"res://src/scenes/levels/summer/tempete_level.tscn",
+	"bear_level_winter":"res://src/scenes/level/bear_level_winter.tscn"
 }
