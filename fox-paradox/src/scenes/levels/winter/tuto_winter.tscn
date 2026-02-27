@@ -57,6 +57,7 @@ tile_set = SubResource("TileSet_1nmo0")
 position = Vector2(220, 442)
 
 [node name="EnterCode" parent="." unique_id=1330988193 instance=ExtResource("5_7e5nw")]
+z_index = 100
 offset_left = 962.0
 offset_top = 436.0
 offset_right = 962.0
