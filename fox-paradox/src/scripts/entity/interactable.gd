@@ -1,7 +1,7 @@
 extends Area2D
 class_name Interactable
 
-@onready var notification: Label = $Notification
+@onready var notification: Sprite2D = $Notification
 
 enum State{IN, OUT, DONE}
 var current_state = State.OUT
