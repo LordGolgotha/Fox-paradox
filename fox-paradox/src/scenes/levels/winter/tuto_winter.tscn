@@ -40,7 +40,7 @@ fox = NodePath("fox")
 enter_code = NodePath("EnterCode")
 code_controller = NodePath("CodeController")
 code_typer = NodePath("code_typer")
-code_id = 2
+code_id = 3
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1483444756]
@@ -57,7 +57,6 @@ tile_set = SubResource("TileSet_1nmo0")
 position = Vector2(220, 442)
 
 [node name="EnterCode" parent="." unique_id=1330988193 instance=ExtResource("5_7e5nw")]
-z_index = 100
 offset_left = 962.0
 offset_top = 436.0
 offset_right = 962.0

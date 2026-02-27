@@ -43,6 +43,7 @@ func _ready():
 			
 	
 func unlock():
+	code_typer.unpause()
 	fox.stop(false)
 	
 func solve():
@@ -51,6 +52,7 @@ func solve():
 	code_controller.on_succeed()
 
 func triggermenu(index):
+	code_typer.pause()
 	enter_code.set_visibility(true)
 	fox.stop(true)
 

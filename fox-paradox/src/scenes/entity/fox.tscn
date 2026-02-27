@@ -28,8 +28,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vrs5o"]
-radius = 36.0
-height = 152.0
+radius = 42.0
+height = 102.0
 
 [node name="fox" type="CharacterBody2D" unique_id=1154230614]
 z_index = 5

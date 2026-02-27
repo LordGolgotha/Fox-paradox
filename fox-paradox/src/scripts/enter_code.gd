@@ -116,3 +116,4 @@ func set_visibility(visibility: bool):
 	for i in range(codes.size()):
 		codes[i].visible = visibility
 	reset_labels()
+	button_0.grab_focus.call_deferred()

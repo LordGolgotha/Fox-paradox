@@ -6,16 +6,28 @@
 texture = ExtResource("1_ibuw7")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 37.5, 64, 33.5, -36.5, -64, -37.5)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(38.5, -64, 64, -64, 64, 64, -64, 64, -64, 34.5, 37.5, 34.5)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -39.860123, -64, -36.317, 34.54544, 64, 38.088577, 64, 64, -64, 64)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -31.5, -35.5, -31.5, -40.5, 64, -64, 64)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -38.5, -64, -40.5)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(41.631683, -64, 64, -64, 64, 64, 43.5, 64)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 41.6317, 64, 39.860138, 64, 64, -64, 64)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -41.631683, -64, -43.5, 64, -64, 64)
 
 [resource]
 tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_250dv")
