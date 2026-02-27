@@ -77,7 +77,7 @@ layout_mode = 2
 
 [node name="SeedLineEdit" type="LineEdit" parent="SeedVBox" unique_id=2113703284]
 layout_mode = 2
-text = "Enter seed"
+placeholder_text = "Enter seed"
 
 [node name="ConfirmSeedButton" type="Button" parent="SeedVBox" unique_id=195863530]
 layout_mode = 2

@@ -1,0 +1,87 @@
+[gd_scene format=4 uid="uid://cfcevmrxu0ptd"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_7lgd6"]
+[ext_resource type="PackedScene" uid="uid://crpg87kgh3tey" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_ycisj"]
+[ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_ry4m4"]
+[ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="4_ne0v2"]
+[ext_resource type="Texture2D" uid="uid://24ajqitumtto" path="res://assets/tilemaps/water_summer.png" id="5_ne0v2"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="5_ry4m4"]
+[ext_resource type="PackedScene" uid="uid://csvh5rvax27mf" path="res://assets/utils/dam.tscn" id="7_1m3ip"]
+[ext_resource type="Script" uid="uid://d3ufyag7qe1et" path="res://src/scenes/levels/summer/area_2d_summer_lake.gd" id="8_pom3f"]
+[ext_resource type="Texture2D" uid="uid://ocpylovl0kgo" path="res://assets/utils/summer_well.png" id="8_ve6cl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_io1up"]
+texture = ExtResource("5_ne0v2")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -20, -64, -21, 21, 64, 22, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(19, -64, 64, -64, 64, 64, -64, 64, -64, 21, 19, 19)
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1m3ip"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/1 = SubResource("TileSetAtlasSource_io1up")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7gk"]
+size = Vector2(509.75, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pom3f"]
+size = Vector2(13.75, 127.25)
+
+[node name="Node2D" type="Node2D" unique_id=869837342]
+script = ExtResource("1_7lgd6")
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=866557824]
+position = Vector2(67, 207)
+
+[node name="Node2D2" parent="." unique_id=354412691 instance=ExtResource("2_ycisj")]
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=390635825]
+tile_map_data = PackedByteArray("AAADAAIAAQACAAAAAAAEAAIAAQACAAAAAAAFAAIAAQACAAAAAAAGAAIAAQACAAAAAAADAAMAAQAAAAAAAAAEAAMAAQADAAAAAAAFAAMAAQADAAAAAAAGAAMAAQADAAAAAAA=")
+tile_set = SubResource("TileSet_1m3ip")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1286985861]
+tile_map_data = PackedByteArray("AAAAAAIAAQACAAAAAAAAAAMAAQAEAAAAAAAAAAQAAQAEAAAAAAADAAQAAQAEAAAAAAAEAAQAAQAEAAAAAAAFAAQAAQAEAAAAAAAGAAQAAQAEAAAAAAAHAAQAAQAEAAAAAAAIAAQAAQADAAAAAAA=")
+tile_set = ExtResource("3_ry4m4")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=589528962]
+tile_map_data = PackedByteArray("AAAAAAIAAQAAAAAAAAA=")
+tile_set = ExtResource("4_ne0v2")
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_ry4m4")]
+position = Vector2(66, 207)
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=38455914]
+tile_map_data = PackedByteArray("AAABAAIAAQADAAAAAAACAAIAAQADAAAAAAABAAMAAQAEAAAAAAACAAMAAQAEAAAAAAACAAQAAQAEAAAAAAABAAQAAQAEAAAAAAA=")
+tile_set = ExtResource("3_ry4m4")
+
+[node name="Node2D" parent="." unique_id=446350652 instance=ExtResource("7_1m3ip")]
+position = Vector2(898, 257)
+scale = Vector2(0.5, 0.5)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1145649759]
+script = ExtResource("8_pom3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1534414244]
+position = Vector2(641, 292)
+shape = SubResource("RectangleShape2D_ug7gk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1117927840]
+
+[node name="SummerWell" type="Sprite2D" parent="StaticBody2D" unique_id=537737144]
+position = Vector2(258.93488, 175.99998)
+scale = Vector2(0.14844194, 0.14844193)
+texture = ExtResource("8_ve6cl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1845772627]
+position = Vector2(318, 209)
+shape = SubResource("RectangleShape2D_pom3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=64096347]
+position = Vector2(185, 210)
+shape = SubResource("RectangleShape2D_pom3f")

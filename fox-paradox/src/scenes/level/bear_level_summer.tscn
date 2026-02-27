@@ -1,10 +1,9 @@
 [gd_scene format=4 uid="uid://c3froq4fbwwf0"]
 
-[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_34bru"]
+[ext_resource type="Script" uid="uid://bx0br7mps3mih" path="res://src/scripts/scenes/level/level_components/bear_level_summer.gd" id="1_k7318"]
 [ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="2_bsd20"]
 [ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_gl7ac"]
 [ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="2_une3j"]
-[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="2_yk10b"]
 [ext_resource type="Texture2D" uid="uid://cw2buwcdvu8jj" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="3_2iqtv"]
 [ext_resource type="Texture2D" uid="uid://ccee48odikrha" path="res://assets/oak_woods_v1.0/background/background_layer_3.png" id="4_2iqtv"]
 [ext_resource type="PackedScene" uid="uid://dgjfvi2rreyaf" path="res://src/scenes/entity/jar.tscn" id="4_ubtyv"]
@@ -13,10 +12,17 @@
 [ext_resource type="PackedScene" uid="uid://dlvyfx1l23kro" path="res://src/scenes/entity/hive.tscn" id="8_nchww"]
 [ext_resource type="PackedScene" uid="uid://bjel63t88tfub" path="res://src/scenes/entity/bear.tscn" id="9_0e3xp"]
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="12_k7318"]
+[ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="13_2iqtv"]
+[ext_resource type="Script" path="res://src/scripts/entity/glyph.gd" id="14_k7318"]
 
-[node name="BearLevelSummer" type="Node2D" unique_id=493597110]
-script = ExtResource("1_34bru")
+[node name="BearLevelSummer2" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("glyph_0", "glyph_1", "glyph_2", "glyph_3")]
+script = ExtResource("1_k7318")
 id = "bear_level_summer"
+glyph_0 = NodePath("Glyph")
+glyph_1 = NodePath("Glyph2")
+glyph_2 = NodePath("Glyph3")
+glyph_3 = NodePath("Glyph4")
+code_id = 1
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1716620904]
@@ -42,10 +48,6 @@ texture = ExtResource("4_2iqtv")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=975989873]
 tile_map_data = PackedByteArray("AAAAAAQAAQACAAAAAAABAAQAAQACAAAAAAACAAQAAQACAAAAAAAEAAQAAQACAAAAAAADAAQAAQACAAAAAAAFAAQAAQACAAAAAAAGAAQAAQACAAAAAAAHAAQAAQACAAAAAAAIAAQAAQACAAAAAAA=")
 tile_set = ExtResource("12_k7318")
-
-[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("2_yk10b")]
-position = Vector2(51, 492)
-scale = Vector2(0.5, 0.5)
 
 [node name="Node2D" parent="." unique_id=185771439 instance=ExtResource("2_une3j")]
 position = Vector2(34, 512)
@@ -127,3 +129,23 @@ process_mode = 3
 visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
+
+[node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("13_2iqtv")]
+position = Vector2(55, 493)
+scale = Vector2(0.5, 0.5)
+
+[node name="Glyph" type="Sprite2D" parent="." unique_id=1625576569]
+position = Vector2(73, 310)
+script = ExtResource("14_k7318")
+
+[node name="Glyph2" type="Sprite2D" parent="." unique_id=456591797]
+position = Vector2(348, 285)
+script = ExtResource("14_k7318")
+
+[node name="Glyph3" type="Sprite2D" parent="." unique_id=1795799542]
+position = Vector2(630, 343)
+script = ExtResource("14_k7318")
+
+[node name="Glyph4" type="Sprite2D" parent="." unique_id=1576171939]
+position = Vector2(943, 318)
+script = ExtResource("14_k7318")

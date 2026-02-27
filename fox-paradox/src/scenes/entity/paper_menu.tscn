@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dyspghcnlj6ht"]
+
+[ext_resource type="Script" uid="uid://bjjbjy4ek51v3" path="res://src/scripts/entity/paper_menu.gd" id="1_h0bkw"]
+
+[sub_resource type="Gradient" id="Gradient_4vv8r"]
+colors = PackedColorArray(0.57254905, 0.32941177, 0.007843138, 0.5568628, 0.57254905, 0.32941177, 0.007843138, 0.5568628)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pvnsj"]
+gradient = SubResource("Gradient_4vv8r")
+
+[node name="Paper" type="Control" unique_id=405212021]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_h0bkw")
+text = "Being lazy, every winter I leave my jar where they  they best fit the beehive output please do not move them !If you need anything, just play the right melody with this bell and I'll see what I can do."
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1672303743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_pvnsj")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1010108929]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.5
+offset_top = -37.5
+offset_right = 421.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 3

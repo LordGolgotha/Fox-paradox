@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name HoldableObject
 
+@export var holdable : bool = true
 var is_grabbed : bool = false
 var can_be_grabbed : bool = false
 var grabber : Fox
@@ -22,7 +23,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	if can_be_grabbed and event.is_action_pressed("Grab"):
+	if can_be_grabbed and event.is_action_pressed("Grab") and holdable:
 		is_grabbed = true
 	elif can_be_grabbed and event.is_action_released("Grab"):
 		is_grabbed = false
