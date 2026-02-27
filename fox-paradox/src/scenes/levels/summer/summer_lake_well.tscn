@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://csvh5rvax27mf" path="res://assets/utils/dam.tscn" id="7_1m3ip"]
 [ext_resource type="Script" uid="uid://d3ufyag7qe1et" path="res://src/scenes/levels/summer/area_2d_summer_lake.gd" id="8_pom3f"]
 [ext_resource type="Texture2D" uid="uid://ocpylovl0kgo" path="res://assets/utils/summer_well.png" id="8_ve6cl"]
+[ext_resource type="Texture2D" uid="uid://3cvl830xrh1b" path="res://assets/entities/castor.png" id="9_ug7gk"]
+[ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="10_pom3f"]
+[ext_resource type="Texture2D" uid="uid://bydkgoqygdd8n" path="res://assets/utils/log.png" id="12_llynj"]
+[ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="13_cp0tr"]
+[ext_resource type="PackedScene" uid="uid://blus4olghu771" path="res://src/scenes/level/level_components/code_controller.tscn" id="14_msawm"]
+[ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="14_tfph1"]
+[ext_resource type="Texture2D" uid="uid://cjajx0wm2turg" path="res://assets/utils/half_summer_well.png" id="15_tfph1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_io1up"]
 texture = ExtResource("5_ne0v2")
@@ -32,8 +39,24 @@ size = Vector2(509.75, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pom3f"]
 size = Vector2(13.75, 127.25)
 
-[node name="Node2D" type="Node2D" unique_id=869837342]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llynj"]
+size = Vector2(113, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsfsn"]
+size = Vector2(126.33769, 126.33766)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msawm"]
+size = Vector2(56, 508)
+
+[node name="Node2D" type="Node2D" unique_id=869837342 node_paths=PackedStringArray("bounds", "fox", "enter_code", "code_controller", "code_typer")]
 script = ExtResource("1_7lgd6")
+bounds = [NodePath("Bound")]
+id = "summer_lake_well"
+fox = NodePath("fox")
+enter_code = NodePath("EnterCode")
+code_controller = NodePath("CodeController")
+code_typer = NodePath("code_typer")
+code_id = 0
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=866557824]
@@ -46,7 +69,7 @@ tile_map_data = PackedByteArray("AAADAAIAAQACAAAAAAAEAAIAAQACAAAAAAAFAAIAAQACAAA
 tile_set = SubResource("TileSet_1m3ip")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1286985861]
-tile_map_data = PackedByteArray("AAAAAAIAAQACAAAAAAAAAAMAAQAEAAAAAAAAAAQAAQAEAAAAAAADAAQAAQAEAAAAAAAEAAQAAQAEAAAAAAAFAAQAAQAEAAAAAAAGAAQAAQAEAAAAAAAHAAQAAQAEAAAAAAAIAAQAAQADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAIAAQACAAAAAAAAAAMAAQAEAAAAAAAAAAQAAQAEAAAAAAADAAQAAQAEAAAAAAAEAAQAAQAEAAAAAAAFAAQAAQAEAAAAAAAGAAQAAQAEAAAAAAAHAAQAAQAEAAAAAAAIAAQAAQADAAAAAAABAAMAAQAEAAAAAAACAAMAAQAEAAAAAAACAAQAAQAEAAAAAAABAAQAAQAEAAAAAAABAAIAAQADAAAAAAACAAIAAQABAAAAAAA=")
 tile_set = ExtResource("3_ry4m4")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=589528962]
@@ -56,20 +79,24 @@ tile_set = ExtResource("4_ne0v2")
 [node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_ry4m4")]
 position = Vector2(66, 207)
 
-[node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=38455914]
-tile_map_data = PackedByteArray("AAABAAIAAQADAAAAAAACAAIAAQADAAAAAAABAAMAAQAEAAAAAAACAAMAAQAEAAAAAAACAAQAAQAEAAAAAAABAAQAAQAEAAAAAAA=")
-tile_set = ExtResource("3_ry4m4")
-
-[node name="Node2D" parent="." unique_id=446350652 instance=ExtResource("7_1m3ip")]
-position = Vector2(898, 257)
-scale = Vector2(0.5, 0.5)
+[node name="HalfSummerWell" type="Sprite2D" parent="." unique_id=1729207427]
+z_index = 5
+position = Vector2(260.00003, 176)
+scale = Vector2(0.14946884, 0.14946884)
+texture = ExtResource("15_tfph1")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1145649759]
 script = ExtResource("8_pom3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1534414244]
-position = Vector2(641, 292)
+position = Vector2(641, 290)
 shape = SubResource("RectangleShape2D_ug7gk")
+
+[node name="Castor" type="Sprite2D" parent="." unique_id=1067872141]
+position = Vector2(381.99997, 226)
+scale = Vector2(0.05721146, 0.057211474)
+texture = ExtResource("9_ug7gk")
+flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1117927840]
 
@@ -85,3 +112,54 @@ shape = SubResource("RectangleShape2D_pom3f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=64096347]
 position = Vector2(185, 210)
 shape = SubResource("RectangleShape2D_pom3f")
+
+[node name="Bound" type="Area2D" parent="." unique_id=1466643054]
+script = ExtResource("10_pom3f")
+to_screen = "deep_well"
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=1155558675]
+position = Vector2(253, 259)
+shape = SubResource("RectangleShape2D_llynj")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1903035461]
+position = Vector2(614, 235)
+scale = Vector2(0.6015625, 0.6015625)
+disable_mode = 1
+
+[node name="Log" type="Sprite2D" parent="StaticBody2D2" unique_id=649725566]
+visible = false
+texture = ExtResource("12_llynj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=17483206]
+position = Vector2(0, 1.662323)
+shape = SubResource("RectangleShape2D_qsfsn")
+disabled = true
+
+[node name="EnterCode" parent="." unique_id=1330988193 instance=ExtResource("14_tfph1")]
+offset_left = 874.0
+offset_top = 302.0
+offset_right = 874.0
+offset_bottom = 302.0
+code_index = 0
+
+[node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("13_cp0tr")]
+position = Vector2(346, 189)
+code_index = 0
+
+[node name="CodeController" parent="." unique_id=981210675 instance=ExtResource("14_msawm")]
+position = Vector2(198, 362)
+
+[node name="Node2D" parent="." unique_id=446350652 instance=ExtResource("7_1m3ip")]
+position = Vector2(898, 259)
+scale = Vector2(0.5, 0.5)
+
+[node name="Bound2" type="Area2D" parent="." unique_id=817776963]
+script = ExtResource("10_pom3f")
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound2" unique_id=751349423]
+position = Vector2(1182, 254)
+shape = SubResource("RectangleShape2D_msawm")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

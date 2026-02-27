@@ -16,7 +16,6 @@ texture = ExtResource("1_xfgux")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1939344201]
 position = Vector2(104.5, 253.5)
 shape = SubResource("RectangleShape2D_xfgux")
-disabled = true
 
 [node name="Log7" type="Sprite2D" parent="." unique_id=1371094868]
 position = Vector2(77.3927, 313.21527)
