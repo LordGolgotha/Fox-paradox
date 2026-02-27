@@ -63,17 +63,17 @@ scale = Vector2(2, 2)
 position = Vector2(968, 485)
 
 [node name="SnowStormParticle" parent="." unique_id=706089482 instance=ExtResource("8_r13ey")]
-visible = false
 position = Vector2(1182, 22.999939)
 
 [node name="SnowParticle" parent="." unique_id=241607874 instance=ExtResource("9_lvq6n")]
+visible = false
 position = Vector2(569, -29)
 
 [node name="ParallaxBackground" parent="." unique_id=377206486 instance=ExtResource("10_dw622")]
+visible = false
 scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 0, 0)
 
 [node name="ParallaxBackground2" parent="." unique_id=923283539 instance=ExtResource("11_muj17")]
-visible = false
 scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dlb53wlpte0y2"]
+
+[ext_resource type="Texture2D" uid="uid://de1vcd5hvndwd" path="res://icon.svg" id="1_aawhu"]
+[ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="1_noh2n"]
+
+[node name="Glyph" type="Sprite2D" unique_id=1404654144]
+texture = ExtResource("1_aawhu")
+script = ExtResource("1_noh2n")
