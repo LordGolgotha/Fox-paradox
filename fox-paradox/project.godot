@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 PasswordGenerator="*uid://c6odi1yqlqe5m"
 GameManager="*uid://d0o2dncaitg3b"
 LevelsControler="*uid://1ysf5phkdo6t"
+MusicHandler="*uid://mbtxsaoi1tfx"
 
 [display]
 

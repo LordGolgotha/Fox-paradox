@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b57t4xi01o01q"
+path="res://.godot/imported/winter ambient.wav-540257a45e2a04a3f8632173f61fbe2e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/winter ambient.wav"
+dest_files=["res://.godot/imported/winter ambient.wav-540257a45e2a04a3f8632173f61fbe2e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

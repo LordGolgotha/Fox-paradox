@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://mbtxsaoi1tfx"]
+
+[ext_resource type="Script" uid="uid://d172egse7wni5" path="res://src/util/music_handler.gd" id="1_w01qy"]
+[ext_resource type="AudioStream" uid="uid://b57t4xi01o01q" path="res://assets/sounds/winter ambient.wav" id="2_fchfm"]
+
+[node name="MusicHandler" type="Node2D" unique_id=1865032687]
+script = ExtResource("1_w01qy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1031621758]
+stream = ExtResource("2_fchfm")
+volume_db = -0.995
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="winter_music_start"]
