@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ddoi1w30yayym"]
 
 [ext_resource type="Script" uid="uid://c52t8cco5r4su" path="res://src/scripts/enter_code.gd" id="1_str6e"]
-[ext_resource type="Texture2D" uid="uid://bhi7t566gowmc" path="res://assets/utils/glyphe1.png" id="2_0ufyy"]
+[ext_resource type="Texture2D" uid="uid://de1vcd5hvndwd" path="res://icon.svg" id="2_0ufyy"]
+[ext_resource type="Texture2D" uid="uid://4bhmpc5pbdht" path="res://assets/utils/return.png" id="2_y1t8l"]
 
 [node name="EnterCode" type="Control" unique_id=1330988193]
 layout_mode = 3
@@ -19,8 +20,9 @@ offset_left = 35.0
 offset_top = 41.0
 offset_right = 100.0
 offset_bottom = 106.0
+scale = Vector2(0.10075888, 0.10075888)
 theme_override_font_sizes/font_size = 32
-text = "X"
+icon = ExtResource("2_y1t8l")
 
 [node name="Button_0" type="Button" parent="Button" unique_id=76016708]
 offset_left = 436.0
@@ -70,34 +72,22 @@ offset_bottom = 619.0
 theme_override_font_sizes/font_size = 32
 text = "5"
 
-[node name="Labels" type="Node" parent="." unique_id=715799137]
-
-[node name="Label_code" type="Label" parent="Labels" unique_id=1761442446]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -45.0
-offset_top = 28.0
-offset_right = 114.0
-offset_bottom = 116.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 64
-text = "XXXX"
-
-[node name="Label_verified" type="Label" parent="Labels" unique_id=1057483190]
-offset_left = 682.0
-offset_top = 54.0
-offset_right = 770.0
-offset_bottom = 142.0
-theme_override_font_sizes/font_size = 64
-text = "✅"
-
 [node name="Glyphs" type="Node" parent="." unique_id=602683821]
 
-[node name="Glyph0" type="Sprite2D" parent="Glyphs" unique_id=275505794]
-visible = false
-position = Vector2(505.00003, 78)
-scale = Vector2(0.3515625, 0.3515625)
+[node name="Code0" type="Sprite2D" parent="Glyphs" unique_id=592765209]
+position = Vector2(351, 90)
+texture = ExtResource("2_0ufyy")
+
+[node name="Code1" type="Sprite2D" parent="Glyphs" unique_id=398304667]
+position = Vector2(513, 92)
+texture = ExtResource("2_0ufyy")
+
+[node name="Code2" type="Sprite2D" parent="Glyphs" unique_id=1504503233]
+position = Vector2(681, 95)
+texture = ExtResource("2_0ufyy")
+
+[node name="Code3" type="Sprite2D" parent="Glyphs" unique_id=1124422948]
+position = Vector2(838, 92)
 texture = ExtResource("2_0ufyy")
 
 [connection signal="pressed" from="Button/Button_X" to="." method="_on_button_x_pressed"]
