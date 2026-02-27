@@ -1,0 +1,19 @@
+[gd_resource type="TileSet" format=3 uid="uid://li5n3y5arxj8"]
+
+[ext_resource type="Texture2D" uid="uid://24ajqitumtto" path="res://assets/tilemaps/water_summer.png" id="1_fv83k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f066"]
+texture = ExtResource("1_fv83k")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -18, -64, -19, 19, 64, 21, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(20, -64, 64, -64, 64, 64, -64, 64, -64, 19, 17, 16)
+2:0/0 = 0
+3:0/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/1 = SubResource("TileSetAtlasSource_1f066")
