@@ -7,7 +7,7 @@
 size = Vector2(128, 140)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qb606"]
-radius = 112.0
+radius = 156.05127
 
 [node name="Jar" type="CharacterBody2D" unique_id=281147090]
 scale = Vector2(0.25, 0.25)

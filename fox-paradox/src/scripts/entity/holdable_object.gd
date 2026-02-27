@@ -6,7 +6,7 @@ class_name HoldableObject
 var is_grabbed : bool = false
 var can_be_grabbed : bool = false
 var grabber : Fox
-var offset : Vector2 = Vector2(0,-10)
+var offset : Vector2 = Vector2(0,-20)
 const GRAVITY = 200.0
 
 

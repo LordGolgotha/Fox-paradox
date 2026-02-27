@@ -1,4 +1,8 @@
 extends CodeController
 
+class_name CodeControllerBearWinter
+
+signal succeed
+
 func on_succeed():
-	print_debug("BON CODE")
+	succeed.emit()

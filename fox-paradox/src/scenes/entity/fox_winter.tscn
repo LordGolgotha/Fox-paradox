@@ -34,7 +34,7 @@ height = 102.0
 
 [node name="fox_winter" type="CharacterBody2D" unique_id=1154230614]
 z_index = 5
-collision_layer = 3
+collision_layer = 19
 script = ExtResource("1_tkivj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=896824464]
