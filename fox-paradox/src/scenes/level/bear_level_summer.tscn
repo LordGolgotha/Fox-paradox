@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c3froq4fbwwf0"]
 
-[ext_resource type="Script" uid="uid://bx0br7mps3mih" path="res://src/scripts/scenes/level/level_components/bear_level_summer.gd" id="1_k7318"]
+[ext_resource type="Script" path="res://src/scripts/scenes/level/level_components/bear_level_summer.gd" id="1_k7318"]
 [ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="2_bsd20"]
 [ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_gl7ac"]
 [ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="2_une3j"]
@@ -13,16 +13,18 @@
 [ext_resource type="PackedScene" uid="uid://bjel63t88tfub" path="res://src/scenes/entity/bear.tscn" id="9_0e3xp"]
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="12_k7318"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="13_2iqtv"]
-[ext_resource type="Script" path="res://src/scripts/entity/glyph.gd" id="14_k7318"]
+[ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="14_k7318"]
 
-[node name="BearLevelSummer2" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("glyph_0", "glyph_1", "glyph_2", "glyph_3")]
+[node name="BearLevelSummer2" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3", "pause_menu")]
 script = ExtResource("1_k7318")
 id = "bear_level_summer"
+fox = NodePath("fox_winter")
 glyph_0 = NodePath("Glyph")
 glyph_1 = NodePath("Glyph2")
 glyph_2 = NodePath("Glyph3")
 glyph_3 = NodePath("Glyph4")
 code_id = 1
+pause_menu = NodePath("PauseMenu")
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1716620904]
