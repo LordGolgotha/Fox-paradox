@@ -29,7 +29,6 @@ MusicHandler="*uid://mbtxsaoi1tfx"
 [display]
 
 window/size/viewport_height=640
-window/stretch/mode="canvas_items"
 
 [input]
 
