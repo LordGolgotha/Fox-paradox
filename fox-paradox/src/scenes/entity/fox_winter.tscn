@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bqh7bfvd11pwq" path="res://assets/entities/fox_idle_winter.png" id="2_tkivj"]
 [ext_resource type="Texture2D" uid="uid://cve8uhgme5g32" path="res://assets/entities/fox_walk_1_winter.png" id="3_fdol8"]
 [ext_resource type="Texture2D" uid="uid://b858lmtled7lq" path="res://assets/entities/fox_walk_2_winter.png" id="4_l6m5c"]
+[ext_resource type="AudioStream" uid="uid://o2hpxdmkhk1e" path="res://assets/sounds/CaveStep.wav" id="5_fdol8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1gh3"]
 animations = [{
@@ -46,3 +47,6 @@ animation = &"idle"
 position = Vector2(-3, 5)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_tkivj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1443708754]
+stream = ExtResource("5_fdol8")

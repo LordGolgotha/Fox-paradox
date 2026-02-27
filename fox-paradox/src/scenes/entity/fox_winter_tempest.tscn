@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://g35juql8ny1v" path="res://assets/entities/fox_idle.png" id="2_ft1l6"]
 [ext_resource type="Texture2D" uid="uid://c5whawielksf3" path="res://assets/entities/fox_walk_1.png" id="3_ecc4s"]
 [ext_resource type="Texture2D" uid="uid://djtpss3yyhvpj" path="res://assets/entities/fox_walk_2.png" id="4_l1lqg"]
+[ext_resource type="AudioStream" uid="uid://o2hpxdmkhk1e" path="res://assets/sounds/CaveStep.wav" id="5_ecc4s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1gh3"]
 animations = [{
@@ -54,3 +55,6 @@ color = Color(0.61960787, 0.61960787, 0.61960787, 0.48235294)
 position = Vector2(-3, 5)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ft1l6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1308226369]
+stream = ExtResource("5_ecc4s")
