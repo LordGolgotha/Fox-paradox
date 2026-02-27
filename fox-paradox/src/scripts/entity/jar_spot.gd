@@ -4,6 +4,7 @@ class_name JarSpot
 
 var is_jar_in : bool = false
 var jar_in : Jar = null
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _on_body_entered(body: Node2D) -> void:
 	print_debug("body in")
@@ -24,3 +25,4 @@ func set_jar_pos() -> void:
 	if jar_in != null:
 		print_debug("jar pos")
 		jar_in.global_position = global_position
+		audio_stream_player_2d.play()

@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bjwuj850ri18p"]
 
 [ext_resource type="Script" uid="uid://br1psrlidfrfh" path="res://src/scripts/entity/jar_spot.gd" id="1_lerfo"]
+[ext_resource type="AudioStream" uid="uid://7mxtkvlj62qu" path="res://assets/sounds/386694__laurenmg95__stone_footstep_4.wav" id="2_jb583"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lerfo"]
-radius = 8.0
-height = 64.0
+radius = 22.0
+height = 112.0
 
 [sub_resource type="Gradient" id="Gradient_lerfo"]
 
@@ -24,6 +25,9 @@ shape = SubResource("CapsuleShape2D_lerfo")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1385197731]
 scale = Vector2(1.3247633, 0.5)
 texture = SubResource("GradientTexture2D_jb583")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=175154330]
+stream = ExtResource("2_jb583")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
