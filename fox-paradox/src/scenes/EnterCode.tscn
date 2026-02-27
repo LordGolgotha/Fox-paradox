@@ -129,6 +129,8 @@ z_index = 100
 position = Vector2(838, 92)
 texture = ExtResource("2_0ufyy")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1045132146]
+
 [connection signal="pressed" from="Button/Button_X" to="." method="_on_button_x_pressed"]
 [connection signal="pressed" from="Button/Button_0" to="." method="_on_button_0_pressed"]
 [connection signal="pressed" from="Button/Button_3" to="." method="_on_button_3_pressed"]
