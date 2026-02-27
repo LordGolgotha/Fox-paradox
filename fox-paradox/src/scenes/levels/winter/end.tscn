@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://d2p0chiky7scl"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_5b16a"]
+[ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="2_61mtc"]
+[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_winter.tscn" id="2_oqlng"]
+[ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_b7n7i"]
+[ext_resource type="TileSet" uid="uid://bvvmpuk1m4p88" path="res://assets/tilemaps/winter_grass_tileset.tres" id="4_oqlng"]
+[ext_resource type="Texture2D" uid="uid://dxtayy4fmnl38" path="res://assets/utils/PORTAL.png" id="5_hxqw1"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="6_61mtc"]
+[ext_resource type="PackedScene" uid="uid://b84sedkgcelqu" path="res://src/util/fog.tscn" id="7_b7n7i"]
+[ext_resource type="Texture2D" uid="uid://dbb6fflvkvhb5" path="res://assets/utils/portal_up.png" id="8_hxqw1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00lok"]
+size = Vector2(91, 30)
+
+[node name="Level" type="Node2D" unique_id=74349290]
+script = ExtResource("1_5b16a")
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="Node2D" parent="." unique_id=1571979652 instance=ExtResource("2_oqlng")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=91847420]
+tile_map_data = PackedByteArray("AAADAAQAAQAAAAAAAAACAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAEAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAEAAIAAQAAAAAAAAA=")
+tile_set = ExtResource("2_61mtc")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1598292579]
+tile_map_data = PackedByteArray("AAABAAQAAQAAAAAAAAAAAAQAAQACAAAAAAACAAMAAQAFAAAAAAADAAIAAQABAAAAAAA=")
+tile_set = ExtResource("3_b7n7i")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1808519263]
+tile_map_data = PackedByteArray("AAAIAAQAAAADAAAAAAAGAAMAAAAGAAAAAAAFAAIAAAAGAAAAAAAHAAQAAAADAAAAAAA=")
+tile_set = ExtResource("4_oqlng")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=50105036]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1052845612]
+position = Vector2(557, 149)
+scale = Vector2(0.62295085, 0.43957466)
+texture = ExtResource("5_hxqw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=3637808]
+position = Vector2(579.5, 240)
+shape = SubResource("RectangleShape2D_00lok")
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("6_61mtc")]
+position = Vector2(1078, 456)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2091234657]
+z_index = 4096
+position = Vector2(563.00006, 149.00002)
+scale = Vector2(0.568306, 0.42938933)
+texture = ExtResource("8_hxqw1")
+
+[node name="Fog" parent="." unique_id=377206486 instance=ExtResource("7_b7n7i")]
+offset = Vector2(550, 0)
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 550, 0)

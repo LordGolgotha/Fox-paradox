@@ -1,0 +1,52 @@
+[gd_scene format=4 uid="uid://dt4ty4wea6xsk"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_d24hv"]
+[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_mdaxc"]
+[ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="2_xlrpe"]
+[ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_mdaxc"]
+[ext_resource type="TileSet" uid="uid://bvvmpuk1m4p88" path="res://assets/tilemaps/winter_grass_tileset.tres" id="4_rl0bl"]
+[ext_resource type="Texture2D" uid="uid://dxtayy4fmnl38" path="res://assets/utils/PORTAL.png" id="5_4vvx2"]
+[ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="6_qhhoq"]
+[ext_resource type="Texture2D" uid="uid://dbb6fflvkvhb5" path="res://assets/utils/portal_up.png" id="7_mdaxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00lok"]
+size = Vector2(91, 30)
+
+[node name="Level" type="Node2D" unique_id=74349290]
+script = ExtResource("1_d24hv")
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="Node2D2" parent="." unique_id=354412691 instance=ExtResource("2_mdaxc")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=91847420]
+tile_map_data = PackedByteArray("AAADAAQAAQAAAAAAAAACAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAEAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAEAAIAAQAAAAAAAAA=")
+tile_set = ExtResource("2_xlrpe")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1598292579]
+tile_map_data = PackedByteArray("AAABAAQAAQAAAAAAAAAAAAQAAQACAAAAAAACAAMAAQAFAAAAAAADAAIAAQABAAAAAAA=")
+tile_set = ExtResource("3_mdaxc")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1808519263]
+tile_map_data = PackedByteArray("AAAIAAQAAAADAAAAAAAGAAMAAAAGAAAAAAAFAAIAAAAGAAAAAAAHAAQAAAADAAAAAAA=")
+tile_set = ExtResource("4_rl0bl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=50105036]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1052845612]
+position = Vector2(557, 149)
+scale = Vector2(0.62295085, 0.43957466)
+texture = ExtResource("5_4vvx2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=3637808]
+position = Vector2(579.5, 240)
+shape = SubResource("RectangleShape2D_00lok")
+
+[node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("6_qhhoq")]
+position = Vector2(84, 463)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2091234657]
+visibility_layer = 512
+z_index = 1000
+position = Vector2(547, 147)
+scale = Vector2(0.6912568, 0.43463743)
+texture = ExtResource("7_mdaxc")
