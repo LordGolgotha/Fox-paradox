@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dve0gls1lgy4e" path="res://assets/caillou.png" id="5_euqe1"]
 [ext_resource type="PackedScene" uid="uid://dfo7v1ev4wlj4" path="res://src/scenes/entity/fox_winter_tempest.tscn" id="6_euqe1"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="7_u6eqv"]
-[ext_resource type="Script" uid="uid://dc6jro631qrgw" path="res://src/scenes/levels/summer/killzone_tempest_level.gd" id="8_01s6m"]
+[ext_resource type="Script" path="res://src/scenes/levels/summer/killzone_tempest_level.gd" id="8_01s6m"]
 [ext_resource type="PackedScene" uid="uid://bfbbfcoc26ggm" path="res://src/util/snowStorm.tscn" id="9_tugx3"]
 [ext_resource type="PackedScene" uid="uid://dc0j6pdj0558b" path="res://src/util/fogStorm.tscn" id="10_euqe1"]
 
