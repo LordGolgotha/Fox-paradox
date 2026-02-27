@@ -40,6 +40,7 @@ fox = NodePath("fox")
 enter_code = NodePath("EnterCode")
 code_controller = NodePath("CodeController")
 code_typer = NodePath("code_typer")
+code_id = 2
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1483444756]
@@ -60,7 +61,6 @@ offset_left = 962.0
 offset_top = 436.0
 offset_right = 962.0
 offset_bottom = 436.0
-code_index = 3
 
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("6_eofx5")]
 position = Vector2(919, 412)

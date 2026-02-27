@@ -15,7 +15,7 @@ glyph_0 = NodePath("Glyphs/Glyph")
 glyph_1 = NodePath("Glyphs/Glyph2")
 glyph_2 = NodePath("Glyphs/Glyph3")
 glyph_3 = NodePath("Glyphs/Glyph4")
-code_id = 2
+code_id = 3
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=296929868]

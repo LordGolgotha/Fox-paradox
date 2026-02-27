@@ -30,7 +30,7 @@ var codes
 signal code_succeed()
 signal menu_exited()
 
-@export var code_index: int = 3
+@export var code_index: int = 4
 var correct_code: String = ""
 var current_code: String = ""
 
@@ -39,9 +39,7 @@ func _ready() -> void:
 	buttons = [button_0, button_1, button_2, button_3, button_4, button_5]
 	codes = [code_0, code_1, code_2, code_3]
 	reset_labels()
-	var password = PasswordGenerator.passes[code_index]
-	for number in password:
-		correct_code += str(number)
+	set_corect_code(code_index)
 	for button in buttons:
 		button.icon = number_to_glyph[button.text]
 		button.text = ""
@@ -79,13 +77,19 @@ func button_pressed(code: String = ""):
 			check_code()
 
 func check_code():
+	await get_tree().create_timer(1).timeout
 	if current_code == correct_code:
-		await get_tree().create_timer(1).timeout
 		code_succeed.emit()
 		set_visibility(false)
+	else:
+		reset_labels()
 		
-func set_corect_code(code: String = "0000"):
-	correct_code = code
+func set_corect_code(index: int = -1):
+	code_index = index
+	var password = PasswordGenerator.passes[code_index]
+	correct_code = ""
+	for number in password:
+		correct_code += str(number)
 	
 func _on_button_0_pressed() -> void:
 	button_pressed("0")
