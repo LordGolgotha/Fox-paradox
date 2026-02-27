@@ -5,7 +5,6 @@
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_ry4m4"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="4_ne0v2"]
 [ext_resource type="Texture2D" uid="uid://24ajqitumtto" path="res://assets/tilemaps/water_summer.png" id="5_ne0v2"]
-[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="5_ry4m4"]
 [ext_resource type="PackedScene" uid="uid://csvh5rvax27mf" path="res://assets/utils/dam.tscn" id="7_1m3ip"]
 [ext_resource type="Script" uid="uid://d3ufyag7qe1et" path="res://src/scenes/levels/summer/area_2d_summer_lake.gd" id="8_pom3f"]
 [ext_resource type="Texture2D" uid="uid://ocpylovl0kgo" path="res://assets/utils/summer_well.png" id="8_ve6cl"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://blus4olghu771" path="res://src/scenes/level/level_components/code_controller.tscn" id="14_msawm"]
 [ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="14_tfph1"]
 [ext_resource type="Texture2D" uid="uid://cjajx0wm2turg" path="res://assets/utils/half_summer_well.png" id="15_tfph1"]
+[ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="16_msawm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_io1up"]
 texture = ExtResource("5_ne0v2")
@@ -50,9 +50,9 @@ size = Vector2(56, 508)
 
 [node name="Node2D" type="Node2D" unique_id=869837342 node_paths=PackedStringArray("bounds", "fox", "enter_code", "code_controller", "code_typer")]
 script = ExtResource("1_7lgd6")
-bounds = [NodePath("Bound")]
+bounds = [NodePath("Bound"), NodePath("Bound2")]
 id = "summer_lake_well"
-fox = NodePath("fox")
+fox = NodePath("fox_winter")
 enter_code = NodePath("EnterCode")
 code_controller = NodePath("CodeController")
 code_typer = NodePath("code_typer")
@@ -75,9 +75,6 @@ tile_set = ExtResource("3_ry4m4")
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=589528962]
 tile_map_data = PackedByteArray("AAAAAAIAAQAAAAAAAAA=")
 tile_set = ExtResource("4_ne0v2")
-
-[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_ry4m4")]
-position = Vector2(66, 207)
 
 [node name="HalfSummerWell" type="Sprite2D" parent="." unique_id=1729207427]
 z_index = 5
@@ -145,7 +142,7 @@ code_index = 0
 
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("13_cp0tr")]
 position = Vector2(346, 189)
-code_index = 0
+code_index = 2
 
 [node name="CodeController" parent="." unique_id=981210675 instance=ExtResource("14_msawm")]
 position = Vector2(198, 362)
@@ -156,10 +153,14 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Bound2" type="Area2D" parent="." unique_id=817776963]
 script = ExtResource("10_pom3f")
+to_screen = "bear_level_summer"
 metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bound2" unique_id=751349423]
 position = Vector2(1182, 254)
 shape = SubResource("RectangleShape2D_msawm")
+
+[node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("16_msawm")]
+position = Vector2(65, 208)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

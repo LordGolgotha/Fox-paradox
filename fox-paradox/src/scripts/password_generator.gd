@@ -16,4 +16,4 @@ func generate_passes(word: String = "", quantity: int = 5):
 	return passes
 
 func _ready() -> void:
-	generate_passes("Anarchisme", 5)
+	generate_passes("Anarchisme", 20)
