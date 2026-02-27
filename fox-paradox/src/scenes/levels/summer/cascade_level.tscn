@@ -1,15 +1,16 @@
 [gd_scene format=4 uid="uid://bewb5fbnu047d"]
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_hrvcr"]
-[ext_resource type="PackedScene" uid="uid://crpg87kgh3tey" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_2bnhe"]
+[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_2bnhe"]
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_ookl1"]
-[ext_resource type="TileSet" uid="uid://d20ktl2hcq1js" path="res://assets/tilemaps/summer_water_tileset.tres" id="4_8hp77"]
+[ext_resource type="TileSet" uid="uid://csndobt2d2byh" path="res://assets/tilemaps/summer_water_tileset.tres" id="4_8hp77"]
 [ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="5_8hp77"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="5_ookl1"]
-[ext_resource type="Script" path="res://src/scripts/entity/interactable/cerf_cascade_summer.gd" id="8_nfg40"]
+[ext_resource type="Script" uid="uid://csxt6mlp3w0rj" path="res://src/scripts/entity/interactable/cerf_cascade_summer.gd" id="8_nfg40"]
 [ext_resource type="Texture2D" uid="uid://ciwu43f3eken1" path="res://assets/entities/cerf.png" id="8_r8hqq"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="9_276uf"]
-[ext_resource type="PackedScene" path="res://src/scenes/entity/glyph.tscn" id="10_r8hqq"]
+[ext_resource type="PackedScene" uid="uid://dlb53wlpte0y2" path="res://src/scenes/entity/glyph.tscn" id="10_r8hqq"]
+[ext_resource type="AudioStream" uid="uid://ntt2eh4u5a2m" path="res://assets/sounds/cerf_1.wav" id="10_wsp1f"]
 [ext_resource type="Texture2D" uid="uid://bydkgoqygdd8n" path="res://assets/utils/log.png" id="11_276uf"]
 [ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="12_1xna2"]
 
@@ -25,15 +26,14 @@ size = Vector2(109, 694)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_276uf"]
 size = Vector2(117, 617)
 
-[node name="CascadeLevel" type="Node2D" unique_id=595706561 node_paths=PackedStringArray("bounds", "fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
+[node name="CascadeLevel" type="Node2D" unique_id=595706561 node_paths=PackedStringArray("fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
 script = ExtResource("1_hrvcr")
-bounds = [NodePath("Bounds")]
+code_id = 4
 fox = NodePath("fox_winter")
 glyph_0 = NodePath("glyphes/Glyph")
 glyph_1 = NodePath("glyphes/Glyph2")
 glyph_2 = NodePath("glyphes/Glyph3")
 glyph_3 = NodePath("glyphes/Glyph4")
-code_id = 4
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="Node2D2" parent="." unique_id=354412691 instance=ExtResource("2_2bnhe")]
@@ -77,6 +77,9 @@ texture = ExtResource("8_r8hqq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1146380676]
 position = Vector2(452, 426)
 shape = SubResource("CircleShape2D_7egav")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Interactable" unique_id=2041090406]
+stream = ExtResource("10_wsp1f")
 
 [node name="glyphes" type="Node2D" parent="." unique_id=1446771381]
 visible = false
