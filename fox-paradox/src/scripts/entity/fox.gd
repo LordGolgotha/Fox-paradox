@@ -43,4 +43,8 @@ func stop(stop: bool):
 		$AnimatedSprite2D.stop()
 	else:
 		current_state = State.READY
+
+func out_of_pause():
+	await get_tree().create_timer(0.01).timeout
+	current_state = State.READY
 	

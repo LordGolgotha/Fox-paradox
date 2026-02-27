@@ -13,9 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="12_eq012"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="13_56woc"]
 
-[node name="BearLevelSummer" type="Node2D" unique_id=493597110]
+[node name="BearLevelSummer" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("fox", "pause_menu")]
 script = ExtResource("1_oqiyf")
 id = "bear_level_summer"
+fox = NodePath("fox_winter")
+pause_menu = NodePath("PauseMenu")
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1716620904]

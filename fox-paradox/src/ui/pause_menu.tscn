@@ -55,6 +55,8 @@ grow_vertical = 0
 
 [node name="QuitButton" type="Button" parent="QuitHBox" unique_id=1879101032]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../PauseVBox/ResumeButton")
+focus_neighbor_bottom = NodePath("../../PauseVBox/ResumeButton")
 text = "Quit"
 
 [node name="PauseVBox" type="VBoxContainer" parent="." unique_id=461259464]
@@ -75,6 +77,8 @@ theme_override_constants/separation = 15
 [node name="ResumeButton" type="Button" parent="PauseVBox" unique_id=195863530]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../../QuitHBox/QuitButton")
+focus_neighbor_bottom = NodePath("../../QuitHBox/QuitButton")
 text = "Resume"
 
 [connection signal="button_down" from="QuitHBox/QuitButton" to="." method="_on_quit_button_button_down"]
