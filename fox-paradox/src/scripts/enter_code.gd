@@ -19,20 +19,25 @@ const GLYPHE_6 = preload("uid://wp558goj7j75")
 const number_to_glyph: Dictionary = {"0": GLYPHE_1, "1": GLYPHE_2, "2": GLYPHE_3, "3": GLYPHE_4, "4": GLYPHE_5, "5": GLYPHE_6}
 const glyph_to_number: Dictionary = {GLYPHE_1: "0", GLYPHE_2: "1", GLYPHE_3: "2", GLYPHE_4: "3", GLYPHE_5: "4", GLYPHE_6: "5"}
 var buttons
+var codes
 
+@onready var code_0: Sprite2D = $Glyphs/Code0
+@onready var code_1: Sprite2D = $Glyphs/Code1
+@onready var code_2: Sprite2D = $Glyphs/Code2
+@onready var code_3: Sprite2D = $Glyphs/Code3
 
-@onready var label_code: Label = $Labels/Label_code
-@onready var label_verified: Label = $Labels/Label_verified
 
 signal code_succeed()
 signal menu_exited()
 
 @export var code_index: int = 3
 var correct_code: String = ""
+var current_code: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	buttons = [button_0, button_1, button_2, button_3, button_4, button_5]
+	codes = [code_0, code_1, code_2, code_3]
 	reset_labels()
 	var password = PasswordGenerator.passes[code_index]
 	for number in password:
@@ -45,8 +50,9 @@ func _ready() -> void:
 	set_visibility(false)
 	
 func reset_labels():
-	label_code.text = ""
-	label_verified.text = ""
+	current_code = ""
+	for i in range(codes.size()):
+		codes[i].texture = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -58,15 +64,22 @@ func _on_button_x_pressed() -> void:
 	menu_exited.emit()
 	
 func button_pressed(code: String = ""):
-	if len(label_code.text) == 4:
+	if len(current_code) == 4:
 		reset_labels()
-	label_code.text += code
-	if len(label_code.text) == 4:
-		check_code()
+	current_code += code
+	match len(current_code):
+		1:
+			code_0.texture = number_to_glyph[code]
+		2:
+			code_1.texture = number_to_glyph[code]
+		3:
+			code_2.texture = number_to_glyph[code]
+		_:
+			code_3.texture = number_to_glyph[code]
+			check_code()
 
 func check_code():
-	if label_code.text == correct_code:
-		label_verified.text = "✅"
+	if current_code == correct_code:
 		await get_tree().create_timer(1).timeout
 		code_succeed.emit()
 		set_visibility(false)
@@ -96,5 +109,6 @@ func set_visibility(visibility: bool):
 	button_x.visible = visibility
 	for i in range(buttons.size()):
 		buttons[i].visible = visibility
-	label_code.visible = visibility
-	label_verified.visible = visibility
+	for i in range(codes.size()):
+		codes[i].visible = visibility
+	reset_labels()

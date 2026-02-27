@@ -16,9 +16,10 @@ class_name Level
 func _ready():
 	for b in bounds:
 		b.player_entered.connect(go_to_level)
-	code_typer.entercode.connect(triggermenu)
-	enter_code.code_succeed.connect(solve)
-	enter_code.menu_exited.connect(unlock)
+	if code_typer != null and enter_code != null and code_controller != null:
+		code_typer.entercode.connect(triggermenu)
+		enter_code.code_succeed.connect(solve)
+		enter_code.menu_exited.connect(unlock)
 	
 func unlock():
 	fox.stop(false)
