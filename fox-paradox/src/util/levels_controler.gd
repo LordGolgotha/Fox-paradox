@@ -6,7 +6,7 @@ var level_list={
 	"cascade_level_summer":"res://src/scenes/levels/summer/cascade_level.tscn",
 	"cascade_level_winter":"res://src/scenes/levels/winter/cascade_level.tscn",
 	"summer_lake_well":"res://src/scenes/levels/summer/summer_lake_well.tscn",
-	"winter_lake_well":"res://src/scenes/levels/winter/summer_lake_well.tscn",
+	"winter_lake_well":"res://src/scenes/levels/winter/winter_lake_well.tscn",
 	"deep_well":"res://src/scenes/levels/summer/deep_well.tscn",
 	"tempete_level_winter":"res://src/scenes/levels/winter/tempete_level.tscn",
 	"tempete_level_summer":"res://src/scenes/levels/summer/tempete_level.tscn",

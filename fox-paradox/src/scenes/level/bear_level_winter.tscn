@@ -38,7 +38,7 @@ fox = NodePath("fox")
 enter_code = NodePath("EnterCode")
 code_controller = NodePath("CodeController")
 code_typer = NodePath("code_typer")
-code_id = 1
+code_id = 5
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1716620904]
@@ -71,7 +71,7 @@ scale = Vector2(3.2670586, 0.2)
 collision_layer = 15
 
 [node name="Jar" parent="." unique_id=281147090 groups=["jars"] instance=ExtResource("9_yhyfi")]
-position = Vector2(559, 515)
+position = Vector2(767, 508)
 jar_size = "MEDIUM"
 holdable = false
 
@@ -80,7 +80,7 @@ position = Vector2(209, 515)
 holdable = false
 
 [node name="Jar3" parent="." unique_id=729710765 groups=["jars"] instance=ExtResource("9_yhyfi")]
-position = Vector2(763, 515)
+position = Vector2(553, 509)
 jar_size = "TALL"
 holdable = false
 
