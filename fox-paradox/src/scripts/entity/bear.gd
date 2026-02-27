@@ -4,22 +4,46 @@ class_name Bear
 
 @export var rock_pos : Array[Vector2]
 @export var jar_pos : Array[Vector2]
+@onready var label = $Label
+
+const dialogues : Array[String] = ["Bring enough honey and I'll give a code that will awake me, even in winter",
+								   "You can use F to grab objects and X to throw",
+								   "Bring jars full of honey"]
+								
+var idx_dialogues : int = 0
 
 const JAR_SIZES : Array[String] = ["SMALL","MEDIUM","TALL"]
 
 var jar_in : Jar
 var nb_full_jar : int = 0
+var player_in : bool = false
 
 signal succeed
 
+func next_dialogue():
+	print_debug("next")
+	label.text = dialogues[idx_dialogues]
+	idx_dialogues = (idx_dialogues + 1) % dialogues.size()
+
+func _input(event : InputEvent) -> void:
+	if event.is_action_pressed("Interact") and player_in:
+		next_dialogue()
+
 func _on_body_entered(body: Node2D) -> void:
 	print_debug("bear")
+	if body is Fox and not player_in:
+		next_dialogue()
+		player_in = true
 	if body is Jar:
 		jar_in = body
 		if not jar_in.dropped.is_connected(receive_jar):
 			jar_in.dropped.connect(receive_jar)
 		
 func _on_body_exited(body: Node2D) -> void:
+	if body is Fox:
+		player_in = false
+		label.text = ""
+		idx_dialogues = 0
 	if body == jar_in:
 		jar_in = null
 			
@@ -41,7 +65,6 @@ func reset() -> void:
 		rocks[i].queue_free()
 	rocks.clear()
 	
-		
 	for i in range(5):
 		var new_rock = preload("res://src/scenes/entity/rock.tscn").instantiate()
 		rocks.append(new_rock)
@@ -58,7 +81,6 @@ func reset() -> void:
 		new_jar.jar_size = JAR_SIZES[i]
 		new_jar.add_to_group("jars")
 		add_sibling(new_jar)
-		
 		
 func receive_jar() -> void:
 	if jar_in != null:

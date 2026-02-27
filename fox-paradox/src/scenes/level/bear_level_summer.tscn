@@ -18,11 +18,11 @@
 [node name="BearLevelSummer2" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("glyph_0", "glyph_1", "glyph_2", "glyph_3")]
 script = ExtResource("1_k7318")
 id = "bear_level_summer"
+code_id = 1
 glyph_0 = NodePath("Glyph")
 glyph_1 = NodePath("Glyph2")
 glyph_2 = NodePath("Glyph3")
 glyph_3 = NodePath("Glyph4")
-code_id = 1
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1716620904]
@@ -80,23 +80,23 @@ position = Vector2(615, 510)
 scale = Vector2(0.1, 0.1)
 
 [node name="rock2" parent="." unique_id=1547723804 groups=["rocks"] instance=ExtResource("7_dbi57")]
-position = Vector2(505, 510)
+position = Vector2(490, 509)
 scale = Vector2(0.1, 0.1)
 
 [node name="rock4" parent="." unique_id=121189067 groups=["rocks"] instance=ExtResource("7_dbi57")]
-position = Vector2(1130, 510)
+position = Vector2(643, 508)
 scale = Vector2(0.1, 0.1)
 
 [node name="rock3" parent="." unique_id=2112230369 groups=["rocks"] instance=ExtResource("7_dbi57")]
-position = Vector2(760, 510)
+position = Vector2(443.00003, 511)
 scale = Vector2(0.1, 0.1)
 
 [node name="rock5" parent="." unique_id=1826789941 groups=["rocks"] instance=ExtResource("7_dbi57")]
-position = Vector2(215, 510)
+position = Vector2(208, 507)
 scale = Vector2(0.1, 0.1)
 
 [node name="Jar" parent="." unique_id=281147090 groups=["jars"] instance=ExtResource("4_ubtyv")]
-position = Vector2(960, 511)
+position = Vector2(963, 510)
 jar_size = "MEDIUM"
 
 [node name="Jar2" parent="." unique_id=568209931 groups=["jars"] instance=ExtResource("4_ubtyv")]
@@ -119,8 +119,8 @@ position = Vector2(692, 508)
 scale = Vector2(2, 2)
 
 [node name="Bear" parent="." unique_id=347275757 instance=ExtResource("9_0e3xp")]
-position = Vector2(333, 465)
-scale = Vector2(0.05, 0.05)
+position = Vector2(333, 447.00003)
+scale = Vector2(0.075, 0.075)
 rock_pos = Array[Vector2]([Vector2(215, 510), Vector2(505, 510), Vector2(1130, 510), Vector2(760, 510), Vector2(615, 510)])
 jar_pos = Array[Vector2]([Vector2(860, 510), Vector2(960, 510), Vector2(1070, 510)])
 
@@ -131,21 +131,24 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("13_2iqtv")]
-position = Vector2(55, 493)
-scale = Vector2(0.5, 0.5)
+position = Vector2(52, 495)
 
 [node name="Glyph" type="Sprite2D" parent="." unique_id=1625576569]
 position = Vector2(73, 310)
+scale = Vector2(0.505, 0.505)
 script = ExtResource("14_k7318")
 
 [node name="Glyph2" type="Sprite2D" parent="." unique_id=456591797]
 position = Vector2(348, 285)
+scale = Vector2(0.505, 0.505)
 script = ExtResource("14_k7318")
 
 [node name="Glyph3" type="Sprite2D" parent="." unique_id=1795799542]
 position = Vector2(630, 343)
+scale = Vector2(0.505, 0.505)
 script = ExtResource("14_k7318")
 
 [node name="Glyph4" type="Sprite2D" parent="." unique_id=1576171939]
 position = Vector2(943, 318)
+scale = Vector2(0.505, 0.505)
 script = ExtResource("14_k7318")

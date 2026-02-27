@@ -6,9 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31jrg"]
 size = Vector2(2151, 2285)
 
-[node name="sleepy_bear" type="Area2D" unique_id=347275757]
+[node name="sleepy_bear" type="CharacterBody2D" unique_id=635324423]
+disable_mode = 1
 collision_layer = 9
-collision_mask = 8
+collision_mask = 9
+slide_on_ceiling = false
 script = ExtResource("1_cnwl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1952934029]

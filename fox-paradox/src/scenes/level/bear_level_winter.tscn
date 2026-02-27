@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bo18746m1wg1" path="res://assets/oak_woods_v1.0/background/background_layer_3_winter.png" id="4_pemng"]
 [ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="5_kun8n"]
 [ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="6_ownd4"]
+[ext_resource type="PackedScene" uid="uid://c6vl84yeibmyj" path="res://src/scenes/entity/sleepy_bear.tscn" id="9_paaiq"]
 [ext_resource type="PackedScene" uid="uid://dgjfvi2rreyaf" path="res://src/scenes/entity/jar.tscn" id="9_yhyfi"]
 [ext_resource type="PackedScene" uid="uid://b5my1jbbslqto" path="res://src/scenes/entity/broken_hive.tscn" id="11_rx316"]
 [ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="12_56woc"]
@@ -14,10 +15,16 @@
 [ext_resource type="PackedScene" uid="uid://dyspghcnlj6ht" path="res://src/scenes/entity/paper_menu.tscn" id="12_pemng"]
 [ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="13_kun8n"]
 [ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="14_ownd4"]
-[ext_resource type="PackedScene" uid="uid://bjel63t88tfub" path="res://src/scenes/entity/bear.tscn" id="14_pemng"]
 [ext_resource type="Script" uid="uid://c0vvijbemdynb" path="res://src/scripts/scenes/level/level_components/code_controller_bear_winter.gd" id="17_ownd4"]
+[ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="19_3eahb"]
 [ext_resource type="PackedScene" uid="uid://wnqclspxn3ku" path="res://src/util/snow.tscn" id="19_bec7l"]
 [ext_resource type="PackedScene" uid="uid://b84sedkgcelqu" path="res://src/util/fog.tscn" id="20_eq012"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_paaiq"]
+font_size = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhyfi"]
+size = Vector2(109, 694)
 
 [node name="BearLevelSummer" type="Node2D" unique_id=493597110 node_paths=PackedStringArray("fox", "enter_code", "code_controller", "code_typer")]
 script = ExtResource("1_oqiyf")
@@ -50,7 +57,7 @@ scale = Vector2(3.62, 3.62)
 texture = ExtResource("3_56woc")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=975989873]
-tile_map_data = PackedByteArray("AAAAAAQAAQACAAAAAAABAAQAAQACAAAAAAACAAQAAQACAAAAAAAEAAQAAQACAAAAAAADAAQAAQACAAAAAAAFAAQAAQACAAAAAAAGAAQAAQACAAAAAAAHAAQAAQACAAAAAAAIAAQAAQACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAQAAQACAAAAAAABAAQAAQACAAAAAAACAAQAAQACAAAAAAAEAAQAAQACAAAAAAADAAQAAQACAAAAAAAFAAQAAQACAAAAAAAGAAQAAQACAAAAAAAHAAQAAQACAAAAAAAIAAQAAQACAAAAAAD//wQAAQACAAAAAAA=")
 tile_set = ExtResource("4_5nxdi")
 
 [node name="Node2D" parent="." unique_id=185771439 instance=ExtResource("6_ownd4")]
@@ -84,24 +91,25 @@ rotation = 0.3634345
 position = Vector2(702.99994, 484.00003)
 rotation = -0.45387572
 
-[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_kun8n")]
-position = Vector2(55, 487)
-scale = Vector2(0.5, 0.5)
+[node name="sleepy_bear" parent="." unique_id=347275757 node_paths=PackedStringArray("controller") instance=ExtResource("9_paaiq")]
+position = Vector2(1056, 461.99997)
+scale = Vector2(0.075, 0.075)
+controller = NodePath("../CodeController")
 
-[node name="paper" parent="." unique_id=1307955519 node_paths=PackedStringArray("menu_to_display") instance=ExtResource("12_oqiyf")]
-position = Vector2(376, 488)
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_kun8n")]
+position = Vector2(99, 492)
+
+[node name="paper" parent="." unique_id=1307955519 node_paths=PackedStringArray("menu_to_display", "label") instance=ExtResource("12_oqiyf")]
+position = Vector2(383, 390)
 scale = Vector2(0.01, 0.01)
 menu_to_display = NodePath("../Paper")
-
-[node name="Bear" parent="." unique_id=347275757 instance=ExtResource("14_pemng")]
-position = Vector2(1093, 457)
-scale = Vector2(0.05, 0.05)
+label = NodePath("../Label")
 
 [node name="SnowParticle" parent="." unique_id=493368967 instance=ExtResource("19_bec7l")]
 position = Vector2(569, -29)
 
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("14_ownd4")]
-position = Vector2(920, 438)
+position = Vector2(851, 433)
 code_index = 2
 
 [node name="CodeController" type="Node2D" parent="." unique_id=592291936]
@@ -123,9 +131,27 @@ offset_bottom = 648.0
 visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
+text = "Etant un peu flemmard, chaque hiver je laisse mes pots de différentes là où ils correspondent le mieux aux rendements des ruches, n'y touchez pas ! "
 
 [node name="EnterCode" parent="." unique_id=1330988193 instance=ExtResource("13_kun8n")]
 visibility_layer = 4
 offset_left = 1.0
 offset_right = 1.0
 code_index = 2
+
+[node name="Label" type="Label" parent="." unique_id=1502500334]
+visible = false
+offset_left = 262.0
+offset_top = 296.0
+offset_right = 4205.0
+offset_bottom = 638.0
+scale = Vector2(0.8800006, 1)
+text = "Appuyez sur Entrer pour afficher"
+label_settings = SubResource("LabelSettings_paaiq")
+
+[node name="Bounds" parent="." unique_id=1244421549 instance=ExtResource("19_3eahb")]
+position = Vector2(-194, 396)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=841135499]
+position = Vector2(147, -92)
+shape = SubResource("RectangleShape2D_yhyfi")
