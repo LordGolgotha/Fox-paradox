@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_j3jlk"]
 [ext_resource type="PackedScene" uid="uid://crpg87kgh3tey" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_11pjv"]
-[ext_resource type="TileSet" uid="uid://d1ypqeukyajvp" path="res://assets/tilemaps/winter_water_tileset.tres" id="3_11pjv"]
+[ext_resource type="TileSet" uid="uid://2brsqq53elf5" path="res://assets/tilemaps/winter_water_tileset.tres" id="3_11pjv"]
 [ext_resource type="TileSet" uid="uid://bvvmpuk1m4p88" path="res://assets/tilemaps/winter_grass_tileset.tres" id="4_f7k0e"]
 [ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="5_ref50"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="6_phx3h"]
 [ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="7_f7k0e"]
 [ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="9_11pjv"]
-[ext_resource type="Script" path="res://src/scenes/levels/winter/cerf.gd" id="10_f7k0e"]
+[ext_resource type="Script" uid="uid://cxis7eutidl8j" path="res://src/scenes/levels/winter/cerf.gd" id="10_f7k0e"]
 [ext_resource type="Texture2D" uid="uid://c4gfpbr3y31p3" path="res://assets/tilemaps/ice.png" id="11_5gvgk"]
+[ext_resource type="AudioStream" uid="uid://bttouyivdcdab" path="res://assets/sounds/IceBreak.wav" id="11_phx3h"]
 [ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="12_5gvgk"]
 [ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="13_5gvgk"]
 [ext_resource type="Texture2D" uid="uid://cbinpyb3nxmqa" path="res://assets/entities/cerf_qui_court.png" id="13_ref50"]
@@ -139,6 +140,9 @@ offset_bottom = 483.0
 visible = false
 script = ExtResource("10_f7k0e")
 metadata/_custom_type_script = "uid://dotgblk65lhev"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CodeController" unique_id=150345351]
+stream = ExtResource("11_phx3h")
 
 [node name="PauseMenu" parent="." unique_id=1744993639 instance=ExtResource("13_5gvgk")]
 visible = false

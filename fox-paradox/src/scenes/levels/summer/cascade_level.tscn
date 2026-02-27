@@ -3,16 +3,17 @@
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_hrvcr"]
 [ext_resource type="PackedScene" uid="uid://crpg87kgh3tey" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_2bnhe"]
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_ookl1"]
-[ext_resource type="TileSet" uid="uid://d20ktl2hcq1js" path="res://assets/tilemaps/summer_water_tileset.tres" id="4_8hp77"]
+[ext_resource type="TileSet" uid="uid://csndobt2d2byh" path="res://assets/tilemaps/summer_water_tileset.tres" id="4_8hp77"]
 [ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="5_8hp77"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="5_ookl1"]
 [ext_resource type="Script" uid="uid://csxt6mlp3w0rj" path="res://src/scripts/entity/interactable/cerf_cascade_summer.gd" id="8_nfg40"]
 [ext_resource type="Texture2D" uid="uid://ciwu43f3eken1" path="res://assets/entities/cerf.png" id="8_r8hqq"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="9_276uf"]
-[ext_resource type="PackedScene" path="res://src/scenes/entity/glyph.tscn" id="10_r8hqq"]
+[ext_resource type="PackedScene" uid="uid://dlb53wlpte0y2" path="res://src/scenes/entity/glyph.tscn" id="10_r8hqq"]
 [ext_resource type="AudioStream" uid="uid://ntt2eh4u5a2m" path="res://assets/sounds/cerf_1.wav" id="10_wsp1f"]
 [ext_resource type="Texture2D" uid="uid://bydkgoqygdd8n" path="res://assets/utils/log.png" id="11_276uf"]
 [ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="12_1xna2"]
+[ext_resource type="AudioStream" uid="uid://q7d82gimswfi" path="res://assets/sounds/690224__nox_sound__ambiance_waterfall_big_skogafoss_loop_stereo.wav" id="14_1cbp1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egav"]
 radius = 124.036285
@@ -141,5 +142,9 @@ position = Vector2(-91, 410)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2093430555]
 position = Vector2(41, -98)
 shape = SubResource("RectangleShape2D_276uf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=978746845]
+stream = ExtResource("14_1cbp1")
+autoplay = true
 
 [connection signal="body_entered" from="Interactable" to="Interactable" method="enter"]

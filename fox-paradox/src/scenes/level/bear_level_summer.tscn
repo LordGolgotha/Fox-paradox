@@ -31,7 +31,7 @@ glyph_0 = NodePath("Glyph")
 glyph_1 = NodePath("Glyph2")
 glyph_2 = NodePath("Glyph3")
 glyph_3 = NodePath("Glyph4")
-code_id = 1
+code_id = 5
 pause_menu = NodePath("PauseMenu")
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
