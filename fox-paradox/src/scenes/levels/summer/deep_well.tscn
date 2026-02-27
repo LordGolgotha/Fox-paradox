@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_1la1x"]
 [ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_q00tx"]
 [ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="3_7ybj0"]
-[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="4_fyv8l"]
 [ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="5_7ybj0"]
+[ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="6_fwit7"]
 [ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="6_fyv8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwit7"]
@@ -38,12 +38,12 @@ size = Vector2(261, 40)
 script = ExtResource("1_1la1x")
 bounds = [NodePath("Bound")]
 id = "deep_well"
-fox = NodePath("fox")
+fox = NodePath("")
 glyph_0 = NodePath("Glyphs/Glyph")
 glyph_1 = NodePath("Glyphs/Glyph2")
 glyph_2 = NodePath("Glyphs/Glyph3")
 glyph_3 = NodePath("Glyphs/Glyph4")
-code_id = 0
+code_id = 1
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=216304453]
@@ -55,9 +55,6 @@ texture = ExtResource("2_q00tx")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1394841084]
 tile_map_data = PackedByteArray("AAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAGAAAAAAABAAEAAAAFAAAAAAABAAEAAAAEAAAAAAABAAEAAAADAAAAAAABAAEAAAAGAAMAAAACAAAAAAAFAAMAAAADAAEAAAAEAAMAAAADAAEAAAADAAMAAAADAAEAAAACAAMAAAADAAEAAAAAAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAABAAMAAAADAAAAAAABAAIAAAAEAAAAAAABAAEAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAAAAAABAAAAAAAHAAEAAAACAAEAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAHAAMAAAAAAAEAAAAHAAIAAAACAAAAAAABAAAAAAAEAAEAAAABAP//AAAEAAEAAAACAP//AAACAAEAAAACAAIAAAABAAEAAAACAAEAAAADAAEAAAADAAEAAAADAAEAAAAEAAEAAAADAAEAAAADAAIAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAFAAEAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_k18ix")
-
-[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("4_fyv8l")]
-position = Vector2(223, 181)
 
 [node name="Bound" type="Area2D" parent="." unique_id=577586700]
 script = ExtResource("5_7ybj0")
@@ -97,3 +94,6 @@ position = Vector2(894.00006, 237.00002)
 scale = Vector2(0.35, 0.35)
 script = ExtResource("6_fyv8l")
 metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
+
+[node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("6_fwit7")]
+position = Vector2(221, 193)
