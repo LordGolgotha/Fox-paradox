@@ -14,6 +14,7 @@ size = Vector2(91, 30)
 
 [node name="Level" type="Node2D" unique_id=74349290]
 script = ExtResource("1_d24hv")
+id = "end_summer"
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="Node2D2" parent="." unique_id=354412691 instance=ExtResource("2_mdaxc")]

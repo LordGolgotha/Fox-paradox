@@ -1,13 +1,14 @@
-[gd_scene format=4 uid="uid://l3smfjn8mgpo"]
+[gd_scene format=4 uid="uid://bytfg8vjlfgfp"]
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_ut0oj"]
-[ext_resource type="PackedScene" uid="uid://crpg87kgh3tey" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_5fu37"]
+[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_5fu37"]
 [ext_resource type="Texture2D" uid="uid://dlbwhg1fyh6qj" path="res://assets/ruche.png" id="3_7rvjn"]
 [ext_resource type="Texture2D" uid="uid://dfs0u8cqd34bd" path="res://assets/pot.png" id="4_lylvf"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="4_xbpqs"]
-[ext_resource type="Script" path="res://src/scenes/levels/summer/killzone_tempest_level.gd" id="5_lg5hy"]
+[ext_resource type="Script" uid="uid://dc6jro631qrgw" path="res://src/scenes/levels/summer/killzone_tempest_level.gd" id="5_lg5hy"]
 [ext_resource type="Texture2D" uid="uid://dve0gls1lgy4e" path="res://assets/caillou.png" id="5_lwn1e"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="6_7rvjn"]
+[ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="9_lylvf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbpqs"]
 size = Vector2(1175, 25)
@@ -15,8 +16,12 @@ size = Vector2(1175, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7rvjn"]
 size = Vector2(117, 660.75)
 
-[node name="TempeteLevel" type="Node2D" unique_id=1245770608]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwn1e"]
+size = Vector2(43.5, 246.5)
+
+[node name="TempeteLevel" type="Node2D" unique_id=1245770608 node_paths=PackedStringArray("bounds")]
 script = ExtResource("1_ut0oj")
+bounds = [NodePath("Bound")]
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="Node2D2" parent="." unique_id=354412691 instance=ExtResource("2_5fu37")]
@@ -66,5 +71,14 @@ position = Vector2(-91, 410)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1821214231]
 position = Vector2(44, -93.375)
 shape = SubResource("RectangleShape2D_7rvjn")
+
+[node name="Bound" type="Area2D" parent="." unique_id=1999615674]
+script = ExtResource("9_lylvf")
+to_screen = "end_summer"
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=276243837]
+position = Vector2(1149.25, 124.75)
+shape = SubResource("RectangleShape2D_lwn1e")
 
 [connection signal="body_entered" from="kill" to="kill" method="_on_body_entered"]

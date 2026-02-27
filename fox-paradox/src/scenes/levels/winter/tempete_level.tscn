@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bfbbfcoc26ggm" path="res://src/util/snowStorm.tscn" id="9_tugx3"]
 [ext_resource type="PackedScene" uid="uid://dc0j6pdj0558b" path="res://src/util/fogStorm.tscn" id="10_euqe1"]
 [ext_resource type="AudioStream" uid="uid://c0jeipv47rq7c" path="res://assets/sounds/651545__nsstudios__wind-draft-loop-3.wav" id="11_tugx3"]
+[ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="12_euqe1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbpqs"]
 size = Vector2(1175, 25)
@@ -18,8 +19,12 @@ size = Vector2(1175, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71ik5"]
 size = Vector2(123, 654)
 
-[node name="TempeteLevel" type="Node2D" unique_id=1245770608 node_paths=PackedStringArray("fox")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkqcg"]
+size = Vector2(53, 302.75)
+
+[node name="TempeteLevel" type="Node2D" unique_id=1245770608 node_paths=PackedStringArray("bounds", "fox")]
 script = ExtResource("1_7ddte")
+bounds = [NodePath("Bound")]
 fox = NodePath("fox_winter")
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
@@ -134,5 +139,14 @@ shape = SubResource("RectangleShape2D_71ik5")
 stream = ExtResource("11_tugx3")
 volume_db = 5.0
 autoplay = true
+
+[node name="Bound" type="Area2D" parent="." unique_id=2026276753]
+script = ExtResource("12_euqe1")
+to_screen = "end_winter"
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=1470035013]
+position = Vector2(1152, 153.375)
+shape = SubResource("RectangleShape2D_nkqcg")
 
 [connection signal="body_entered" from="kill" to="kill" method="_on_body_entered"]
