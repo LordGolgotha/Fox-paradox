@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var rock_pos : Vector2
-@export var jar_pos : Vector2
+@export var rock_pos : Array[Vector2]
+@export var jar_pos : Array[Vector2]
 
 const JAR_SIZES : Array[String] = ["SMALL","MEDIUM","TALL"]
 
@@ -12,7 +12,8 @@ func _on_body_entered(body: Node2D) -> void:
 	print_debug("bear")
 	if body is Jar:
 		jar_in = body
-		jar_in.dropped.connect(receive_jar)
+		if not jar_in.dropped.is_connected(receive_jar):
+			jar_in.dropped.connect(receive_jar)
 		
 func _on_body_exited(body: Node2D) -> void:
 	if body == jar_in:
@@ -35,10 +36,10 @@ func reset() -> void:
 	rocks.clear()
 	
 		
-	for i in range(3):
+	for i in range(5):
 		var new_rock = preload("res://src/scenes/entity/rock.tscn").instantiate()
 		rocks.append(new_rock)
-		new_rock.global_position = rock_pos + Vector2(40 * i+1,0)
+		new_rock.global_position = rock_pos[i]
 		new_rock.scale = Vector2(0.1,0.1)
 		new_rock.add_to_group("rocks")
 		add_sibling(new_rock)
@@ -46,7 +47,7 @@ func reset() -> void:
 	for i in range(3):
 		var new_jar = preload("res://src/scenes/entity/jar.tscn").instantiate()
 		jars.append(new_jar)
-		new_jar.global_position = jar_pos + Vector2(100 * i+1,0)
+		new_jar.global_position = jar_pos[i]
 		new_jar.scale = Vector2(0.25,0.25)
 		new_jar.jar_size = JAR_SIZES[i]
 		new_jar.add_to_group("jars")
