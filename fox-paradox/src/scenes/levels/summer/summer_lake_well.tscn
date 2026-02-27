@@ -5,8 +5,8 @@
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_ry4m4"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="4_ne0v2"]
 [ext_resource type="Texture2D" uid="uid://24ajqitumtto" path="res://assets/tilemaps/water_summer.png" id="5_ne0v2"]
-[ext_resource type="PackedScene" uid="uid://csvh5rvax27mf" path="res://assets/utils/dam.tscn" id="7_1m3ip"]
-[ext_resource type="Script" uid="uid://d3ufyag7qe1et" path="res://src/scenes/levels/summer/area_2d_summer_lake.gd" id="8_pom3f"]
+[ext_resource type="PackedScene" path="res://assets/utils/dam.tscn" id="7_1m3ip"]
+[ext_resource type="Script" path="res://src/scenes/levels/summer/area_2d_summer_lake.gd" id="8_pom3f"]
 [ext_resource type="Texture2D" uid="uid://ocpylovl0kgo" path="res://assets/utils/summer_well.png" id="8_ve6cl"]
 [ext_resource type="Texture2D" uid="uid://3cvl830xrh1b" path="res://assets/entities/castor.png" id="9_ug7gk"]
 [ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="10_pom3f"]
@@ -56,7 +56,7 @@ fox = NodePath("fox_winter")
 enter_code = NodePath("EnterCode")
 code_controller = NodePath("CodeController")
 code_typer = NodePath("code_typer")
-code_id = 0
+code_id = 1
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=866557824]
@@ -138,11 +138,11 @@ offset_left = 874.0
 offset_top = 302.0
 offset_right = 874.0
 offset_bottom = 302.0
-code_index = 0
+code_index = 1
 
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("13_cp0tr")]
 position = Vector2(346, 189)
-code_index = 2
+code_index = 1
 
 [node name="CodeController" parent="." unique_id=981210675 instance=ExtResource("14_msawm")]
 position = Vector2(198, 362)
