@@ -1,0 +1,61 @@
+[gd_scene format=4 uid="uid://bytfg8vjlfgfp"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_ut0oj"]
+[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_5fu37"]
+[ext_resource type="Texture2D" uid="uid://dlbwhg1fyh6qj" path="res://assets/ruche.png" id="3_7rvjn"]
+[ext_resource type="Texture2D" uid="uid://dfs0u8cqd34bd" path="res://assets/pot.png" id="4_lylvf"]
+[ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="4_xbpqs"]
+[ext_resource type="Script" uid="uid://dc6jro631qrgw" path="res://src/scenes/levels/summer/killzone_tempest_level.gd" id="5_lg5hy"]
+[ext_resource type="Texture2D" uid="uid://dve0gls1lgy4e" path="res://assets/caillou.png" id="5_lwn1e"]
+[ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="6_7rvjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbpqs"]
+size = Vector2(1175, 25)
+
+[node name="TempeteLevel" type="Node2D" unique_id=1245770608 node_paths=PackedStringArray("fox")]
+script = ExtResource("1_ut0oj")
+fox = NodePath("")
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="Node2D2" parent="." unique_id=354412691 instance=ExtResource("2_5fu37")]
+
+[node name="markers4" type="Sprite2D" parent="." unique_id=843178073]
+position = Vector2(812.99994, 342)
+scale = Vector2(0.03619659, 0.037014082)
+texture = ExtResource("3_7rvjn")
+
+[node name="markers" type="Sprite2D" parent="." unique_id=2057982776]
+position = Vector2(31, 204)
+scale = Vector2(0.03681818, 0.036937635)
+texture = ExtResource("3_7rvjn")
+
+[node name="markers2" type="Sprite2D" parent="." unique_id=982140851]
+position = Vector2(441.00006, 136.99997)
+scale = Vector2(0.04202622, 0.039103836)
+texture = ExtResource("4_lylvf")
+
+[node name="markers3" type="Sprite2D" parent="." unique_id=1767802196]
+position = Vector2(997, 237)
+scale = Vector2(0.054617744, 0.054744534)
+texture = ExtResource("5_lwn1e")
+
+[node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("6_7rvjn")]
+position = Vector2(72, 454)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=403771916]
+position = Vector2(1, -1)
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAgAAQAAAAAAAAABAAkAAQAEAAAAAAACAAgAAQAEAAAAAAADAAgAAQABAAEAAAARAAgAAQAAAAAAAAARAAkAAQAAAAAAAAAQAAgAAQAAAAAAAAAQAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAARAAcAAQAAAAAAAAARAAYAAQAAAAAAAAARAAUAAQAAAAAAAAAQAAQAAQAAAAAAAAARAAQAAQAAAAAAAAAOAAkAAQACAAAAAAAPAAgAAQACAAAAAAAQAAcAAQACAAAAAAAQAAYAAQACAAEAAAAJAAQAAQAEAAAAAAAJAAMAAQADAAEAAAAMAAQAAQADAAEAAAAQAAUAAQABAAAAAAAPAAQAAQABAAAAAAAQAAMAAQADAAEAAAARAAMAAQADAAEAAAAIAAQAAQABAAEAAAAKAAMAAQADAAEAAAABAAQAAQAEAAAAAAACAAQAAQABAAEAAAACAAMAAQADAAEAAAAEAAcAAQABAAEAAAAEAAYAAQACAAAAAAAHAAMAAQABAAEAAAAGAAIAAQADAAEAAAAHAAIAAQADAAEAAAA=")
+tile_set = ExtResource("4_xbpqs")
+
+[node name="kill" type="Area2D" parent="." unique_id=1036145439]
+script = ExtResource("5_lg5hy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill" unique_id=1118892792]
+position = Vector2(594, 810)
+shape = SubResource("RectangleShape2D_xbpqs")
+
+[node name="spawn" type="Marker2D" parent="." unique_id=726088369]
+position = Vector2(72, 454)
+
+[connection signal="body_entered" from="kill" to="kill" method="_on_body_entered"]

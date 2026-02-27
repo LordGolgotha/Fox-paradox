@@ -1,0 +1,122 @@
+[gd_scene format=4 uid="uid://u5qvare54j3e"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_7ddte"]
+[ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_tugx3"]
+[ext_resource type="Texture2D" uid="uid://dlbwhg1fyh6qj" path="res://assets/ruche.png" id="3_71ik5"]
+[ext_resource type="Texture2D" uid="uid://dfs0u8cqd34bd" path="res://assets/pot.png" id="4_tugx3"]
+[ext_resource type="Texture2D" uid="uid://dve0gls1lgy4e" path="res://assets/caillou.png" id="5_euqe1"]
+[ext_resource type="PackedScene" uid="uid://dfo7v1ev4wlj4" path="res://src/scenes/entity/fox_winter_tempest.tscn" id="6_euqe1"]
+[ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="7_u6eqv"]
+[ext_resource type="Script" uid="uid://dc6jro631qrgw" path="res://src/scenes/levels/summer/killzone_tempest_level.gd" id="8_01s6m"]
+[ext_resource type="PackedScene" uid="uid://bfbbfcoc26ggm" path="res://src/util/snowStorm.tscn" id="9_tugx3"]
+[ext_resource type="PackedScene" uid="uid://dc0j6pdj0558b" path="res://src/util/fogStorm.tscn" id="10_euqe1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbpqs"]
+size = Vector2(1175, 25)
+
+[node name="TempeteLevel" type="Node2D" unique_id=1245770608]
+script = ExtResource("1_7ddte")
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=474600016]
+position = Vector2(573.99994, 320)
+scale = Vector2(3.6, 3.5444443)
+texture = ExtResource("2_tugx3")
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer1" unique_id=2047087685]
+offset_left = -160.83331
+offset_top = -91.41066
+offset_right = 165.0
+offset_bottom = 91.41066
+color = Color(0.40578339, 0.40578339, 0.4057832, 0.5372549)
+
+[node name="markers4" type="Sprite2D" parent="." unique_id=843178073]
+clip_children = 2
+position = Vector2(812.99994, 342)
+scale = Vector2(0.03619659, 0.037014082)
+texture = ExtResource("3_71ik5")
+
+[node name="ColorRect" type="ColorRect" parent="markers4" unique_id=494905405]
+show_behind_parent = true
+offset_left = -22460.678
+offset_top = -9239.727
+offset_right = 7265.879
+offset_bottom = 4835.997
+color = Color(0.36078432, 0.36078432, 0.36078432, 0.84313726)
+
+[node name="markers" type="Sprite2D" parent="." unique_id=2057982776]
+clip_children = 2
+position = Vector2(31, 204)
+scale = Vector2(0.03681818, 0.036937635)
+texture = ExtResource("3_71ik5")
+
+[node name="ColorRect" type="ColorRect" parent="markers" unique_id=63873944]
+show_behind_parent = true
+offset_left = -22460.678
+offset_top = -9239.727
+offset_right = 7265.879
+offset_bottom = 4835.997
+color = Color(0.36078432, 0.36078432, 0.36078432, 0.6039216)
+
+[node name="markers2" type="Sprite2D" parent="." unique_id=982140851]
+clip_children = 2
+position = Vector2(441.00006, 136.99997)
+scale = Vector2(0.04202622, 0.039103836)
+texture = ExtResource("4_tugx3")
+
+[node name="ColorRect" type="ColorRect" parent="markers2" unique_id=946826490]
+show_behind_parent = true
+offset_left = -22460.678
+offset_top = -9239.727
+offset_right = 7265.879
+offset_bottom = 4835.997
+color = Color(0.36078432, 0.36078432, 0.36078432, 0.67058825)
+
+[node name="markers3" type="Sprite2D" parent="." unique_id=1767802196]
+clip_children = 2
+position = Vector2(997, 237)
+scale = Vector2(0.054617744, 0.054744534)
+texture = ExtResource("5_euqe1")
+
+[node name="ColorRect" type="ColorRect" parent="markers3" unique_id=1380045239]
+show_behind_parent = true
+offset_left = -22460.678
+offset_top = -9239.727
+offset_right = 7265.879
+offset_bottom = 4835.997
+color = Color(0.36078432, 0.36078432, 0.36078432, 0.5882353)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=403771916]
+visible = false
+position = Vector2(1, -1)
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAgAAQAAAAAAAAABAAkAAQAEAAAAAAACAAgAAQAEAAAAAAADAAgAAQABAAEAAAARAAgAAQAAAAAAAAARAAkAAQAAAAAAAAAQAAgAAQAAAAAAAAAQAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAARAAcAAQAAAAAAAAARAAYAAQAAAAAAAAARAAUAAQAAAAAAAAAQAAQAAQAAAAAAAAARAAQAAQAAAAAAAAAOAAkAAQACAAAAAAAPAAgAAQACAAAAAAAQAAcAAQACAAAAAAAQAAYAAQACAAEAAAAJAAQAAQAEAAAAAAAJAAMAAQADAAEAAAAMAAQAAQADAAEAAAAQAAUAAQABAAAAAAAPAAQAAQABAAAAAAAQAAMAAQADAAEAAAARAAMAAQADAAEAAAAIAAQAAQABAAEAAAAKAAMAAQADAAEAAAABAAQAAQAEAAAAAAACAAQAAQABAAEAAAACAAMAAQADAAEAAAAHAAMAAQABAAEAAAAGAAIAAQADAAEAAAAHAAIAAQADAAEAAAAFAAYAAQACAAAAAAAFAAcAAQABAAEAAAA=")
+tile_set = ExtResource("7_u6eqv")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=666827098]
+position = Vector2(1, -1)
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAgAAQAAAAAAAAARAAkAAQAAAAAAAAARAAUAAQABAAAAAAARAAQAAQADAAEAAAARAAYAAQACAAEAAAARAAcAAQACAAEAAAARAAgAAQACAAAAAAAQAAkAAQACAAAAAAA=")
+tile_set = ExtResource("7_u6eqv")
+
+[node name="kill" type="Area2D" parent="." unique_id=1036145439]
+script = ExtResource("8_01s6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill" unique_id=1118892792]
+position = Vector2(594, 810)
+shape = SubResource("RectangleShape2D_xbpqs")
+
+[node name="spawn" type="Marker2D" parent="." unique_id=726088369]
+position = Vector2(72, 454)
+
+[node name="SnowStormParticle" parent="." unique_id=241607874 instance=ExtResource("9_tugx3")]
+position = Vector2(1134, 12.0000305)
+
+[node name="FogStorm" parent="." unique_id=377206486 instance=ExtResource("10_euqe1")]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("6_euqe1")]
+position = Vector2(73, 454)
+
+[connection signal="body_entered" from="kill" to="kill" method="_on_body_entered"]
