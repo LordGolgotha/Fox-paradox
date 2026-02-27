@@ -28,7 +28,9 @@ func _ready():
 		code_typer.entercode.connect(triggermenu)
 		enter_code.code_succeed.connect(solve)
 		enter_code.menu_exited.connect(unlock)
-	if code_id != -1 and code_id != null and code_id < len(PasswordGenerator.passes[3]):
+		if code_id != -1 and code_id != null and code_id < len(PasswordGenerator.passes):
+			enter_code.set_corect_code(code_id)
+	if code_id != -1 and code_id != null and code_id < len(PasswordGenerator.passes):
 		var password = PasswordGenerator.passes[code_id]
 		if glyph_0 != null:
 			glyph_0.set_glyph(str(password[0]))
