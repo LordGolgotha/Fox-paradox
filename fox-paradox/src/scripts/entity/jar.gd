@@ -3,6 +3,7 @@ extends HoldableObject
 class_name Jar 
 
 @onready var sprite2D : Sprite2D = $Sprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 enum State {EMPTY, ALMOST_EMPTY, HALF_EMPTY, FULL, OVERFLOW}
 
@@ -43,6 +44,8 @@ func add_in_jar(amount : String) -> void:
 				_:
 					jar_state = State.FULL
 	change_sprite2D()
+	audio_stream_player_2d.play()
+	
 		
 func change_sprite2D() -> void:
 	match jar_state:

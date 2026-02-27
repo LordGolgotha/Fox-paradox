@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dlbwhg1fyh6qj" path="res://assets/ruche.png" id="3_71ik5"]
 [ext_resource type="Texture2D" uid="uid://dfs0u8cqd34bd" path="res://assets/pot.png" id="4_tugx3"]
 [ext_resource type="Texture2D" uid="uid://dve0gls1lgy4e" path="res://assets/caillou.png" id="5_euqe1"]
-[ext_resource type="PackedScene" uid="uid://dfo7v1ev4wlj4" path="res://src/scenes/entity/fox_winter_tempest.tscn" id="6_euqe1"]
+[ext_resource type="PackedScene" path="res://src/scenes/entity/fox_winter_tempest.tscn" id="6_euqe1"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="7_u6eqv"]
 [ext_resource type="Script" path="res://src/scenes/levels/summer/killzone_tempest_level.gd" id="8_01s6m"]
 [ext_resource type="PackedScene" uid="uid://bfbbfcoc26ggm" path="res://src/util/snowStorm.tscn" id="9_tugx3"]
@@ -14,8 +14,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbpqs"]
 size = Vector2(1175, 25)
 
-[node name="TempeteLevel" type="Node2D" unique_id=1245770608]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71ik5"]
+size = Vector2(123, 654)
+
+[node name="TempeteLevel" type="Node2D" unique_id=1245770608 node_paths=PackedStringArray("fox")]
 script = ExtResource("1_7ddte")
+fox = NodePath("fox_winter")
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=474600016]
@@ -118,5 +122,11 @@ transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("6_euqe1")]
 position = Vector2(73, 454)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=610645937]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1962078725]
+position = Vector2(-46.5, 317)
+shape = SubResource("RectangleShape2D_71ik5")
 
 [connection signal="body_entered" from="kill" to="kill" method="_on_body_entered"]
