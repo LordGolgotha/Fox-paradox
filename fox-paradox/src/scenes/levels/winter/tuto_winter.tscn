@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="6_eofx5"]
 [ext_resource type="Texture2D" uid="uid://de1vcd5hvndwd" path="res://icon.svg" id="7_r8ha3"]
 [ext_resource type="Script" uid="uid://cjk4qk1iqpop" path="res://src/scenes/levels/winter/code_controller_tuto.gd" id="8_n4754"]
+[ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="9_6e2u8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3u4a3"]
 texture = ExtResource("3_m8flf")
@@ -34,8 +35,12 @@ sources/0 = SubResource("TileSetAtlasSource_3u4a3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2wv3"]
 size = Vector2(127, 252.5)
 
-[node name="Node2D" type="Node2D" unique_id=1093831451 node_paths=PackedStringArray("fox", "enter_code", "code_controller", "code_typer")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8flf"]
+size = Vector2(109, 694)
+
+[node name="Node2D" type="Node2D" unique_id=1093831451 node_paths=PackedStringArray("bounds", "fox", "enter_code", "code_controller", "code_typer")]
 script = ExtResource("1_62gnn")
+bounds = [NodePath("Bounds")]
 fox = NodePath("fox")
 enter_code = NodePath("EnterCode")
 code_controller = NodePath("CodeController")
@@ -80,3 +85,11 @@ shape = SubResource("RectangleShape2D_p2wv3")
 [node name="CodeController" type="Node2D" parent="." unique_id=865982061]
 script = ExtResource("8_n4754")
 metadata/_custom_type_script = "uid://dotgblk65lhev"
+
+[node name="Bounds" parent="." unique_id=1244421549 instance=ExtResource("9_6e2u8")]
+position = Vector2(-238, 649)
+to_screen = "cascade_level_winter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=407487011]
+position = Vector2(1426, -356)
+shape = SubResource("RectangleShape2D_m8flf")

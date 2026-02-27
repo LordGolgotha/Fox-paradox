@@ -1,18 +1,19 @@
 [gd_scene format=4 uid="uid://dgqvwm5ar0wl0"]
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_j3jlk"]
-[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_11pjv"]
-[ext_resource type="TileSet" uid="uid://2brsqq53elf5" path="res://assets/tilemaps/winter_water_tileset.tres" id="3_11pjv"]
+[ext_resource type="PackedScene" uid="uid://crpg87kgh3tey" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_11pjv"]
+[ext_resource type="TileSet" uid="uid://d1ypqeukyajvp" path="res://assets/tilemaps/winter_water_tileset.tres" id="3_11pjv"]
 [ext_resource type="TileSet" uid="uid://bvvmpuk1m4p88" path="res://assets/tilemaps/winter_grass_tileset.tres" id="4_f7k0e"]
 [ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="5_ref50"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="6_phx3h"]
 [ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="7_f7k0e"]
 [ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="9_11pjv"]
-[ext_resource type="Script" uid="uid://cxis7eutidl8j" path="res://src/scenes/levels/winter/cerf.gd" id="10_f7k0e"]
+[ext_resource type="Script" path="res://src/scenes/levels/winter/cerf.gd" id="10_f7k0e"]
 [ext_resource type="Texture2D" uid="uid://c4gfpbr3y31p3" path="res://assets/tilemaps/ice.png" id="11_5gvgk"]
 [ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="12_5gvgk"]
 [ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="13_5gvgk"]
 [ext_resource type="Texture2D" uid="uid://cbinpyb3nxmqa" path="res://assets/entities/cerf_qui_court.png" id="13_ref50"]
+[ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="14_ref50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ref50"]
 size = Vector2(380, 20)
@@ -56,8 +57,15 @@ _data = {
 &"run": SubResource("Animation_qkli3")
 }
 
-[node name="CascadeLevel" type="Node2D" unique_id=595706561 node_paths=PackedStringArray("fox", "enter_code", "code_controller", "code_typer")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkli3"]
+size = Vector2(109, 694)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gvgk"]
+size = Vector2(117, 617)
+
+[node name="CascadeLevel" type="Node2D" unique_id=595706561 node_paths=PackedStringArray("bounds", "fox", "enter_code", "code_controller", "code_typer")]
 script = ExtResource("1_j3jlk")
+bounds = [NodePath("Bounds")]
 fox = NodePath("fox")
 enter_code = NodePath("EnterCode")
 code_controller = NodePath("CodeController")
@@ -92,7 +100,7 @@ tile_map_data = PackedByteArray("AAAIAAQAAQAAAAAAAAAIAAIAAQAEAAAAAAD//wQAAQAAAAA
 tile_set = ExtResource("6_phx3h")
 
 [node name="fox" parent="." unique_id=1154230614 instance=ExtResource("7_f7k0e")]
-position = Vector2(47, 452)
+position = Vector2(79, 471)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2000043674]
 
@@ -146,5 +154,20 @@ flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1957813558]
 libraries/ = SubResource("AnimationLibrary_da2x8")
+
+[node name="Bounds" parent="." unique_id=1244421549 instance=ExtResource("14_ref50")]
+position = Vector2(-376, 1216)
+to_screen = "winter_lake_well"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=1864381707]
+position = Vector2(1545, -896)
+shape = SubResource("RectangleShape2D_qkli3")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2045960098]
+position = Vector2(-91, 410)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=555738327]
+position = Vector2(41, -98)
+shape = SubResource("RectangleShape2D_5gvgk")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="CodeController" method="_on_animation_player_animation_finished"]
