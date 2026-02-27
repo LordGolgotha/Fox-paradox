@@ -3,7 +3,6 @@ class_name Code_Typer
 
 signal entercode(index)
 @export var code_index:int = 3
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
