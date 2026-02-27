@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dfo7v1ev4wlj4"]
+
+[ext_resource type="Script" uid="uid://dkqniq2vr6sl" path="res://src/scripts/entity/fox.gd" id="1_ft1l6"]
+[ext_resource type="Texture2D" uid="uid://bqh7bfvd11pwq" path="res://assets/entities/fox_idle_winter.png" id="2_ecc4s"]
+[ext_resource type="Texture2D" uid="uid://cve8uhgme5g32" path="res://assets/entities/fox_walk_1_winter.png" id="3_l1lqg"]
+[ext_resource type="Texture2D" uid="uid://b858lmtled7lq" path="res://assets/entities/fox_walk_2_winter.png" id="4_3uet7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u1gh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ecc4s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_l1lqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3uet7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ft1l6"]
+radius = 42.0
+height = 102.0
+
+[node name="fox_winter" type="CharacterBody2D" unique_id=1154230614]
+z_index = 5
+collision_layer = 3
+script = ExtResource("1_ft1l6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=896824464]
+clip_children = 2
+position = Vector2(-8.999999, -55.000015)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_u1gh3")
+animation = &"idle"
+
+[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D" unique_id=106911333]
+offset_left = -549.99994
+offset_top = -124.99991
+offset_right = 664.9998
+offset_bottom = 745.0
+color = Color(0.56078434, 0.56078434, 0.56078434, 0.7921569)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1928888689]
+position = Vector2(-3, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ft1l6")

@@ -27,9 +27,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vrs5o"]
-radius = 36.0
-height = 152.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tkivj"]
+radius = 42.0
+height = 102.0
 
 [node name="fox_winter" type="CharacterBody2D" unique_id=1154230614]
 z_index = 5
@@ -40,9 +40,9 @@ script = ExtResource("1_tkivj")
 position = Vector2(-8.999999, -55.000015)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_u1gh3")
-animation = &"walk"
+animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1451948305]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1677200643]
 position = Vector2(-3, 5)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_vrs5o")
+shape = SubResource("CapsuleShape2D_tkivj")
