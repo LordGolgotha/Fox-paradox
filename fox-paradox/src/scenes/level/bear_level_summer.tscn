@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bjel63t88tfub" path="res://src/scenes/entity/bear.tscn" id="9_0e3xp"]
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="12_k7318"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="13_2iqtv"]
-[ext_resource type="Script" path="res://src/scripts/entity/glyph.gd" id="14_k7318"]
+[ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="14_k7318"]
 [ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="15_bdesh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hg6jj"]
@@ -51,7 +51,7 @@ scale = Vector2(3.62, 3.62)
 texture = ExtResource("4_2iqtv")
 
 [node name="BackgroundLayer4" type="Sprite2D" parent="." unique_id=2010837613]
-position = Vector2(1294, 289)
+position = Vector2(1295, 289)
 scale = Vector2(3.62, 3.62)
 texture = ExtResource("4_2iqtv")
 

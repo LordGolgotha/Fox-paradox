@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dt4ty4wea6xsk"]
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_d24hv"]
-[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_mdaxc"]
+[ext_resource type="PackedScene" uid="uid://crpg87kgh3tey" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_mdaxc"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="2_xlrpe"]
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_mdaxc"]
 [ext_resource type="TileSet" uid="uid://bvvmpuk1m4p88" path="res://assets/tilemaps/winter_grass_tileset.tres" id="4_rl0bl"]
@@ -11,6 +11,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00lok"]
 size = Vector2(91, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdaxc"]
+size = Vector2(24, 655)
 
 [node name="Level" type="Node2D" unique_id=74349290]
 script = ExtResource("1_d24hv")
@@ -51,3 +54,17 @@ z_index = 1000
 position = Vector2(547, 147)
 scale = Vector2(0.6912568, 0.43463743)
 texture = ExtResource("7_mdaxc")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1841220207]
+position = Vector2(0, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=833287697]
+position = Vector2(2, 203.5)
+shape = SubResource("RectangleShape2D_mdaxc")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=343650673]
+position = Vector2(1150, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1453858290]
+position = Vector2(2, 203.5)
+shape = SubResource("RectangleShape2D_mdaxc")

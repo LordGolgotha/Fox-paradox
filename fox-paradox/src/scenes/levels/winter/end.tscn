@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_5b16a"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="2_61mtc"]
-[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_winter.tscn" id="2_oqlng"]
+[ext_resource type="PackedScene" uid="uid://ds1wgad320fl0" path="res://assets/oak_woods_v1.0/background/background_winter.tscn" id="2_oqlng"]
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_b7n7i"]
 [ext_resource type="TileSet" uid="uid://bvvmpuk1m4p88" path="res://assets/tilemaps/winter_grass_tileset.tres" id="4_oqlng"]
 [ext_resource type="Texture2D" uid="uid://dxtayy4fmnl38" path="res://assets/utils/PORTAL.png" id="5_hxqw1"]
@@ -12,6 +12,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00lok"]
 size = Vector2(91, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqlng"]
+size = Vector2(24, 655)
 
 [node name="Level" type="Node2D" unique_id=74349290]
 script = ExtResource("1_5b16a")
@@ -56,3 +59,17 @@ texture = ExtResource("8_hxqw1")
 offset = Vector2(550, 0)
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 550, 0)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=490061097]
+position = Vector2(0, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=160498025]
+position = Vector2(2, 203.5)
+shape = SubResource("RectangleShape2D_oqlng")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=657926898]
+position = Vector2(1150, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=303557333]
+position = Vector2(2, 203.5)
+shape = SubResource("RectangleShape2D_oqlng")
