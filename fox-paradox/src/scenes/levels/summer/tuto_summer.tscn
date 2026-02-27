@@ -2,15 +2,35 @@
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_wgerl"]
 [ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_naknc"]
-[ext_resource type="Texture2D" uid="uid://cw2buwcdvu8jj" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="3_85dxq"]
-[ext_resource type="Texture2D" uid="uid://ccee48odikrha" path="res://assets/oak_woods_v1.0/background/background_layer_3.png" id="4_nmcvf"]
-[ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="5_ig3ha"]
-[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="6_vmcpa"]
-[ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="7_icaw6"]
+[ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="5_qlsyb"]
+[ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="6_naknc"]
 [ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="8_85dxq"]
 
-[node name="Node2D" type="Node2D" unique_id=30359563 node_paths=PackedStringArray("glyph_0", "glyph_1", "glyph_2", "glyph_3")]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85dxq"]
+texture = ExtResource("5_qlsyb")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nmcvf"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_85dxq")
+
+[node name="Node2D" type="Node2D" unique_id=30359563 node_paths=PackedStringArray("fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
 script = ExtResource("1_wgerl")
+fox = NodePath("fox_winter")
 glyph_0 = NodePath("Glyphs/Glyph")
 glyph_1 = NodePath("Glyphs/Glyph2")
 glyph_2 = NodePath("Glyphs/Glyph3")
@@ -18,55 +38,41 @@ glyph_3 = NodePath("Glyphs/Glyph4")
 code_id = 3
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
-[node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=296929868]
+[node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1375683907]
+modulate = Color(0.1764706, 0.1764706, 0.16862746, 1)
 position = Vector2(576, 323.99997)
-scale = Vector2(3.6000004, 3.5999997)
+scale = Vector2(3.6, 3.5999994)
 texture = ExtResource("2_naknc")
-
-[node name="BackgroundLayer2" type="Sprite2D" parent="." unique_id=1973737559]
-position = Vector2(576, 324)
-scale = Vector2(3.6, 3.6000001)
-texture = ExtResource("3_85dxq")
-
-[node name="BackgroundLayer3" type="Sprite2D" parent="." unique_id=521877811]
-position = Vector2(576, 324)
-scale = Vector2(3.6000001, 3.6)
-texture = ExtResource("4_nmcvf")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1468165629]
-tile_map_data = PackedByteArray("AAAAAAQAAQAFAAAAAAABAAQAAQADAAAAAAACAAQAAQACAAAAAAADAAQAAQAAAAAAAAAEAAQAAQABAAAAAAAFAAQAAQAAAAAAAAAIAAQAAQAGAAAAAAAGAAQAAQADAAAAAAAHAAQAAQABAAAAAAA=")
-tile_set = ExtResource("5_ig3ha")
-
-[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("6_vmcpa")]
-position = Vector2(92, 473)
-
-[node name="Node2D" parent="." unique_id=185771439 instance=ExtResource("7_icaw6")]
-position = Vector2(-10, 3)
-rotation = 1.5707964
-scale = Vector2(2, 1)
 
 [node name="Glyphs" type="Node" parent="." unique_id=1132079598]
 
 [node name="Glyph" type="Sprite2D" parent="Glyphs" unique_id=1392732668]
-position = Vector2(206.5, 336.5)
+position = Vector2(380, 127)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("8_85dxq")
 metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
 [node name="Glyph2" type="Sprite2D" parent="Glyphs" unique_id=1014759658]
-position = Vector2(528, 275)
+position = Vector2(515, 249)
 scale = Vector2(0.35, 0.35)
 script = ExtResource("8_85dxq")
 metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
 [node name="Glyph3" type="Sprite2D" parent="Glyphs" unique_id=825254558]
-position = Vector2(807, 316)
+position = Vector2(663, 123)
 scale = Vector2(0.25, 0.25)
 script = ExtResource("8_85dxq")
 metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
 [node name="Glyph4" type="Sprite2D" parent="Glyphs" unique_id=1010069830]
-position = Vector2(1066, 287)
+position = Vector2(790, 237)
 scale = Vector2(0.35, 0.35)
 script = ExtResource("8_85dxq")
 metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=150549049]
+tile_map_data = PackedByteArray("AAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAGAAAAAAABAAEAAAAFAAAAAAABAAEAAAAEAAAAAAABAAEAAAADAAAAAAABAAEAAAACAAAAAAABAAEAAAABAAAAAAAEAAAAAAAGAAMAAAADAAEAAAAFAAMAAAADAAEAAAAEAAMAAAADAAEAAAADAAMAAAADAAEAAAACAAMAAAADAAEAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAABAAMAAAADAAAAAAABAAIAAAAEAAEAAAABAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAAAAAABAAAAAAAHAAEAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_nmcvf")
+
+[node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("6_naknc")]
+position = Vector2(220, 442)
