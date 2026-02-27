@@ -5,11 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://dlbwhg1fyh6qj" path="res://assets/ruche.png" id="3_71ik5"]
 [ext_resource type="Texture2D" uid="uid://dfs0u8cqd34bd" path="res://assets/pot.png" id="4_tugx3"]
 [ext_resource type="Texture2D" uid="uid://dve0gls1lgy4e" path="res://assets/caillou.png" id="5_euqe1"]
-[ext_resource type="PackedScene" path="res://src/scenes/entity/fox_winter_tempest.tscn" id="6_euqe1"]
+[ext_resource type="PackedScene" uid="uid://dfo7v1ev4wlj4" path="res://src/scenes/entity/fox_winter_tempest.tscn" id="6_euqe1"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="7_u6eqv"]
-[ext_resource type="Script" path="res://src/scenes/levels/summer/killzone_tempest_level.gd" id="8_01s6m"]
+[ext_resource type="Script" uid="uid://dc6jro631qrgw" path="res://src/scenes/levels/summer/killzone_tempest_level.gd" id="8_01s6m"]
 [ext_resource type="PackedScene" uid="uid://bfbbfcoc26ggm" path="res://src/util/snowStorm.tscn" id="9_tugx3"]
 [ext_resource type="PackedScene" uid="uid://dc0j6pdj0558b" path="res://src/util/fogStorm.tscn" id="10_euqe1"]
+[ext_resource type="AudioStream" uid="uid://c0jeipv47rq7c" path="res://assets/sounds/651545__nsstudios__wind-draft-loop-3.wav" id="11_tugx3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbpqs"]
 size = Vector2(1175, 25)
@@ -128,5 +129,10 @@ position = Vector2(73, 454)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1962078725]
 position = Vector2(-46.5, 317)
 shape = SubResource("RectangleShape2D_71ik5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=794606910]
+stream = ExtResource("11_tugx3")
+volume_db = 5.0
+autoplay = true
 
 [connection signal="body_entered" from="kill" to="kill" method="_on_body_entered"]

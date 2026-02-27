@@ -26,6 +26,10 @@ var codes
 @onready var code_2: Sprite2D = $Glyphs/Code2
 @onready var code_3: Sprite2D = $Glyphs/Code3
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+const fail = preload("uid://bnv5ts05dluy3")
+const success = preload("uid://cxxfstfd3k01a")
+const touch = preload("uid://cp7w862ku4b5k")
 
 signal code_succeed()
 signal menu_exited()
@@ -62,6 +66,8 @@ func _on_button_x_pressed() -> void:
 	menu_exited.emit()
 	
 func button_pressed(code: String = ""):
+	audio_stream_player_2d.stream = touch
+	audio_stream_player_2d.play()
 	if len(current_code) == 4:
 		reset_labels()
 	current_code += code
@@ -77,11 +83,16 @@ func button_pressed(code: String = ""):
 			check_code()
 
 func check_code():
-	await get_tree().create_timer(1).timeout
 	if current_code == correct_code:
+		audio_stream_player_2d.stream = success
+		audio_stream_player_2d.play()
+		await get_tree().create_timer(1).timeout
 		code_succeed.emit()
 		set_visibility(false)
 	else:
+		audio_stream_player_2d.stream = fail
+		audio_stream_player_2d.play()
+		await get_tree().create_timer(1).timeout
 		reset_labels()
 		
 func set_corect_code(index: int = -1):

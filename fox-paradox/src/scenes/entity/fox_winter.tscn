@@ -50,3 +50,5 @@ shape = SubResource("CapsuleShape2D_tkivj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1443708754]
 stream = ExtResource("5_fdol8")
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="play_walking"]
