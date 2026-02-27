@@ -5,7 +5,9 @@ class_name HoldableObject
 var is_grabbed : bool = false
 var can_be_grabbed : bool = false
 var grabber : Fox
+var offset : Vector2 = Vector2(0,-10)
 const GRAVITY = 200.0
+
 
 signal dropped
 
@@ -14,15 +16,17 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 		
 	if is_grabbed:
-		global_position = grabber.position + Vector2(0,-10)
+			global_position = grabber.position + offset
+			
 		
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	if can_be_grabbed and event.is_action_pressed("Interact"):
+	if can_be_grabbed and event.is_action_pressed("Grab"):
 		is_grabbed = true
-	elif can_be_grabbed and event.is_action_released("Interact"):
+	elif can_be_grabbed and event.is_action_released("Grab"):
 		is_grabbed = false
+		print_debug("dropped")
 		dropped.emit()
 		
 

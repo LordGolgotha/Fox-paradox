@@ -11,7 +11,8 @@ func _on_body_entered(body: Node2D) -> void:
 		print_debug("jar in")
 		is_jar_in = true
 		jar_in = body
-		jar_in.dropped.connect(set_jar_pos)
+		if not jar_in.dropped.is_connected(set_jar_pos):
+			jar_in.dropped.connect(set_jar_pos)
 		
 func _on_body_exited(body: Node2D) -> void:
 	if body == jar_in:

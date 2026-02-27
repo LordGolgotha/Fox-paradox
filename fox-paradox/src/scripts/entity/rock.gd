@@ -2,6 +2,9 @@ extends HoldableObject
 
 class_name Rock
 
+func _ready() -> void:
+	offset = Vector2(0,-25)
+
 func _input(event: InputEvent) -> void:
 	super(event)
 	if event.is_action_pressed("Throw") and is_grabbed:

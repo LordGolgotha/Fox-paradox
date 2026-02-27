@@ -1,0 +1,122 @@
+[gd_scene format=4 uid="uid://odngvtlt2nku"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_oqiyf"]
+[ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_56woc"]
+[ext_resource type="Texture2D" uid="uid://c7s08i83gk6it" path="res://assets/oak_woods_v1.0/background/background_layer_2_winter.png" id="3_56woc"]
+[ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="4_5nxdi"]
+[ext_resource type="Texture2D" uid="uid://bo18746m1wg1" path="res://assets/oak_woods_v1.0/background/background_layer_3_winter.png" id="4_pemng"]
+[ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="6_ownd4"]
+[ext_resource type="PackedScene" uid="uid://dlvyfx1l23kro" path="res://src/scenes/entity/hive.tscn" id="7_paaiq"]
+[ext_resource type="PackedScene" uid="uid://18j5jnwhqk43" path="res://src/scenes/entity/rock.tscn" id="8_3eahb"]
+[ext_resource type="PackedScene" uid="uid://dgjfvi2rreyaf" path="res://src/scenes/entity/jar.tscn" id="9_yhyfi"]
+[ext_resource type="PackedScene" uid="uid://bjwuj850ri18p" path="res://src/scenes/entity/jar_spot.tscn" id="10_d836t"]
+[ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="12_eq012"]
+[ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="13_56woc"]
+
+[node name="BearLevelSummer" type="Node2D" unique_id=493597110]
+script = ExtResource("1_oqiyf")
+id = "bear_level_summer"
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1716620904]
+position = Vector2(573, 310)
+scale = Vector2(3.62, 3.62)
+texture = ExtResource("2_56woc")
+
+[node name="BackgroundLayer3" type="Sprite2D" parent="." unique_id=76277722]
+position = Vector2(718, 297.99997)
+scale = Vector2(3.62, 3.62)
+texture = ExtResource("4_pemng")
+
+[node name="BackgroundLayer2" type="Sprite2D" parent="." unique_id=458640912]
+position = Vector2(135.99994, 290.99997)
+scale = Vector2(3.62, 3.62)
+texture = ExtResource("3_56woc")
+
+[node name="BackgroundLayer4" type="Sprite2D" parent="." unique_id=2010837613]
+position = Vector2(1294, 289)
+scale = Vector2(3.62, 3.62)
+texture = ExtResource("3_56woc")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=975989873]
+tile_map_data = PackedByteArray("AAAAAAQAAQACAAAAAAABAAQAAQACAAAAAAACAAQAAQACAAAAAAAEAAQAAQACAAAAAAADAAQAAQACAAAAAAAFAAQAAQACAAAAAAAGAAQAAQACAAAAAAAHAAQAAQACAAAAAAAIAAQAAQACAAAAAAA=")
+tile_set = ExtResource("4_5nxdi")
+
+[node name="Node2D" parent="." unique_id=185771439 instance=ExtResource("6_ownd4")]
+position = Vector2(34, 512)
+scale = Vector2(3.2670586, 0.2)
+collision_layer = 15
+
+[node name="hive" parent="." unique_id=985769630 node_paths=PackedStringArray("jar_spot") instance=ExtResource("7_paaiq")]
+position = Vector2(161, 240)
+scale = Vector2(0.15, 0.15)
+collision_layer = 0
+jar_spot = NodePath("../JarSpot")
+hive_size = "SMALL"
+
+[node name="hive2" parent="." unique_id=447545952 node_paths=PackedStringArray("jar_spot") instance=ExtResource("7_paaiq")]
+position = Vector2(565, 273)
+scale = Vector2(0.15, 0.15)
+collision_layer = 0
+jar_spot = NodePath("../JarSpot2")
+hive_size = "TALL"
+
+[node name="hive3" parent="." unique_id=1592094891 node_paths=PackedStringArray("jar_spot") instance=ExtResource("7_paaiq")]
+position = Vector2(692, 201)
+scale = Vector2(0.15, 0.15)
+collision_layer = 0
+jar_spot = NodePath("../JarSpot3")
+hive_size = "MEDIUM"
+
+[node name="rock" parent="." unique_id=1529654570 groups=["rocks"] instance=ExtResource("8_3eahb")]
+position = Vector2(615, 510)
+scale = Vector2(0.1, 0.1)
+
+[node name="rock2" parent="." unique_id=1547723804 groups=["rocks"] instance=ExtResource("8_3eahb")]
+position = Vector2(505, 510)
+scale = Vector2(0.1, 0.1)
+
+[node name="rock4" parent="." unique_id=121189067 groups=["rocks"] instance=ExtResource("8_3eahb")]
+position = Vector2(1130, 510)
+scale = Vector2(0.1, 0.1)
+
+[node name="rock3" parent="." unique_id=2112230369 groups=["rocks"] instance=ExtResource("8_3eahb")]
+position = Vector2(760, 510)
+scale = Vector2(0.1, 0.1)
+
+[node name="rock5" parent="." unique_id=1826789941 groups=["rocks"] instance=ExtResource("8_3eahb")]
+position = Vector2(215, 510)
+scale = Vector2(0.1, 0.1)
+
+[node name="Jar" parent="." unique_id=281147090 groups=["jars"] instance=ExtResource("9_yhyfi")]
+position = Vector2(960, 511)
+jar_size = "MEDIUM"
+
+[node name="Jar2" parent="." unique_id=568209931 groups=["jars"] instance=ExtResource("9_yhyfi")]
+position = Vector2(860, 513)
+
+[node name="Jar3" parent="." unique_id=729710765 groups=["jars"] instance=ExtResource("9_yhyfi")]
+position = Vector2(1070, 510)
+jar_size = "TALL"
+
+[node name="JarSpot" parent="." unique_id=629362363 instance=ExtResource("10_d836t")]
+position = Vector2(153, 507)
+scale = Vector2(2, 2)
+
+[node name="JarSpot2" parent="." unique_id=1934862444 instance=ExtResource("10_d836t")]
+position = Vector2(565, 507)
+scale = Vector2(2, 2)
+
+[node name="JarSpot3" parent="." unique_id=2078684355 instance=ExtResource("10_d836t")]
+position = Vector2(692, 508)
+scale = Vector2(2, 2)
+
+[node name="PauseMenu" parent="." unique_id=1744993639 instance=ExtResource("12_eq012")]
+process_mode = 3
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("13_56woc")]
+position = Vector2(50, 492)
+scale = Vector2(0.5, 0.5)

@@ -1,6 +1,6 @@
 extends Node
 
 var level_list={
-	"test_level":"res://src/scenes/level/TestLevel.tscn",
-	"test_level2":"res://src/scenes/level/TestLevel2.tscn",
+	"tuto_summer":"res://src/scenes/levels/summer/tuto_summer.tscn",
+	"tuto_winter":"res://src/scenes/levels/winter/tuto_winter.tscn",
 }
