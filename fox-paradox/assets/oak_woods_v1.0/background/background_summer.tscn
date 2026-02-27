@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://crpg87kgh3tey"]
+
+[ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="1_v8ljs"]
+[ext_resource type="Texture2D" uid="uid://cw2buwcdvu8jj" path="res://assets/oak_woods_v1.0/background/background_layer_2.png" id="2_jfej4"]
+[ext_resource type="Texture2D" uid="uid://ccee48odikrha" path="res://assets/oak_woods_v1.0/background/background_layer_3.png" id="3_03fh3"]
+
+[node name="Node2D2" type="Node2D" unique_id=354412691]
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1328496269]
+position = Vector2(576, 320)
+scale = Vector2(3.6000004, 3.5555556)
+texture = ExtResource("1_v8ljs")
+
+[node name="BackgroundLayer2" type="Sprite2D" parent="." unique_id=280090509]
+position = Vector2(576, 320)
+scale = Vector2(3.6, 3.5555556)
+texture = ExtResource("2_jfej4")
+
+[node name="BackgroundLayer3" type="Sprite2D" parent="." unique_id=1939503773]
+position = Vector2(575.99994, 320)
+scale = Vector2(3.6000001, 3.5555553)
+texture = ExtResource("3_03fh3")

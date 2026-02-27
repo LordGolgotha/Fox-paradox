@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ds1wgad320fl0"]
+
+[ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="1_c77ut"]
+[ext_resource type="Texture2D" uid="uid://bo18746m1wg1" path="res://assets/oak_woods_v1.0/background/background_layer_3_winter.png" id="2_h3lnp"]
+[ext_resource type="Texture2D" uid="uid://c7s08i83gk6it" path="res://assets/oak_woods_v1.0/background/background_layer_2_winter.png" id="3_as6hx"]
+
+[node name="Node2D" type="Node2D" unique_id=1571979652]
+position = Vector2(573, 319)
+scale = Vector2(3.578125, 3.5444446)
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=1134830312]
+position = Vector2(0.838427, 0.28212747)
+scale = Vector2(1.0061135, 1.0031347)
+texture = ExtResource("1_c77ut")
+
+[node name="BackgroundLayer3Winter" type="Sprite2D" parent="." unique_id=1998740085]
+position = Vector2(0.8384117, 0.2821396)
+scale = Vector2(1.0061135, 1.0031347)
+texture = ExtResource("2_h3lnp")
+
+[node name="BackgroundLayer2Winter" type="Sprite2D" parent="." unique_id=2128303482]
+position = Vector2(0.8384339, 0.28214213)
+scale = Vector2(1.0061135, 1.0031348)
+texture = ExtResource("3_as6hx")
