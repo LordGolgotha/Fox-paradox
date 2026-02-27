@@ -1,3 +1,21 @@
 [gd_resource type="TileSet" format=3 uid="uid://dhtl8s5w4iiuf"]
 
+[ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="1_ibuw7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_250dv"]
+texture = ExtResource("1_ibuw7")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
 [resource]
+tile_size = Vector2i(128, 128)
+sources/1 = SubResource("TileSetAtlasSource_250dv")
