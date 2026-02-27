@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dyspghcnlj6ht" path="res://src/scenes/entity/paper_menu.tscn" id="12_pemng"]
 [ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="13_kun8n"]
 [ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="14_ownd4"]
+[ext_resource type="Texture2D" uid="uid://1sxjweclhq1m" path="res://assets/bells.png" id="14_yhyfi"]
 [ext_resource type="Script" uid="uid://c0vvijbemdynb" path="res://src/scripts/scenes/level/level_components/code_controller_bear_winter.gd" id="17_ownd4"]
 [ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="19_3eahb"]
 [ext_resource type="PackedScene" uid="uid://wnqclspxn3ku" path="res://src/util/snow.tscn" id="19_bec7l"]
@@ -97,7 +98,7 @@ rotation = -0.45387572
 
 [node name="sleepy_bear" parent="." unique_id=347275757 node_paths=PackedStringArray("controller") instance=ExtResource("9_paaiq")]
 position = Vector2(1056, 461.99997)
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.075, 0.075)
 controller = NodePath("../CodeController")
 
 [node name="fox" parent="." unique_id=81802165 instance=ExtResource("5_kun8n")]
@@ -115,6 +116,11 @@ position = Vector2(569, -29)
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("14_ownd4")]
 position = Vector2(857, 407)
 code_index = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="code_typer" unique_id=875289314]
+position = Vector2(36, 32)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("14_yhyfi")
 
 [node name="CodeController" type="Node2D" parent="." unique_id=592291936]
 script = ExtResource("17_ownd4")
