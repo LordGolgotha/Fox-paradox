@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="12_5gvgk"]
 [ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="13_5gvgk"]
 [ext_resource type="Texture2D" uid="uid://cbinpyb3nxmqa" path="res://assets/entities/cerf_qui_court.png" id="13_ref50"]
+[ext_resource type="Texture2D" uid="uid://biwjhscv743aw" path="res://assets/oak_woods_v1.0/decorations/sign.png" id="14_qkli3"]
 [ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="14_ref50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ref50"]
@@ -149,6 +150,11 @@ visible = false
 
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("12_5gvgk")]
 position = Vector2(725, 439)
+
+[node name="Sign" type="Sprite2D" parent="code_typer" unique_id=2040207290]
+position = Vector2(43, 23.999989)
+scale = Vector2(3.4545455, 3.4545453)
+texture = ExtResource("14_qkli3")
 
 [node name="cerf" type="Sprite2D" parent="." unique_id=1210153845]
 position = Vector2(-287, 415)
