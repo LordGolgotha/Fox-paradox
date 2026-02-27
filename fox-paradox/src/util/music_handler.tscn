@@ -9,10 +9,11 @@ script = ExtResource("1_w01qy")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1031621758]
 stream = ExtResource("2_fchfm")
-volume_db = -0.995
+volume_db = -1.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1862435158]
 stream = ExtResource("3_jnhbk")
+volume_db = -15.0
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="winter_music_start"]
 [connection signal="finished" from="AudioStreamPlayer2" to="." method="summer_music_start"]

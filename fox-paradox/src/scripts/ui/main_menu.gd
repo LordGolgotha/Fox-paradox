@@ -20,7 +20,7 @@ func _on_confirm_seed_button_button_down() -> void:
 	if seed_line_edit.text.is_empty():
 		error_label.text = "You must enter a seed"
 	else:
-		PasswordGenerator.generate_passes(seed_line_edit.text)
+		PasswordGenerator.generate_passes(seed_line_edit.text,20)
 		error_label.text = ""
 		seed_vbox.visible = false
 		summer_winter_vbox.visible = true

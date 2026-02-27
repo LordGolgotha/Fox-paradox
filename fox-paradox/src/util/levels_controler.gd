@@ -11,6 +11,7 @@ var level_list={
 	"tempete_level_winter":"res://src/scenes/levels/winter/tempete_level.tscn",
 	"tempete_level_summer":"res://src/scenes/levels/summer/tempete_level.tscn",
 	"bear_level_winter":"res://src/scenes/level/bear_level_winter.tscn",
-	"bear_level_summer":"res://src/scenes/level/bear_level_summer.tscn"
-	
+	"bear_level_summer":"res://src/scenes/level/bear_level_summer.tscn",
+	"end_winter":"res://src/scenes/levels/winter/end.tscn",
+	"end_summer":"res://src/scenes/levels/summer/end.tscn"
 }
