@@ -7,6 +7,7 @@ extends Node
 
 func _on_summer_button_button_down() -> void:
 	GameManager.go_to_level("tuto_summer")
+	MusicHandler.summer_music_start()
 	
 func _on_winter_button_button_down() -> void:
 	GameManager.go_to_level("tuto_winter")
