@@ -10,9 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://ciwu43f3eken1" path="res://assets/entities/cerf.png" id="8_r8hqq"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="9_276uf"]
 [ext_resource type="PackedScene" uid="uid://dlb53wlpte0y2" path="res://src/scenes/entity/glyph.tscn" id="10_r8hqq"]
+[ext_resource type="Texture2D" uid="uid://bydkgoqygdd8n" path="res://assets/utils/log.png" id="11_276uf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egav"]
 radius = 124.036285
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xna2"]
+size = Vector2(766, 58)
 
 [node name="CascadeLevel" type="Node2D" unique_id=595706561 node_paths=PackedStringArray("fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
 script = ExtResource("1_hrvcr")
@@ -82,5 +86,33 @@ position = Vector2(498, 169)
 
 [node name="Glyph4" parent="glyphes" unique_id=114428311 instance=ExtResource("10_r8hqq")]
 position = Vector2(655, 261)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=57964023]
+position = Vector2(394, 253)
+scale = Vector2(0.5, 0.5)
+
+[node name="Log5" type="Sprite2D" parent="StaticBody2D" unique_id=1487582536]
+position = Vector2(1092, 560)
+texture = ExtResource("11_276uf")
+
+[node name="Log4" type="Sprite2D" parent="StaticBody2D" unique_id=906384055]
+position = Vector2(620, 564)
+texture = ExtResource("11_276uf")
+
+[node name="Log" type="Sprite2D" parent="StaticBody2D" unique_id=113909606]
+position = Vector2(731, 564)
+texture = ExtResource("11_276uf")
+
+[node name="Log2" type="Sprite2D" parent="StaticBody2D" unique_id=914600894]
+position = Vector2(836, 569)
+texture = ExtResource("11_276uf")
+
+[node name="Log3" type="Sprite2D" parent="StaticBody2D" unique_id=765373669]
+position = Vector2(958, 564)
+texture = ExtResource("11_276uf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=483855965]
+position = Vector2(874, 554)
+shape = SubResource("RectangleShape2D_1xna2")
 
 [connection signal="body_entered" from="Interactable" to="Interactable" method="enter"]

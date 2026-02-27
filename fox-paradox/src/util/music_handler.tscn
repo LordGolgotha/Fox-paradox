@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d172egse7wni5" path="res://src/util/music_handler.gd" id="1_w01qy"]
 [ext_resource type="AudioStream" uid="uid://b57t4xi01o01q" path="res://assets/sounds/winter ambient.wav" id="2_fchfm"]
+[ext_resource type="AudioStream" uid="uid://b01ynib31urdh" path="res://assets/sounds/Sappheiros - Embrace.mp3" id="3_jnhbk"]
 
 [node name="MusicHandler" type="Node2D" unique_id=1865032687]
 script = ExtResource("1_w01qy")
@@ -10,4 +11,8 @@ script = ExtResource("1_w01qy")
 stream = ExtResource("2_fchfm")
 volume_db = -0.995
 
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1862435158]
+stream = ExtResource("3_jnhbk")
+
 [connection signal="finished" from="AudioStreamPlayer" to="." method="winter_music_start"]
+[connection signal="finished" from="AudioStreamPlayer2" to="." method="summer_music_start"]
