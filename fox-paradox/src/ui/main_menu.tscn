@@ -54,6 +54,8 @@ grow_vertical = 0
 
 [node name="QuitButton" type="Button" parent="QuitHBox" unique_id=1879101032]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../SummerWinterVBox/BackButton")
+focus_neighbor_bottom = NodePath("../../SummerWinterVBox/HBoxContainer/SummerButton")
 text = "Quit"
 
 [node name="SeedVBox" type="VBoxContainer" parent="." unique_id=461259464]
@@ -105,18 +107,28 @@ layout_mode = 2
 [node name="SummerButton" type="Button" parent="SummerWinterVBox/HBoxContainer" unique_id=448384579]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../WinterButton")
+focus_neighbor_top = NodePath("../../../QuitHBox/QuitButton")
+focus_neighbor_right = NodePath("../WinterButton")
+focus_neighbor_bottom = NodePath("../../BackButton")
 text = "Summer
 "
 
 [node name="WinterButton" type="Button" parent="SummerWinterVBox/HBoxContainer" unique_id=1159673306]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../SummerButton")
+focus_neighbor_top = NodePath("../../../QuitHBox/QuitButton")
+focus_neighbor_right = NodePath("../SummerButton")
+focus_neighbor_bottom = NodePath("../../BackButton")
 text = "Winter
 "
 
 [node name="BackButton" type="Button" parent="SummerWinterVBox" unique_id=164032910]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../HBoxContainer/SummerButton")
+focus_neighbor_bottom = NodePath("../../QuitHBox/QuitButton")
 text = "Back
 "
 
