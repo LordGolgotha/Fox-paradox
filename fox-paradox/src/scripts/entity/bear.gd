@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Bear
+
 @export var rock_pos : Array[Vector2]
 @export var jar_pos : Array[Vector2]
 
@@ -7,6 +9,8 @@ const JAR_SIZES : Array[String] = ["SMALL","MEDIUM","TALL"]
 
 var jar_in : Jar
 var nb_full_jar : int = 0
+
+signal succeed
 
 func _on_body_entered(body: Node2D) -> void:
 	print_debug("bear")
@@ -23,8 +27,10 @@ func receive_full_jar() -> void:
 	nb_full_jar += 1
 	if nb_full_jar == 3:
 		print_debug("Félicitations tu as réussi !")
+		succeed.emit()
 	
 func reset() -> void:
+	nb_full_jar = 0
 	var jars = get_tree().get_nodes_in_group("jars")
 	for i in jars.size():
 		jars[i].queue_free()
