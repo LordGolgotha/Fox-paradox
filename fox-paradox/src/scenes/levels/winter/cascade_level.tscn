@@ -1,0 +1,150 @@
+[gd_scene format=4 uid="uid://dgqvwm5ar0wl0"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_j3jlk"]
+[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_11pjv"]
+[ext_resource type="TileSet" uid="uid://2brsqq53elf5" path="res://assets/tilemaps/winter_water_tileset.tres" id="3_11pjv"]
+[ext_resource type="TileSet" uid="uid://bvvmpuk1m4p88" path="res://assets/tilemaps/winter_grass_tileset.tres" id="4_f7k0e"]
+[ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="5_ref50"]
+[ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="6_phx3h"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="7_f7k0e"]
+[ext_resource type="PackedScene" uid="uid://ddoi1w30yayym" path="res://src/scenes/EnterCode.tscn" id="9_11pjv"]
+[ext_resource type="Script" uid="uid://cxis7eutidl8j" path="res://src/scenes/levels/winter/cerf.gd" id="10_f7k0e"]
+[ext_resource type="Texture2D" uid="uid://c4gfpbr3y31p3" path="res://assets/tilemaps/ice.png" id="11_5gvgk"]
+[ext_resource type="PackedScene" uid="uid://caru34a384ux0" path="res://src/scenes/entity/interactable/code_typer.tscn" id="12_5gvgk"]
+[ext_resource type="PackedScene" uid="uid://bpsruroqevudj" path="res://src/ui/pause_menu.tscn" id="13_5gvgk"]
+[ext_resource type="Texture2D" uid="uid://cbinpyb3nxmqa" path="res://assets/entities/cerf_qui_court.png" id="13_ref50"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ref50"]
+size = Vector2(380, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phx3h"]
+size = Vector2(50, 520.5)
+
+[sub_resource type="Animation" id="Animation_phx3h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cerf:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-287, 415)]
+}
+
+[sub_resource type="Animation" id="Animation_qkli3"]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cerf:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-287, 415), Vector2(1399, 432.00003)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_da2x8"]
+_data = {
+&"RESET": SubResource("Animation_phx3h"),
+&"run": SubResource("Animation_qkli3")
+}
+
+[node name="CascadeLevel" type="Node2D" unique_id=595706561 node_paths=PackedStringArray("fox", "enter_code", "code_controller", "code_typer")]
+script = ExtResource("1_j3jlk")
+fox = NodePath("fox")
+enter_code = NodePath("EnterCode")
+code_controller = NodePath("CodeController")
+code_typer = NodePath("code_typer")
+code_id = 4
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="Node2D2" parent="." unique_id=354412691 instance=ExtResource("2_11pjv")]
+
+[node name="water" type="TileMapLayer" parent="." unique_id=451641664]
+tile_map_data = PackedByteArray("AAAFAAQAAAAAAAAAAAAHAAQAAAABAAAAAAAHAAIAAAADAAAAAGAHAAEAAAADAAAAAGAHAAAAAAADAAAAAGAGAAQAAAADAAAAAAAHAAMAAAACAAAAAAA=")
+tile_set = ExtResource("3_11pjv")
+
+[node name="ground" type="TileMapLayer" parent="." unique_id=1534722881]
+tile_map_data = PackedByteArray("AAAAAAQAAAAAAAAAAAABAAQAAAADAAAAAAACAAQAAAAAAAAAAAADAAQAAAACAAAAAAAEAAQAAAABAAAAAAAIAAAAAAAEAAAAAAAIAAEAAAAEAAAAAAA=")
+tile_set = ExtResource("4_f7k0e")
+
+[node name="Cave" type="Sprite2D" parent="." unique_id=1541351215]
+clip_children = 2
+position = Vector2(1345, 383)
+texture = ExtResource("5_ref50")
+
+[node name="ColorRect" type="ColorRect" parent="Cave" unique_id=660514992]
+offset_left = -481.0
+offset_top = -194.0
+offset_right = 267.0
+offset_bottom = 247.0
+color = Color(0.20392157, 0.20392157, 0.20392157, 0.5372549)
+
+[node name="cave" type="TileMapLayer" parent="." unique_id=253867207]
+tile_map_data = PackedByteArray("AAAIAAQAAQAAAAAAAAAIAAIAAQAEAAAAAAD//wQAAQAAAAAAAAD+/wQAAQAAAAAAAAD9/wQAAQAAAAAAAAA=")
+tile_set = ExtResource("6_phx3h")
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("7_f7k0e")]
+position = Vector2(47, 452)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2000043674]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=854417721]
+position = Vector2(828, 529)
+shape = SubResource("RectangleShape2D_ref50")
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D" unique_id=818468459]
+position = Vector2(921.7321, 129.33975)
+rotation = 1.5707964
+scale = Vector2(2.0361636, 1.6011401)
+texture = ExtResource("11_5gvgk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=1903829760]
+position = Vector2(922.51666, 385)
+rotation = 1.5707964
+scale = Vector2(1.978972, 1.6139783)
+texture = ExtResource("11_5gvgk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2137917334]
+position = Vector2(831.5, 528)
+scale = Vector2(2.3046873, 1)
+texture = ExtResource("11_5gvgk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=787087705]
+position = Vector2(919, 259.25)
+shape = SubResource("RectangleShape2D_phx3h")
+
+[node name="EnterCode" parent="." unique_id=1330988193 instance=ExtResource("9_11pjv")]
+offset_left = -122.0
+offset_top = 483.0
+offset_right = -122.0
+offset_bottom = 483.0
+
+[node name="CodeController" type="Node2D" parent="." unique_id=607888067]
+visible = false
+script = ExtResource("10_f7k0e")
+metadata/_custom_type_script = "uid://dotgblk65lhev"
+
+[node name="PauseMenu" parent="." unique_id=1744993639 instance=ExtResource("13_5gvgk")]
+visible = false
+
+[node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("12_5gvgk")]
+position = Vector2(725, 439)
+
+[node name="cerf" type="Sprite2D" parent="." unique_id=1210153845]
+position = Vector2(-287, 415)
+scale = Vector2(0.14713417, 0.14713418)
+texture = ExtResource("13_ref50")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1957813558]
+libraries/ = SubResource("AnimationLibrary_da2x8")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="CodeController" method="_on_animation_player_animation_finished"]

@@ -1,0 +1,99 @@
+[gd_scene format=4 uid="uid://bju43d2t3yw5b"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_1la1x"]
+[ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_q00tx"]
+[ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="3_7ybj0"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="4_fyv8l"]
+[ext_resource type="Script" uid="uid://wnbkr0jjr4bq" path="res://src/scripts/scenes/level/level_components/bounds.gd" id="5_7ybj0"]
+[ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="6_fyv8l"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwit7"]
+texture = ExtResource("3_7ybj0")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -33, -64, -32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -40, -64, -40)
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k18ix"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_fwit7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyv8l"]
+size = Vector2(261, 40)
+
+[node name="Node2D" type="Node2D" unique_id=498304774 node_paths=PackedStringArray("bounds", "fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
+script = ExtResource("1_1la1x")
+bounds = [NodePath("Bound")]
+id = "deep_well"
+fox = NodePath("fox")
+glyph_0 = NodePath("Glyphs/Glyph")
+glyph_1 = NodePath("Glyphs/Glyph2")
+glyph_2 = NodePath("Glyphs/Glyph3")
+glyph_3 = NodePath("Glyphs/Glyph4")
+code_id = 0
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=216304453]
+modulate = Color(0.1764706, 0.1764706, 0.16862746, 1)
+position = Vector2(576, 323.99997)
+scale = Vector2(3.6, 3.5999994)
+texture = ExtResource("2_q00tx")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1394841084]
+tile_map_data = PackedByteArray("AAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAGAAAAAAABAAEAAAAFAAAAAAABAAEAAAAEAAAAAAABAAEAAAADAAAAAAABAAEAAAAGAAMAAAACAAAAAAAFAAMAAAADAAEAAAAEAAMAAAADAAEAAAADAAMAAAADAAEAAAACAAMAAAADAAEAAAAAAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAABAAMAAAADAAAAAAABAAIAAAAEAAAAAAABAAEAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAAAAAABAAAAAAAHAAEAAAACAAEAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAHAAMAAAAAAAEAAAAHAAIAAAACAAAAAAABAAAAAAAEAAEAAAABAP//AAAEAAEAAAACAP//AAACAAEAAAACAAIAAAABAAEAAAACAAEAAAADAAEAAAADAAEAAAADAAEAAAAEAAEAAAADAAEAAAADAAIAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAFAAEAAAADAAEAAAA=")
+tile_set = SubResource("TileSet_k18ix")
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("4_fyv8l")]
+position = Vector2(223, 181)
+
+[node name="Bound" type="Area2D" parent="." unique_id=577586700]
+script = ExtResource("5_7ybj0")
+to_screen = "summer_lake_well"
+metadata/_custom_type_script = "uid://wnbkr0jjr4bq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bound" unique_id=1912943113]
+position = Vector2(260, 2)
+shape = SubResource("RectangleShape2D_fyv8l")
+
+[node name="Glyphs" type="Node" parent="." unique_id=1489452106]
+
+[node name="Glyph" type="Sprite2D" parent="Glyphs" unique_id=942433356]
+z_index = 6
+position = Vector2(258, 386)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("6_fyv8l")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
+
+[node name="Glyph2" type="Sprite2D" parent="Glyphs" unique_id=409494295]
+z_index = 6
+position = Vector2(379.0001, 129.00002)
+scale = Vector2(0.35, 0.35)
+script = ExtResource("6_fyv8l")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
+
+[node name="Glyph3" type="Sprite2D" parent="Glyphs" unique_id=513192404]
+z_index = 6
+position = Vector2(575, 579)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("6_fyv8l")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
+
+[node name="Glyph4" type="Sprite2D" parent="Glyphs" unique_id=754297923]
+z_index = 6
+position = Vector2(894.00006, 237.00002)
+scale = Vector2(0.35, 0.35)
+script = ExtResource("6_fyv8l")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"

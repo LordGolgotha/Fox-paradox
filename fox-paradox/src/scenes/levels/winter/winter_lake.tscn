@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bwxojhe0bq405"]
+
+[ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_epun6"]
+[ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_mxetd"]
+[ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="2_ygt0a"]
+[ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="3_ygt0a"]
+[ext_resource type="Texture2D" uid="uid://dbjb3v7mo7smq" path="res://assets/oak_woods_v1.0/background/background_layer_3_winter.png" id="4_316p8"]
+[ext_resource type="Texture2D" uid="uid://c7s08i83gk6it" path="res://assets/oak_woods_v1.0/background/background_layer_2_winter.png" id="6_316p8"]
+
+[node name="Node2D" type="Node2D" unique_id=1203024585]
+script = ExtResource("1_epun6")
+metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=2035793499]
+position = Vector2(572.5, 319)
+scale = Vector2(3.578125, 3.5444446)
+texture = ExtResource("2_mxetd")
+
+[node name="BackgroundLayer3Winter" type="Sprite2D" parent="." unique_id=90219413]
+position = Vector2(574.5, 330.5)
+scale = Vector2(3.578125, 3.638889)
+texture = ExtResource("4_316p8")
+
+[node name="BackgroundLayer2Winter" type="Sprite2D" parent="." unique_id=2011899895]
+position = Vector2(574, 326)
+scale = Vector2(3.56875, 3.5777779)
+texture = ExtResource("6_316p8")
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("3_ygt0a")]
+position = Vector2(88, 205)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=41021627]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 2, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 1, 0, 2, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_ygt0a")

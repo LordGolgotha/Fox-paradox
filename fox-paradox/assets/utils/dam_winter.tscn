@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3iijm2afbvb6"]
 
 [ext_resource type="Texture2D" uid="uid://dhi88n252lsdw" path="res://assets/utils/image.png" id="1_gy0oe"]
-[ext_resource type="Texture2D" uid="uid://chv67v4tkux8" path="res://assets/entities/log.png" id="2_jxnsv"]
+[ext_resource type="Texture2D" uid="uid://bydkgoqygdd8n" path="res://assets/utils/log.png" id="2_gy0oe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfgux"]
 size = Vector2(209, 507)
@@ -20,113 +20,113 @@ shape = SubResource("RectangleShape2D_xfgux")
 [node name="Log7" type="Sprite2D" parent="." unique_id=1371094868]
 position = Vector2(77.3927, 313.21527)
 scale = Vector2(0.27511406, 0.2778858)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log8" type="Sprite2D" parent="." unique_id=1898137906]
 position = Vector2(151, 30.999985)
 scale = Vector2(0.38909534, 0.36854213)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log9" type="Sprite2D" parent="." unique_id=1539093139]
 position = Vector2(144.9668, 280.4668)
 scale = Vector2(0.87551874, 0.85208124)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log" type="Sprite2D" parent="." unique_id=947674024]
 position = Vector2(122.5, 170.5)
 scale = Vector2(0.8203125, 0.8203125)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log2" type="Sprite2D" parent="." unique_id=149164746]
 position = Vector2(65, 67)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log3" type="Sprite2D" parent="." unique_id=650904308]
 position = Vector2(170.5, 88.5)
 scale = Vector2(0.6171875, 0.6171875)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log10" type="Sprite2D" parent="." unique_id=1417778931]
 position = Vector2(187.46875, 209.53128)
 scale = Vector2(0.3520507, 0.3520507)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log4" type="Sprite2D" parent="." unique_id=737552203]
 position = Vector2(36, 168)
 scale = Vector2(0.53125, 0.53125)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log5" type="Sprite2D" parent="." unique_id=1944684480]
 position = Vector2(46.000004, 246.00002)
 scale = Vector2(0.65234375, 0.65234375)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log6" type="Sprite2D" parent="." unique_id=2007081248]
 position = Vector2(32, 313.99997)
 scale = Vector2(0.43686754, 0.4251727)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log11" type="Sprite2D" parent="." unique_id=220646280]
 position = Vector2(135, 453)
 scale = Vector2(0.63307166, 0.621353)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log12" type="Sprite2D" parent="." unique_id=594132110]
 position = Vector2(178, 386)
 scale = Vector2(0.48463443, 0.49635336)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log13" type="Sprite2D" parent="." unique_id=1563473298]
 position = Vector2(193, 338.05353)
 scale = Vector2(0.32812503, 0.31934115)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log23" type="Sprite2D" parent="." unique_id=1290772384]
 position = Vector2(64.99999, 348.99997)
 scale = Vector2(0.22021317, 0.20858085)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log14" type="Sprite2D" parent="." unique_id=1011956940]
 position = Vector2(112, 364)
 scale = Vector2(0.46926877, 0.45670652)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log15" type="Sprite2D" parent="." unique_id=587523812]
 position = Vector2(134, 402)
 scale = Vector2(0.22708128, 0.22100236)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log16" type="Sprite2D" parent="." unique_id=1895175726]
 position = Vector2(150, 345)
 scale = Vector2(0.25051883, 0.24381247)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log17" type="Sprite2D" parent="." unique_id=873287873]
 position = Vector2(93, 404)
 scale = Vector2(0.21145627, 0.20579562)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log18" type="Sprite2D" parent="." unique_id=1399442532]
 position = Vector2(193.2334, 158.8847)
 scale = Vector2(0.3557281, 0.34194848)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log19" type="Sprite2D" parent="." unique_id=494150971]
 position = Vector2(52.483406, 454.07556)
 scale = Vector2(0.8674466, 0.8425693)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log20" type="Sprite2D" parent="." unique_id=559109036]
 position = Vector2(31.000008, 376)
 scale = Vector2(0.46926877, 0.45670652)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log21" type="Sprite2D" parent="." unique_id=945513989]
 position = Vector2(184.2666, 481)
 scale = Vector2(0.42604065, 0.40625024)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")
 
 [node name="Log22" type="Sprite2D" parent="." unique_id=285312449]
 position = Vector2(187, 439.00003)
 scale = Vector2(0.22708128, 0.22100236)
-texture = ExtResource("2_jxnsv")
+texture = ExtResource("2_gy0oe")

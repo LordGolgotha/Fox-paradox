@@ -20,6 +20,8 @@ class_name Level
 
 @export var code_id: int = -1
 
+@export var pause_menu: PauseMenu
+
 
 func _ready():
 	for b in bounds:
@@ -40,11 +42,20 @@ func _ready():
 			glyph_2.set_glyph(str(password[2]))
 		if glyph_3 != null:
 			glyph_3.set_glyph(str(password[3]))
+	if pause_menu != null:
+		pause_menu.stop.connect(pause)
+		pause_menu.unstop.connect(unpause)
 			
 	
 func unlock():
 	code_typer.unpause()
 	fox.stop(false)
+	
+func pause():
+	fox.stop(true)
+
+func unpause():
+	fox.out_of_pause()
 	
 func solve():
 	unlock()

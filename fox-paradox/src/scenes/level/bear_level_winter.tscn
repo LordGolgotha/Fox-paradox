@@ -95,6 +95,12 @@ rotation = -0.45387572
 position = Vector2(1056, 461.99997)
 scale = Vector2(0.075, 0.075)
 controller = NodePath("../CodeController")
+scale = Vector2(0.05, 0.05)
+controller = NodePath("../CodeController")
+
+[node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_kun8n")]
+position = Vector2(55, 487)
+scale = Vector2(0.5, 0.5)
 
 [node name="fox" parent="." unique_id=1154230614 instance=ExtResource("5_kun8n")]
 position = Vector2(99, 492)
@@ -110,6 +116,7 @@ position = Vector2(569, -29)
 
 [node name="code_typer" parent="." unique_id=1137686485 instance=ExtResource("14_ownd4")]
 position = Vector2(851, 433)
+position = Vector2(870, 442)
 code_index = 2
 
 [node name="CodeController" type="Node2D" parent="." unique_id=592291936]
