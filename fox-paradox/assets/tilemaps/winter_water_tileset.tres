@@ -1,0 +1,20 @@
+[gd_resource type="TileSet" format=3 uid="uid://2brsqq53elf5"]
+
+[ext_resource type="Texture2D" uid="uid://b6sykrxdxpqhk" path="res://assets/tilemaps/water_winter.png" id="1_aojli"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6yi4"]
+texture = ExtResource("1_aojli")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, -20, -64, -18, 17, 64, 20, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(19, 18, 19, -64, 64, -64, 64, 64, -64, 64, -64, 17)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 28, 64, 29, 64, 64, -64, 64)
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_e6yi4")
