@@ -1,16 +1,17 @@
 [gd_scene format=4 uid="uid://bewb5fbnu047d"]
 
 [ext_resource type="Script" uid="uid://bhkq3b8il8gv8" path="res://src/scripts/scenes/level/level_components/level.gd" id="1_hrvcr"]
-[ext_resource type="PackedScene" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_2bnhe"]
+[ext_resource type="PackedScene" uid="uid://crpg87kgh3tey" path="res://assets/oak_woods_v1.0/background/background_summer.tscn" id="2_2bnhe"]
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="3_ookl1"]
-[ext_resource type="TileSet" uid="uid://csndobt2d2byh" path="res://assets/tilemaps/summer_water_tileset.tres" id="4_8hp77"]
+[ext_resource type="TileSet" uid="uid://d20ktl2hcq1js" path="res://assets/tilemaps/summer_water_tileset.tres" id="4_8hp77"]
 [ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="5_8hp77"]
 [ext_resource type="TileSet" uid="uid://dhtl8s5w4iiuf" path="res://assets/tilemaps/cave_tileset.tres" id="5_ookl1"]
-[ext_resource type="Script" uid="uid://csxt6mlp3w0rj" path="res://src/scripts/entity/interactable/cerf_cascade_summer.gd" id="8_nfg40"]
+[ext_resource type="Script" path="res://src/scripts/entity/interactable/cerf_cascade_summer.gd" id="8_nfg40"]
 [ext_resource type="Texture2D" uid="uid://ciwu43f3eken1" path="res://assets/entities/cerf.png" id="8_r8hqq"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="9_276uf"]
-[ext_resource type="PackedScene" uid="uid://dlb53wlpte0y2" path="res://src/scenes/entity/glyph.tscn" id="10_r8hqq"]
+[ext_resource type="PackedScene" path="res://src/scenes/entity/glyph.tscn" id="10_r8hqq"]
 [ext_resource type="Texture2D" uid="uid://bydkgoqygdd8n" path="res://assets/utils/log.png" id="11_276uf"]
+[ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="12_1xna2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egav"]
 radius = 124.036285
@@ -18,8 +19,15 @@ radius = 124.036285
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xna2"]
 size = Vector2(766, 58)
 
-[node name="CascadeLevel" type="Node2D" unique_id=595706561 node_paths=PackedStringArray("fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsp1f"]
+size = Vector2(109, 694)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_276uf"]
+size = Vector2(117, 617)
+
+[node name="CascadeLevel" type="Node2D" unique_id=595706561 node_paths=PackedStringArray("bounds", "fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
 script = ExtResource("1_hrvcr")
+bounds = [NodePath("Bounds")]
 fox = NodePath("fox_winter")
 glyph_0 = NodePath("glyphes/Glyph")
 glyph_1 = NodePath("glyphes/Glyph2")
@@ -114,5 +122,20 @@ texture = ExtResource("11_276uf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=483855965]
 position = Vector2(874, 554)
 shape = SubResource("RectangleShape2D_1xna2")
+
+[node name="Bounds" parent="." unique_id=1244421549 instance=ExtResource("12_1xna2")]
+position = Vector2(-285, 806)
+to_screen = "summer_lake_well"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=1668543079]
+position = Vector2(1460, -488)
+shape = SubResource("RectangleShape2D_wsp1f")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=795122654]
+position = Vector2(-91, 410)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2093430555]
+position = Vector2(41, -98)
+shape = SubResource("RectangleShape2D_276uf")
 
 [connection signal="body_entered" from="Interactable" to="Interactable" method="enter"]

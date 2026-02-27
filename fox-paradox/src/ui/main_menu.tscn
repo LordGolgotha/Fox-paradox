@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3gjq3a63uaiy"]
 
 [ext_resource type="Script" uid="uid://b2p2lh5rb2ffi" path="res://src/scripts/ui/main_menu.gd" id="1_qkuje"]
+[ext_resource type="Texture2D" uid="uid://dchdvpm7w0tw0" path="res://assets/utils/title.png" id="2_qoywa"]
 
 [sub_resource type="Gradient" id="Gradient_1vaol"]
 offsets = PackedFloat32Array(0, 0.9939759)
@@ -27,17 +28,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_rm437")
 
-[node name="Label" type="Label" parent="." unique_id=1469354618]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -55.5
-offset_right = 55.5
-offset_bottom = 23.0
-grow_horizontal = 2
-scale = Vector2(1.0050627, 0.99652886)
-text = "FOX PARADOX"
+[node name="Container" type="BoxContainer" parent="." unique_id=1422327105]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 270.0
+
+[node name="Title" type="Sprite2D" parent="Container" unique_id=347106256]
+position = Vector2(601, 142)
+scale = Vector2(0.21969695, 0.21969698)
+texture = ExtResource("2_qoywa")
 
 [node name="QuitHBox" type="HBoxContainer" parent="." unique_id=598260363]
 layout_mode = 1

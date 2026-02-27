@@ -7,16 +7,31 @@ const JUMP_VELOCITY = -850.0
 enum State{READY, STOPED}
 var current_state
 
+var play_walk = false
+var playing = false
 var has_object_in_hand : bool = false
 
 func _ready() -> void:
 	current_state = State.READY
+
+func _process(delta):
+	if play_walk:
+		if not playing:
+			playing = true
+			play_walking()
+	else:
+		playing = false
+
+func play_walking():
+	if playing:
+		$AudioStreamPlayer.play()
 
 func _physics_process(delta: float) -> void:
 	if current_state != State.STOPED:
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta
+			play_walk = false
 
 		# Handle jump.
 		if Input.is_action_just_pressed("Jump") and is_on_floor():
@@ -28,12 +43,16 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func walk():
+	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
+		if is_on_floor():
+			play_walk=true
 		$AnimatedSprite2D.flip_h = (direction == -1)
 		velocity.x = direction * SPEED
 		$AnimatedSprite2D.play("walk")
 	else:
+		play_walk = false
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$AnimatedSprite2D.play("idle")
 		

@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cvbyltclky6kj" path="res://assets/oak_woods_v1.0/background/background_layer_1.png" id="2_naknc"]
 [ext_resource type="Texture2D" uid="uid://cjobooywg4m8c" path="res://assets/tilemaps/cave.png" id="5_qlsyb"]
 [ext_resource type="PackedScene" uid="uid://cj7mydec5417k" path="res://src/scenes/entity/fox_winter.tscn" id="6_naknc"]
-[ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="8_85dxq"]
+[ext_resource type="PackedScene" uid="uid://p0olt1tpfw4j" path="res://src/scenes/level/level_components/Bounds.tscn" id="6_qlsyb"]
+[ext_resource type="Script" path="res://src/scripts/entity/glyph.gd" id="8_85dxq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85dxq"]
 texture = ExtResource("5_qlsyb")
@@ -28,8 +29,12 @@ physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_85dxq")
 
-[node name="Node2D" type="Node2D" unique_id=30359563 node_paths=PackedStringArray("fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_naknc"]
+size = Vector2(109, 694)
+
+[node name="Node2D" type="Node2D" unique_id=30359563 node_paths=PackedStringArray("bounds", "fox", "glyph_0", "glyph_1", "glyph_2", "glyph_3")]
 script = ExtResource("1_wgerl")
+bounds = [NodePath("Bounds")]
 fox = NodePath("fox_winter")
 glyph_0 = NodePath("Glyphs/Glyph")
 glyph_1 = NodePath("Glyphs/Glyph2")
@@ -50,25 +55,21 @@ texture = ExtResource("2_naknc")
 position = Vector2(380, 127)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("8_85dxq")
-metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
 [node name="Glyph2" type="Sprite2D" parent="Glyphs" unique_id=1014759658]
 position = Vector2(515, 249)
 scale = Vector2(0.35, 0.35)
 script = ExtResource("8_85dxq")
-metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
 [node name="Glyph3" type="Sprite2D" parent="Glyphs" unique_id=825254558]
 position = Vector2(663, 123)
 scale = Vector2(0.25, 0.25)
 script = ExtResource("8_85dxq")
-metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
 [node name="Glyph4" type="Sprite2D" parent="Glyphs" unique_id=1010069830]
 position = Vector2(790, 237)
 scale = Vector2(0.35, 0.35)
 script = ExtResource("8_85dxq")
-metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=150549049]
 tile_map_data = PackedByteArray("AAAAAAQAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAGAAAAAAABAAEAAAAFAAAAAAABAAEAAAAEAAAAAAABAAEAAAADAAAAAAABAAEAAAACAAAAAAABAAEAAAABAAAAAAAEAAAAAAAGAAMAAAADAAEAAAAFAAMAAAADAAEAAAAEAAMAAAADAAEAAAADAAMAAAADAAEAAAACAAMAAAADAAEAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAABAAMAAAADAAAAAAABAAIAAAAEAAEAAAABAAEAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAAAAAABAAAAAAAHAAEAAAACAAEAAAA=")
@@ -76,3 +77,11 @@ tile_set = SubResource("TileSet_nmcvf")
 
 [node name="fox_winter" parent="." unique_id=1154230614 instance=ExtResource("6_naknc")]
 position = Vector2(220, 442)
+
+[node name="Bounds" parent="." unique_id=1244421549 instance=ExtResource("6_qlsyb")]
+position = Vector2(-238, 649)
+to_screen = "cascade_level_summer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=1864428436]
+position = Vector2(1426, -356)
+shape = SubResource("RectangleShape2D_naknc")
