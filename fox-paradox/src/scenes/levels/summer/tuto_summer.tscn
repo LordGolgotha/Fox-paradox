@@ -7,12 +7,15 @@
 [ext_resource type="TileSet" uid="uid://bhorjmi1b1pgp" path="res://assets/tilemaps/summer_grass_tileset.tres" id="5_ig3ha"]
 [ext_resource type="PackedScene" uid="uid://dsk74hy7ce3hk" path="res://src/scenes/entity/fox.tscn" id="6_vmcpa"]
 [ext_resource type="PackedScene" uid="uid://dou468tlw0xsl" path="res://src/scenes/entity/ground.tscn" id="7_icaw6"]
-[ext_resource type="Texture2D" uid="uid://d1pnyt42tpvvl" path="res://assets/utils/glyphe5.png" id="8_ig3ha"]
-[ext_resource type="Texture2D" uid="uid://b2rbcxa58q6g1" path="res://assets/utils/glyphe2.png" id="9_icaw6"]
-[ext_resource type="Texture2D" uid="uid://l5wnsdf5qdt7" path="res://assets/utils/glyphe3.png" id="10_erofv"]
+[ext_resource type="Script" uid="uid://dk0jk78fo3wyg" path="res://src/scripts/entity/glyph.gd" id="8_85dxq"]
 
-[node name="Node2D" type="Node2D" unique_id=30359563]
+[node name="Node2D" type="Node2D" unique_id=30359563 node_paths=PackedStringArray("glyph_0", "glyph_1", "glyph_2", "glyph_3")]
 script = ExtResource("1_wgerl")
+glyph_0 = NodePath("Glyphs/Glyph")
+glyph_1 = NodePath("Glyphs/Glyph2")
+glyph_2 = NodePath("Glyphs/Glyph3")
+glyph_3 = NodePath("Glyphs/Glyph4")
+code_id = 2
 metadata/_custom_type_script = "uid://bhkq3b8il8gv8"
 
 [node name="BackgroundLayer1" type="Sprite2D" parent="." unique_id=296929868]
@@ -42,24 +45,28 @@ position = Vector2(-10, 3)
 rotation = 1.5707964
 scale = Vector2(2, 1)
 
-[node name="Glyphe1" type="Sprite2D" parent="." unique_id=1529544686]
+[node name="Glyphs" type="Node" parent="." unique_id=1132079598]
+
+[node name="Glyph" type="Sprite2D" parent="Glyphs" unique_id=1392732668]
 position = Vector2(206.5, 336.5)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_ig3ha")
+script = ExtResource("8_85dxq")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
-[node name="Glyphe2" type="Sprite2D" parent="." unique_id=26557938]
+[node name="Glyph2" type="Sprite2D" parent="Glyphs" unique_id=1014759658]
 position = Vector2(528, 275)
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("10_erofv")
+script = ExtResource("8_85dxq")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
-[node name="Glyphe3" type="Sprite2D" parent="." unique_id=2049866169]
+[node name="Glyph3" type="Sprite2D" parent="Glyphs" unique_id=825254558]
 position = Vector2(807, 316)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_ig3ha")
+script = ExtResource("8_85dxq")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"
 
-[node name="Glyphe4" type="Sprite2D" parent="." unique_id=627031344]
-modulate = Color(0.62967473, 0.62967473, 0.6296747, 1)
-texture_filter = 5
+[node name="Glyph4" type="Sprite2D" parent="Glyphs" unique_id=1010069830]
 position = Vector2(1066, 287)
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("9_icaw6")
+script = ExtResource("8_85dxq")
+metadata/_custom_type_script = "uid://dk0jk78fo3wyg"

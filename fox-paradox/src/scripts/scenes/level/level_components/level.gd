@@ -13,6 +13,14 @@ class_name Level
 
 @export var code_typer : Code_Typer
 
+@export var glyph_0 : Glyph
+@export var glyph_1 : Glyph
+@export var glyph_2 : Glyph
+@export var glyph_3 : Glyph
+
+@export var code_id: int = -1
+
+
 func _ready():
 	for b in bounds:
 		b.player_entered.connect(go_to_level)
@@ -20,6 +28,17 @@ func _ready():
 		code_typer.entercode.connect(triggermenu)
 		enter_code.code_succeed.connect(solve)
 		enter_code.menu_exited.connect(unlock)
+	if code_id != -1 and code_id != null and code_id < len(PasswordGenerator.passes[3]):
+		var password = PasswordGenerator.passes[code_id]
+		if glyph_0 != null:
+			glyph_0.set_glyph(str(password[0]))
+		if glyph_1 != null:
+			glyph_1.set_glyph(str(password[1]))
+		if glyph_2 != null:
+			glyph_2.set_glyph(str(password[2]))
+		if glyph_3 != null:
+			glyph_3.set_glyph(str(password[3]))
+			
 	
 func unlock():
 	fox.stop(false)
